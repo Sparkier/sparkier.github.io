@@ -1,6 +1,5 @@
 import React from 'react';
 import { Grid, Link } from '@material-ui/core';
-import IconButton from '@material-ui/core/IconButton';
 import GitHub from '@material-ui/icons/GitHub';
 
 
