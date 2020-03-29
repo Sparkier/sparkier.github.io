@@ -1,16 +1,15 @@
-secure: "YA7Plkfhv/xu2+0uHZlEClYXUPo4scE4K3BlmHf8W6TDM8OKtJQgicQbdj5HJ5YhkgsHZ89EIBStmHo8S95NFJNFskeUyQn2eOBDcv0+1PqTb3VjsWC7lIP9bhTzTT+pYhHUsvt/erFHF3Okl+0iGsZ89K7sVK1pZ0Fo1c0hd0mG88Avx8SNyf0rHzHWGo5lZvTY+YnrLlq0tW6VyQfTK+pg5meOpgQRl8skc4DU5eJvnTIrF5FnCCJ7Z47w4xouLC84rQRLsgTQFCvve2nTVf0tN13RQYmitMGTdrNgs5zEyWCKR1z7MIA2G/Vt9BFLZUkpjyXXY65dpHfn/mpnI9PGuk3j4+weNrYKWtyPto+imhaynVxqyHjC+1KEDS0DVzr+RxeQhdokE+R2F7olrZdbViGRTWC5d6CyYELMqYSGi7otfYX7+kSqPEznpIlKfCxOKaB6+lmfQkxT0hlhSbKde0UqfZddWXutywNLQfxC7SiMUmW0fy/mRxuxTjWCWRTHb6TLevP7GE8cP4lIHQvBA4Y9bBLjTImq0jtNdJWH/sbnqiIQwv8JE9OXA25wA1/7GahCDe/pkXi60vgXySVpISw2yhyqNa6Y8tpR9W9uaUx5F1LETvRQmdGqLJygWV7HSoMj9Om+9JQzqu6KQaiK7roaq1yyIfk8MJmCukQ="
 language: node_js
 node_js:
- - "node"
-
+- node
 cache: npm
-
 script: npm run build
-
 deploy:
- provider: pages
- skip_cleanup: true
- github_token: $GITHUB_TOKEN
- local_dir: dist
- on:
-   branch: master
+  provider: pages
+  skip_cleanup: true
+  github_token: "$GITHUB_TOKEN"
+  local_dir: dist
+  on:
+    branch: master
+env:
+  global:
+    secure: usRDLkwgFuOK0bwiGodg37ERVmWT73kef+DbKh2OUHthVA7tamifEUUU+8LtH+y2e1PxeHwWTq+cAK/P+QInH9vVIwaYvwKgDfHrkctkqj9D1RUuaaSW5VCiW9mKPBTmuxO/obj960srUMWYspkQ8O0vl3bQxJDFpGBuVCtCVHFumoxIDfpaxxiCOdm1J+r58yN3QUnZU8ALGl68GA9bi/O2BLASU7DxA23dfuWAp9d5AyPyO7S90kI72awpmnDc1UpgaV3zaFHkW2OAuQgRgvpM4AwHXJe9FBvrVqleVuE/DD39hp34NXuJrR2IKjUsObai+M4fuh5vNegO5qCmj2Uh/iGXe1Y4yupnb9mjOd+sm8KkYeJfGXPqMFLnC2axpSX4MS86kcL+1PMnxezj2j03Lb5RDBbYSQffnwFdpq36gZNJDeHAEoYUngTJfvZ1w0yiPMPgBjHVuX9BD0bgdRO83WQDWO/ACQqSyMSzt8KIT5kCbU/CHXy71dNoBTfTQfCW/CE2q6qGYEeUzaaerNQTwPLoUHr1BfSJTI1mRVQqeCgsPEWCmuSDs7kSkmp+utXvu1he3vggG2B3dNIYlH7zuCLSB/dsm3HrZQiLElWZ4uoRY0rrNvBsZZIP7ld+c0FQNNnbvLKNgZYhSvXt3SwFxl7n1gGTKfr6vgsqVoQ=
