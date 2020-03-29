@@ -1,3 +1,4 @@
+secure: "YA7Plkfhv/xu2+0uHZlEClYXUPo4scE4K3BlmHf8W6TDM8OKtJQgicQbdj5HJ5YhkgsHZ89EIBStmHo8S95NFJNFskeUyQn2eOBDcv0+1PqTb3VjsWC7lIP9bhTzTT+pYhHUsvt/erFHF3Okl+0iGsZ89K7sVK1pZ0Fo1c0hd0mG88Avx8SNyf0rHzHWGo5lZvTY+YnrLlq0tW6VyQfTK+pg5meOpgQRl8skc4DU5eJvnTIrF5FnCCJ7Z47w4xouLC84rQRLsgTQFCvve2nTVf0tN13RQYmitMGTdrNgs5zEyWCKR1z7MIA2G/Vt9BFLZUkpjyXXY65dpHfn/mpnI9PGuk3j4+weNrYKWtyPto+imhaynVxqyHjC+1KEDS0DVzr+RxeQhdokE+R2F7olrZdbViGRTWC5d6CyYELMqYSGi7otfYX7+kSqPEznpIlKfCxOKaB6+lmfQkxT0hlhSbKde0UqfZddWXutywNLQfxC7SiMUmW0fy/mRxuxTjWCWRTHb6TLevP7GE8cP4lIHQvBA4Y9bBLjTImq0jtNdJWH/sbnqiIQwv8JE9OXA25wA1/7GahCDe/pkXi60vgXySVpISw2yhyqNa6Y8tpR9W9uaUx5F1LETvRQmdGqLJygWV7HSoMj9Om+9JQzqu6KQaiK7roaq1yyIfk8MJmCukQ="
 language: node_js
 node_js:
  - "node"
@@ -9,6 +10,7 @@ script: npm run build
 deploy:
  provider: pages
  skip_cleanup: true
+ github_token: $GITHUB_TOKEN
  local_dir: dist
  on:
    branch: master
