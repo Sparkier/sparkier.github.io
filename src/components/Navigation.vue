@@ -1,24 +1,21 @@
 <template>
   <v-row align="center" justify="center">
-    <!--
-    <v-col cols="2" align="right">
+    <v-col align="right">
       <router-link to="/research">Research</router-link>
     </v-col>
-    -->
-    <v-col cols="2">
+    <v-col cols="3">
       <router-link to="/">
-        <v-avatar size="100%" max-width="150" min-width="0%">
+        <v-avatar size="100%" max-width="150" min-width="0%" >
           <img
-            src="../assets/alex_small.jpg"
-            alt="Profile image Alex"/>
+            src="@/assets/alex_small.jpg"
+            alt="Profile image Alex"
+            ref="pic"/>
         </v-avatar>
       </router-link>
     </v-col>
-    <!--
-    <v-col cols="2" align="left">
+    <v-col align="left">
       <router-link to="/fun">Projects</router-link>
     </v-col>
-    -->
   </v-row>
 </template>
 
@@ -26,8 +23,17 @@
 export default {
   name: 'Navigation',
 
-  data: () => ({
-  }),
+  methods: {
+    getPicHeight() {
+      const windowShare = window.innerWidth/12 * 3;
+      const picHeight = Math.min(150, windowShare);
+      this.$store.commit('setHeadHeight', (picHeight + 59));
+    },
+  },
+  created() {
+    window.addEventListener('resize', this.getPicHeight);
+    this.getPicHeight();
+  },
 };
 </script>
 
