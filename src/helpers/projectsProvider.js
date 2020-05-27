@@ -109,6 +109,15 @@ export function getFunProjects() {
         'manage the spreading of the virus.',
         require('@/assets/contagion.png'),
         [new LinkWithIcon('https://github.com/Sparkier/Contagion', 'mdi-github')]),
+    new FunProject(
+        'midosa',
+        'Microdonate and Safe: Winner project for the Audi App Challenge ' +
+        'where we developed an ' +
+        'application for both, the car cockpit and android mobile devices. ' +
+        'The app motivates users to drive with less fuel consumtion and then ' +
+        'donate the savings to charity, thus gamifying this experience.',
+        require('@/assets/midosa.png'),
+        [new LinkWithIcon('https://www.uni-ulm.de/home/uni-aktuell/article/auto-fahren-umwelt-schonen-gutes-tun-ulmer-studenten-gewinnen-erste-audi-app-challenge/', 'mdi-web')]),
   ];
   projects.sort((a, b) => b.year - a.year);
   return projects;

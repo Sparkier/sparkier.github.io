@@ -1,5 +1,8 @@
 <template>
   <v-row justify='center'>
+    <v-btn icon href="mailto:alex.baeuerle@uni-ulm.de">
+      <v-icon color="blue">mdi-email</v-icon>
+    </v-btn>
     <v-btn icon href="https://scholar.google.com/citations?user=131euyAAAAAJ&hl=en&oi=ao" target="_blank">
       <v-icon color="blue">mdi-school</v-icon>
     </v-btn>
