@@ -8,7 +8,7 @@
         <v-avatar size="100%" max-width="150" min-width="0%" >
           <img
             src="@/assets/alex_small.jpg"
-            alt="Profile image Alex"
+            alt="Profile image Alex Bäuerle"
             ref="pic"/>
         </v-avatar>
       </router-link>
