@@ -20,7 +20,7 @@ export function getResearchProjects() {
         'plugged into any classification pipeline.',
         2020,
         require('@/assets/cgvc.jpg'),
-        [new LinkWithIcon('https://www.uni-ulm.de/fileadmin/website_uni_ulm/iui.inst.100/institut/Papers/viscom/2020/baeuerle_classifier_guided_correction.pdf', 'mdi-file'), new LinkWithIcon('https://www.uni-ulm.de/in/mi/mi-forschung/viscom/publications/2020/classifier-guided-visual-correction-of-noisy-labels-for-image-classification-tasks/', 'mdi-web'), new LinkWithIcon('https://github.com/Sparkier/Classifier-Guided-Correction', 'mdi-github')]),
+        [new LinkWithIcon('https://www.uni-ulm.de/fileadmin/website_uni_ulm/iui.inst.100/institut/Papers/viscom/2020/baeuerle_classifier_guided_correction.pdf', 'mdi-file'), new LinkWithIcon('https://www.uni-ulm.de/in/mi/mi-forschung/viscom/publications/2020/classifier-guided-visual-correction-of-noisy-labels-for-image-classification-tasks/', 'mdi-web'), new LinkWithIcon('https://github.com/Sparkier/Classifier-Guided-Correction', 'mdi-github'), new LinkWithIcon('https://youtu.be/FK1qoDCvdws?t=2412', 'mdi-youtube')]),
     new ResearchProject(
         'Net2vis: Transforming Deep Convolutional Networks into ' +
       'Publication-Ready Visualizations',
