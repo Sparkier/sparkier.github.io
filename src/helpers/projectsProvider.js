@@ -42,8 +42,8 @@ export function getResearchProjects() {
         'Detecting crossovers in cryo-electron microscopy images of ' +
         'protein fibrils is an important step towards determining ' +
         'the morphological composition of a sample. We propose a combination ' +
-        'of classical, stochastic approaches, and machine learning techniques ' +
-        'towards solving this problem in a novel, much easier way.',
+        'of classical, stochastic approaches, and machine learning techniques' +
+        ' towards solving this problem in a novel, much easier way.',
         2020,
         require('@/assets/fibrils.png'),
         [new LinkWithIcon('https://onlinelibrary.wiley.com/doi/pdf/10.1111/jmi.12858', 'mdi-file')]),
@@ -114,8 +114,8 @@ export function getFunProjects() {
         'Microdonate and Safe: Winner project for the Audi App Challenge ' +
         'where we developed an ' +
         'application for both, the car cockpit and android mobile devices. ' +
-        'The app motivates users to drive with less fuel consumtion and then ' +
-        'donate the savings to charity, thus gamifying this experience.',
+        'The app motivates users to drive with less fuel consumption and then' +
+        ' donate the savings to charity, thus gamifying this experience.',
         require('@/assets/midosa.png'),
         [new LinkWithIcon('https://www.uni-ulm.de/home/uni-aktuell/article/auto-fahren-umwelt-schonen-gutes-tun-ulmer-studenten-gewinnen-erste-audi-app-challenge/', 'mdi-web')]),
   ];
