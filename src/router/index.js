@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Research from '../views/Research.vue';
 import Projects from '../views/Projects.vue';
+import NotFound from '../views/404.vue';
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,11 @@ const routes = [
     path: '/fun',
     name: 'Projecs',
     component: Projects,
+  },
+  {
+    path: '*',
+    name: '404',
+    component: NotFound,
   },
 ];
 
