@@ -42,7 +42,7 @@ export function getResearchProjects() {
         'Detecting crossovers in cryo-electron microscopy images of ' +
         'protein fibrils is an important step towards determining ' +
         'the morphological composition of a sample. We propose a combination ' +
-        'of classical, stochastic approaches and machine learning techniques ' +
+        'of classical, stochastic approaches, and machine learning techniques ' +
         'towards solving this problem in a novel, much easier way.',
         2020,
         require('@/assets/fibrils.png'),
@@ -98,7 +98,7 @@ export function getFunProjects() {
         'mySnow',
         'An App I developed with my colleagues of the Swabian Skiing ' +
         'Association (SSV). It teaches you concepts about skiing and helps ' +
-        'you improve with videos and handcrafted guidance. Among other stuff ' +
+        'you improve with videos and handcrafted guidance. Among other stuff' +
         ', I am mainly responsible for the iOS version of the app.',
         require('@/assets/mySnow.png'),
         [new LinkWithIcon('https://apps.apple.com/de/app/mysnow/id1448897499', 'mdi-apple'), new LinkWithIcon('https://play.google.com/store/apps/details?id=source.ssv.mysnow&hl=de', 'mdi-android')]),
