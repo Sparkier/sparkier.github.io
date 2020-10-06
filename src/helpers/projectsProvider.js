@@ -10,8 +10,30 @@ import LinkWithIcon from '../types/LinkWithIcon';
 export function getResearchProjects() {
   const projects = [
     new ResearchProject(
+        'What does BERT dream of?',
+        'Alex Bäuerle and James Wexler',
+        'In this internship project with the Google PAIR team, we ' +
+        'investigated how Feature ' +
+        'Visualization could be transferred to the text domain and conducted ' +
+        'several experiments in this line of research. While Feature ' +
+        'Visualization did not work out as well as we hoped, this provides ' +
+        'new insight into the realm of deep dreaming with text.',
+        2020,
+        require('@/assets/bert.png'),
+        [
+          new LinkWithIcon(
+              'https://pair-code.github.io/interpretability/text-dream/explainable/',
+              'mdi-web',
+          ),
+          new LinkWithIcon(
+              'https://github.com/PAIR-code/interpretability/tree/master/text-dream',
+              'mdi-github',
+          ),
+        ],
+    ),
+    new ResearchProject(
         'Classifier-Guided Visual Correction of Noisy Labels for Image ' +
-      'Classification Tasks',
+        'Classification Tasks',
         'Alex Bäuerle, Heiko Neumann, and Timo Ropinski',
         'Training data plays an essential role in modern applications of ' +
         'machine learning. In this project, we provide means to visually ' +
@@ -20,10 +42,25 @@ export function getResearchProjects() {
         'plugged into any classification pipeline.',
         2020,
         require('@/assets/cgvc.jpg'),
-        [new LinkWithIcon('https://www.uni-ulm.de/fileadmin/website_uni_ulm/iui.inst.100/institut/Papers/viscom/2020/baeuerle_classifier_guided_correction.pdf', 'mdi-file'), new LinkWithIcon('https://www.uni-ulm.de/in/mi/mi-forschung/viscom/publications/2020/classifier-guided-visual-correction-of-noisy-labels-for-image-classification-tasks/', 'mdi-web'), new LinkWithIcon('https://github.com/Sparkier/Classifier-Guided-Correction', 'mdi-github'), new LinkWithIcon('https://youtu.be/FK1qoDCvdws?t=2412', 'mdi-youtube')]),
+        [
+          new LinkWithIcon(
+              'https://www.uni-ulm.de/fileadmin/website_uni_ulm/iui.inst.100/institut/Papers/viscom/2020/baeuerle_classifier_guided_correction.pdf',
+              'mdi-file',
+          ),
+          new LinkWithIcon(
+              'https://www.uni-ulm.de/in/mi/mi-forschung/viscom/publications/2020/classifier-guided-visual-correction-of-noisy-labels-for-image-classification-tasks/',
+              'mdi-web',
+          ),
+          new LinkWithIcon(
+              'https://github.com/Sparkier/Classifier-Guided-Correction',
+              'mdi-github',
+          ),
+          new LinkWithIcon('https://youtu.be/FK1qoDCvdws?t=2412', 'mdi-youtube'),
+        ],
+    ),
     new ResearchProject(
         'Net2vis: Transforming Deep Convolutional Networks into ' +
-      'Publication-Ready Visualizations',
+        'Publication-Ready Visualizations',
         'Alex Bäuerle, Christian van Onzenoodt, and Timo Ropinski',
         'To convey neural network architectures in publications, appropriate ' +
         'visualizations are of great importance. This project is aimed at ' +
@@ -33,10 +70,15 @@ export function getResearchProjects() {
         'errors in these visualizations.',
         2019,
         require('@/assets/net2vis.png'),
-        [new LinkWithIcon('https://arxiv.org/pdf/1902.04394.pdf', 'mdi-file'), new LinkWithIcon('http://viscom.net2vis.uni-ulm.de/', 'mdi-web'), new LinkWithIcon('https://github.com/viscom-ulm/Net2Vis', 'mdi-github')]),
+        [
+          new LinkWithIcon('https://arxiv.org/pdf/1902.04394.pdf', 'mdi-file'),
+          new LinkWithIcon('http://viscom.net2vis.uni-ulm.de/', 'mdi-web'),
+          new LinkWithIcon('https://github.com/viscom-ulm/Net2Vis', 'mdi-github'),
+        ],
+    ),
     new ResearchProject(
         'Automatic identification of crossovers in cryo‐EM images of murine ' +
-      'amyloid protein A fibrils with machine learning',
+        'amyloid protein A fibrils with machine learning',
         'Mattthias Weber, Alex Bäuerle, Matthias Schmidt, Matthias Neumann, ' +
         'Marcus Fähndrich, Timo Ropinski, and Volker Schmidt',
         'Detecting crossovers in cryo-electron microscopy images of ' +
@@ -46,23 +88,16 @@ export function getResearchProjects() {
         ' towards solving this problem in a novel, much easier way.',
         2020,
         require('@/assets/fibrils.png'),
-        [new LinkWithIcon('https://onlinelibrary.wiley.com/doi/pdf/10.1111/jmi.12858', 'mdi-file')]),
-    new ResearchProject(
-        'What does BERT dream of? A visual investigation of nightmares in ' +
-      'Sesame Street',
-        'Alex Bäuerle and James Wexler',
-        'In this internship project with the Google PAIR team, we ' +
-        'investigated how Feature ' +
-        'Visualization could be transferred to the text domain and conducted ' +
-        'several experiments in this line of research. While Feature ' +
-        'Visualization did not work out as well as we hoped, this provides ' +
-        'new insight into the realm of deep dreaming with text.',
-        2019,
-        require('@/assets/bert.png'),
-        [new LinkWithIcon('https://pair-code.github.io/interpretability/text-dream/blogpost/', 'mdi-web'), new LinkWithIcon('https://github.com/PAIR-code/interpretability/tree/master/text-dream', 'mdi-github')]),
+        [
+          new LinkWithIcon(
+              'https://onlinelibrary.wiley.com/doi/pdf/10.1111/jmi.12858',
+              'mdi-file',
+          ),
+        ],
+    ),
     new ResearchProject(
         'Convolutional neural network (CNN) applied to respiratory motion ' +
-      'detection in fluoroscopic frames',
+        'detection in fluoroscopic frames',
         'Christoph Baldauf, Alex Bäuerle, Timo Ropinski, Volker Rasche, and ' +
         'Ina Vernikouskaya',
         'To support surgeons during surgeries conducted under ' +
@@ -74,7 +109,13 @@ export function getResearchProjects() {
         'this problem.',
         2019,
         require('@/assets/breath.png'),
-        [new LinkWithIcon('https://www.semanticscholar.org/paper/Convolutional-neural-network-(CNN)-applied-to-in-Baldauf-B%C3%A4uerle/8b5b521bc8489bf691bff08c432d8f865182d7c1', 'mdi-file')]),
+        [
+          new LinkWithIcon(
+              'https://www.semanticscholar.org/paper/Convolutional-neural-network-(CNN)-applied-to-in-Baldauf-B%C3%A4uerle/8b5b521bc8489bf691bff08c432d8f865182d7c1',
+              'mdi-file',
+          ),
+        ],
+    ),
   ];
   projects.sort((a, b) => b.year - a.year);
   return projects;
@@ -93,7 +134,8 @@ export function getFunProjects() {
         'includes both my macs and my linux workstations. Feel free to ' +
         'base your configurations on these!',
         require('@/assets/dotfiles.png'),
-        [new LinkWithIcon('https://github.com/Sparkier/Dotfiles', 'mdi-github')]),
+        [new LinkWithIcon('https://github.com/Sparkier/Dotfiles', 'mdi-github')],
+    ),
     new FunProject(
         'mySnow',
         'An App I developed with my colleagues of the Swabian Skiing ' +
@@ -101,14 +143,25 @@ export function getFunProjects() {
         'you improve with videos and handcrafted guidance. Among other stuff' +
         ', I am mainly responsible for the iOS version of the app.',
         require('@/assets/mySnow.png'),
-        [new LinkWithIcon('https://apps.apple.com/de/app/mysnow/id1448897499', 'mdi-apple'), new LinkWithIcon('https://play.google.com/store/apps/details?id=source.ssv.mysnow&hl=de', 'mdi-android')]),
+        [
+          new LinkWithIcon(
+              'https://apps.apple.com/de/app/mysnow/id1448897499',
+              'mdi-apple',
+          ),
+          new LinkWithIcon(
+              'https://play.google.com/store/apps/details?id=source.ssv.mysnow&hl=de',
+              'mdi-android',
+          ),
+        ],
+    ),
     new FunProject(
         'Contagion',
         'A fun project for the #WirVsVirus hackathon during the coronavirus ' +
         'pandemic. We implemented a text adventure where users have to ' +
         'manage the spreading of the virus.',
         require('@/assets/contagion.png'),
-        [new LinkWithIcon('https://github.com/Sparkier/Contagion', 'mdi-github')]),
+        [new LinkWithIcon('https://github.com/Sparkier/Contagion', 'mdi-github')],
+    ),
     new FunProject(
         'midosa',
         'Microdonate and Safe: Winner project for the Audi App Challenge ' +
@@ -117,7 +170,13 @@ export function getFunProjects() {
         'The app motivates users to drive with less fuel consumption and then' +
         ' donate the savings to charity, thus gamifying this experience.',
         require('@/assets/midosa.png'),
-        [new LinkWithIcon('https://www.uni-ulm.de/home/uni-aktuell/article/auto-fahren-umwelt-schonen-gutes-tun-ulmer-studenten-gewinnen-erste-audi-app-challenge/', 'mdi-web')]),
+        [
+          new LinkWithIcon(
+              'https://www.uni-ulm.de/home/uni-aktuell/article/auto-fahren-umwelt-schonen-gutes-tun-ulmer-studenten-gewinnen-erste-audi-app-challenge/',
+              'mdi-web',
+          ),
+        ],
+    ),
   ];
   projects.sort((a, b) => b.year - a.year);
   return projects;
