@@ -1,15 +1,15 @@
 <template>
   <v-app>
     <Head/>
-    <v-content id="main" :style="headHeight">
+    <v-main id="main" :style="headHeight">
       <router-view/>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
 <script>
 import {mapState} from 'vuex';
-import Head from './components/Head.vue';
+import Head from './views/head/Head.vue';
 
 export default {
   name: 'App',

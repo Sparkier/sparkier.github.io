@@ -1,22 +1,26 @@
 <template>
   <v-col class="text-left">
-    <ResearchProject v-for="project in researchProjects"
-      :key="project.title" :project="project"/>
+    <ThoughtAbstract
+      v-for="(thought, index) in thoughts"
+      :key="index"
+      :thought="thought"
+      :id="index"
+    />
   </v-col>
 </template>
 
 <script>
 import {mapState} from 'vuex';
-import ResearchProject from './elements/ResearchProject.vue';
+import ThoughtAbstract from './ThoughtAbstract.vue';
 
 export default {
-  name: 'Research',
+  name: 'Thoughts',
 
   components: {
-    ResearchProject,
+    ThoughtAbstract,
   },
   computed: mapState({
-    researchProjects: (state) => state.researchProjects,
+    thoughts: (state) => state.thoughts,
   }),
 };
 </script>

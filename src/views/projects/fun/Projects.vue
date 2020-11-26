@@ -7,7 +7,7 @@
 
 <script>
 import {mapState} from 'vuex';
-import FunProject from './elements/FunProject.vue';
+import FunProject from './FunProject.vue';
 
 export default {
   name: 'Projects',

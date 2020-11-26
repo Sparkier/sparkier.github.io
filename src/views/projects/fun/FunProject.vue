@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import LinkItem from './LinkItem.vue';
+import LinkItem from '../LinkItem.vue';
 
 export default {
   name: 'FunProject',
