@@ -2,7 +2,9 @@
   <v-app>
     <Head/>
     <v-main id="main" :style="headHeight">
-      <router-view/>
+      <transition name="fade" mode="out-in">
+        <router-view/>
+      </transition>
     </v-main>
   </v-app>
 </template>
@@ -30,5 +32,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.25s ease-out;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>
