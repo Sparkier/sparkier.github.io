@@ -27,7 +27,7 @@
           <router-link to="/thoughts">Thoughts</router-link>
         </v-col>
         <v-col>
-          <a href="CV_Alex_Baeuerle.pdf" target="_blank">
+          <a :href="getBaseURL() + '/CV_Alex_Baeuerle.pdf'" target="_blank">
             CV
           </a>
         </v-col>
@@ -45,6 +45,9 @@ export default {
       const windowShare = (window.innerWidth / 12) * 2;
       const picHeight = Math.max(Math.min(150, windowShare), 130);
       this.$store.commit('setHeadHeight', picHeight + 84);
+    },
+    getBaseURL() {
+      return window.location.origin;
     },
   },
   created() {
