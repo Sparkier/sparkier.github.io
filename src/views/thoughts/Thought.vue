@@ -11,7 +11,7 @@
           </h3>
           <br>
           <p>
-            <span v-html="thoughts[id].content"></span>
+            <span class="thought-content" v-html="thoughts[id].content"></span>
           </p>
         </v-col>
       </v-row>
@@ -32,8 +32,14 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style lang="scss">
 .container {
   max-width: 1000px;
+}
+.thought-content {
+  text-align: justify;
+  a {
+    font-size: inherit;
+  }
 }
 </style>

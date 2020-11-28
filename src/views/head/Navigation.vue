@@ -27,7 +27,7 @@
           <router-link to="/thoughts">Thoughts</router-link>
         </v-col>
         <v-col>
-          <a href="./CV_Alex_Baeuerle.pdf" target="_blank">
+          <a href="CV_Alex_Baeuerle.pdf" target="_blank">
             CV
           </a>
         </v-col>
