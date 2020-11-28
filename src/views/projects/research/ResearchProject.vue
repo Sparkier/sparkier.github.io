@@ -5,7 +5,7 @@
         <img :src="project.imageSRC" alt="Project Image" />
       </v-col>
       <v-col>
-        <h3>{{ project.title }} ({{ project.year }})</h3>
+        <h3>{{ project.title }} ({{project.venue}}, {{ project.year }})</h3>
         <p>
           {{ project.authors }}
         </p>

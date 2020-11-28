@@ -19,6 +19,7 @@ export function getResearchProjects() {
         'Visualization did not work out as well as we hoped, this provides ' +
         'new insight into the realm of deep dreaming with text.',
         2020,
+        'VISxAI',
         require('@/assets/bert.png'),
         [
           new LinkWithIcon(
@@ -41,6 +42,7 @@ export function getResearchProjects() {
         ' which is built on common labeling error types we propose, can be ' +
         'plugged into any classification pipeline.',
         2020,
+        'Computer Graphics Forum & EuroVis',
         require('@/assets/cgvc.jpg'),
         [
           new LinkWithIcon(
@@ -65,6 +67,7 @@ export function getResearchProjects() {
         'investment towards these visualizations significantly, and reduce ' +
         'errors in these visualizations.',
         2019,
+        'ArXiv',
         require('@/assets/net2vis.png'),
         [
           new LinkWithIcon('https://arxiv.org/pdf/1902.04394.pdf', 'mdi-file'),
@@ -83,6 +86,7 @@ export function getResearchProjects() {
         'of classical, stochastic approaches, and machine learning techniques' +
         ' towards solving this problem in a novel, much easier way.',
         2020,
+        'Journal of Microscopy',
         require('@/assets/fibrils.png'),
         [
           new LinkWithIcon(
@@ -104,6 +108,7 @@ export function getResearchProjects() {
         'convolutional neural networks (CNN) as a novel approach to address ' +
         'this problem.',
         2019,
+        'International Journal of Computer Assisted Radiology and Surgery',
         require('@/assets/breath.png'),
         [
           new LinkWithIcon(
