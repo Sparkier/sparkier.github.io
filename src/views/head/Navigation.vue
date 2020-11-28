@@ -44,7 +44,7 @@ export default {
     getPicHeight() {
       const windowShare = (window.innerWidth / 12) * 2;
       const picHeight = Math.max(Math.min(150, windowShare), 130);
-      this.$store.commit('setHeadHeight', picHeight + 59);
+      this.$store.commit('setHeadHeight', picHeight + 84);
     },
   },
   created() {
