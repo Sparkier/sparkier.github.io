@@ -8,7 +8,7 @@ export default class ResearchProject extends Project {
    * Creates a research project
    *
    * @param {String} title the title of the project/paper
-   * @param {String} authors the authors of the project/paper
+   * @param {String[]} authors the authors of the project/paper
    * @param {String} abstract the abstract of the project/paper
    * @param {int} year the year of the publication
    * @param {String} venue the venue of the publication

@@ -9,7 +9,7 @@
           <h3>
             {{ thoughts[id].date.toDateString() }}
           </h3>
-          <br>
+          <br />
           <p>
             <span class="thought-content" v-html="thoughts[id].content"></span>
           </p>

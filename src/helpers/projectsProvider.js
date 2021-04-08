@@ -12,7 +12,7 @@ export function getResearchProjects() {
     new ResearchProject(
         'exploRNN: Understanding Recurrent Neural Networks through Visual ' +
         'Exploration',
-        'Alex Bäuerle, Raphael Störk, and Timo Ropinski',
+        ['Alex Bäuerle', 'Raphael Störk', 'Timo Ropinski'],
         'Visualization has proven to be of great help with learning about ' +
         'neural network processes. While most current educational ' +
         'visualizations are targeted towards one specific architecture or ' +
@@ -26,10 +26,7 @@ export function getResearchProjects() {
         'ArXiv',
         require('@/assets/exploRNN.png'),
         [
-          new LinkWithIcon(
-              'https://arxiv.org/pdf/2012.06326.pdf',
-              'mdi-file',
-          ),
+          new LinkWithIcon('https://arxiv.org/pdf/2012.06326.pdf', 'mdi-file'),
           new LinkWithIcon(
               'https://mi-pages.informatik.uni-ulm.de/explornn/',
               'mdi-web',
@@ -37,8 +34,45 @@ export function getResearchProjects() {
         ],
     ),
     new ResearchProject(
+        'Net2vis: Transforming Deep Convolutional Networks into ' +
+        'Publication-Ready Visualizations',
+        ['Alex Bäuerle', 'Christian van Onzenoodt', 'Timo Ropinski'],
+        'To convey neural network architectures in publications, appropriate ' +
+        'visualizations are of great importance. This project is aimed at ' +
+        ' automatically generating such visualizations from code. Thus, ' +
+        'we are able to employ a common visual grammar, reduce the time ' +
+        'investment towards these visualizations significantly, and reduce ' +
+        'errors in these visualizations.',
+        2021,
+        'IEEE TVCG',
+        require('@/assets/net2vis.png'),
+        [
+          new LinkWithIcon('https://arxiv.org/pdf/1902.04394.pdf', 'mdi-file'),
+          new LinkWithIcon('http://viscom.net2vis.uni-ulm.de/', 'mdi-web'),
+          new LinkWithIcon('https://github.com/viscom-ulm/Net2Vis', 'mdi-github'),
+        ],
+    ),
+    new ResearchProject(
+        'Measuring Model Biases in the Absence of Ground Truth',
+        [
+          'Osman Aka',
+          'Ken Burke',
+          'Alex Bäuerle',
+          'Christina Greer',
+          'Margaret Mitchell',
+        ],
+        'Model fairness is getting more and more important. At the same ' +
+        'time, datasets are getting larger and ground truth more sparse. In ' +
+        'this paper, we evaluate bias detection algorithms that can be used ' +
+        'without ground truth at hand.',
+        2021,
+        'AIES',
+        require('@/assets/nPMI.png'),
+        [new LinkWithIcon('https://arxiv.org/pdf/2103.03417.pdf', 'mdi-file')],
+    ),
+    new ResearchProject(
         'What does BERT dream of?',
-        'Alex Bäuerle and James Wexler',
+        ['Alex Bäuerle', 'James Wexler'],
         'In this internship project with the Google PAIR team, we ' +
         'investigated how Feature ' +
         'Visualization could be transferred to the text domain and conducted ' +
@@ -62,7 +96,7 @@ export function getResearchProjects() {
     new ResearchProject(
         'Classifier-Guided Visual Correction of Noisy Labels for Image ' +
         'Classification Tasks',
-        'Alex Bäuerle, Heiko Neumann, and Timo Ropinski',
+        ['Alex Bäuerle', 'Heiko Neumann', 'Timo Ropinski'],
         'Training data plays an essential role in modern applications of ' +
         'machine learning. In this project, we provide means to visually ' +
         'guide users towards potential errors in such datasets. Our guidance,' +
@@ -84,29 +118,17 @@ export function getResearchProjects() {
         ],
     ),
     new ResearchProject(
-        'Net2vis: Transforming Deep Convolutional Networks into ' +
-        'Publication-Ready Visualizations',
-        'Alex Bäuerle, Christian van Onzenoodt, and Timo Ropinski',
-        'To convey neural network architectures in publications, appropriate ' +
-        'visualizations are of great importance. This project is aimed at ' +
-        ' automatically generating such visualizations from code. Thus, ' +
-        'we are able to employ a common visual grammar, reduce the time ' +
-        'investment towards these visualizations significantly, and reduce ' +
-        'errors in these visualizations.',
-        2019,
-        'ArXiv',
-        require('@/assets/net2vis.png'),
-        [
-          new LinkWithIcon('https://arxiv.org/pdf/1902.04394.pdf', 'mdi-file'),
-          new LinkWithIcon('http://viscom.net2vis.uni-ulm.de/', 'mdi-web'),
-          new LinkWithIcon('https://github.com/viscom-ulm/Net2Vis', 'mdi-github'),
-        ],
-    ),
-    new ResearchProject(
         'Automatic identification of crossovers in cryo‐EM images of murine ' +
         'amyloid protein A fibrils with machine learning',
-        'Mattthias Weber, Alex Bäuerle, Matthias Schmidt, Matthias Neumann, ' +
-        'Marcus Fähndrich, Timo Ropinski, and Volker Schmidt',
+        [
+          'Mattthias Weber',
+          'Alex Bäuerle',
+          'Matthias Schmidt',
+          'Matthias Neumann',
+          'Marcus Fähndrich',
+          'Timo Ropinski',
+          'Volker Schmidt',
+        ],
         'Detecting crossovers in cryo-electron microscopy images of ' +
         'protein fibrils is an important step towards determining ' +
         'the morphological composition of a sample. We propose a combination ' +
@@ -125,8 +147,13 @@ export function getResearchProjects() {
     new ResearchProject(
         'Convolutional neural network (CNN) applied to respiratory motion ' +
         'detection in fluoroscopic frames',
-        'Christoph Baldauf, Alex Bäuerle, Timo Ropinski, Volker Rasche, and ' +
-        'Ina Vernikouskaya',
+        [
+          'Christoph Baldauf',
+          'Alex Bäuerle',
+          'Timo Ropinski',
+          'Volker Rasche',
+          'Ina Vernikouskaya',
+        ],
         'To support surgeons during surgeries conducted under ' +
         'X-ray-fluoroscopy guidance, real' +
         'time fluoroscopy is augmented with organ shape models. Following ' +
