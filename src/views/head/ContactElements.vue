@@ -16,11 +16,7 @@
     <v-btn icon href="https://www.twitter.com/a13xba" target="_blank">
       <v-icon color="blue">mdi-twitter</v-icon>
     </v-btn>
-    <v-btn
-      icon
-      href="https://www.linkedin.com/in/alex-bäuerle-baa8a81b7"
-      target="_blank"
-    >
+    <v-btn icon href="https://www.linkedin.com/in/alex-bauerle" target="_blank">
       <v-icon color="blue">mdi-linkedin</v-icon>
     </v-btn>
   </v-row>
