@@ -25,5 +25,6 @@ export default {
 <style scoped lang="scss">
 .container {
   max-width: 1000px;
+  line-height: normal;
 }
 </style>

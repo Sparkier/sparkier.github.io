@@ -22,7 +22,7 @@
             :linkWithIcon="link"
           />
         </v-row>
-        <p>
+        <p class="abstract-container">
           {{ project.abstract }}
         </p>
       </v-col>
@@ -60,5 +60,9 @@ p {
 }
 .neutral-row {
   margin-left: 0px;
+  margin-top: 5px;
+}
+.abstract-container {
+  margin-top: 12px !important;
 }
 </style>
