@@ -31,6 +31,7 @@ export function getResearchProjects() {
               'https://mi-pages.informatik.uni-ulm.de/explornn/',
               'mdi-web',
           ),
+          new LinkWithIcon('https://github.com/Sparkier/exploRNN', 'mdi-github'),
         ],
     ),
     new ResearchProject(
@@ -91,6 +92,7 @@ export function getResearchProjects() {
               'https://github.com/PAIR-code/interpretability/tree/master/text-dream',
               'mdi-github',
           ),
+          new LinkWithIcon('https://www.youtube.com/watch?v=wEo9skwDfts&t=10665s', 'mdi-youtube'),
         ],
     ),
     new ResearchProject(
