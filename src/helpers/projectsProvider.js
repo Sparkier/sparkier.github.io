@@ -48,7 +48,7 @@ export function getResearchProjects() {
         'IEEE TVCG',
         require('@/assets/net2vis.png'),
         [
-          new LinkWithIcon('https://arxiv.org/pdf/1902.04394.pdf', 'mdi-file'),
+          new LinkWithIcon('https://viscom.publications.uni-ulm.de/api/uploads/4/09350177.pdf', 'mdi-file'),
           new LinkWithIcon('http://viscom.net2vis.uni-ulm.de/', 'mdi-web'),
           new LinkWithIcon('https://github.com/viscom-ulm/Net2Vis', 'mdi-github'),
         ],
