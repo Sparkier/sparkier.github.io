@@ -35,7 +35,7 @@ import LinkItem from '../LinkItem.vue';
 import Author from './Author.vue';
 
 export default {
-  name: 'ResearchProject',
+  name: 'Publication',
 
   components: {
     LinkItem,

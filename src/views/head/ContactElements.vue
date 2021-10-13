@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center">
-    <v-btn icon href="mailto:alex.baeuerle@uni-ulm.de">
+    <v-btn icon href="mailto:alex@a13x.io">
       <v-icon color="blue">mdi-email</v-icon>
     </v-btn>
     <v-btn

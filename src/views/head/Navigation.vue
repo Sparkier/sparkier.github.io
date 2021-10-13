@@ -3,10 +3,10 @@
     <v-col>
       <v-row align="end" justify="end">
         <v-col class="non-growing">
-          <router-link to="/research">Research</router-link>
+          <router-link to="/publications">Publications</router-link>
         </v-col>
         <v-col class="non-growing">
-          <router-link to="/fun">Fun</router-link>
+          <router-link to="/research">Research</router-link>
         </v-col>
       </v-row>
     </v-col>
@@ -24,7 +24,7 @@
     <v-col>
       <v-row align="end" justify="begin">
         <v-col class="non-growing">
-          <router-link to="/thoughts">Thoughts</router-link>
+          <router-link to="/fun">Side Projects</router-link>
         </v-col>
         <v-col class="non-growing">
           <a :href="getBaseURL() + '/CV_Alex_Baeuerle.pdf'" target="_blank">
@@ -72,5 +72,6 @@ a {
 
 .non-growing {
   flex-grow: 0;
+  white-space: nowrap;
 }
 </style>

@@ -2,9 +2,9 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import Home from '../views/Home.vue';
-import Research from '../views/projects/research/Research.vue';
+import Publications from '../views/projects/publications/Publications.vue';
 import Projects from '../views/projects/fun/Projects.vue';
-import Thoughts from '../views/thoughts/Thoughts.vue';
+import Research from '../views/research/Research.vue';
 import Thought from '../views/thoughts/Thought.vue';
 import NotFound from '../views/404.vue';
 
@@ -17,9 +17,9 @@ const routes = [
     component: Home,
   },
   {
-    path: '/research',
-    name: 'Research',
-    component: Research,
+    path: '/publications',
+    name: 'Publications',
+    component: Publications,
   },
   {
     path: '/fun',
@@ -27,9 +27,9 @@ const routes = [
     component: Projects,
   },
   {
-    path: '/thoughts',
-    name: 'Thoughts',
-    component: Thoughts,
+    path: '/research',
+    name: 'Research',
+    component: Research,
   },
   {
     path: '/thought/:id',
