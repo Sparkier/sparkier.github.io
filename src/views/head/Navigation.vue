@@ -1,9 +1,9 @@
 <template>
-  <v-row align="center" justify="center">
+  <v-row align="center" justify="center" class="no-wrap">
     <v-col>
       <v-row align="end" justify="end">
         <v-col class="non-growing">
-          <router-link to="/publications">Publications</router-link>
+          <router-link to="/publications">Papers</router-link>
         </v-col>
         <v-col class="non-growing">
           <router-link to="/research">Research</router-link>
@@ -24,7 +24,7 @@
     <v-col>
       <v-row align="end" justify="begin">
         <v-col class="non-growing">
-          <router-link to="/fun">Side Projects</router-link>
+          <router-link to="/fun">Projects</router-link>
         </v-col>
         <v-col class="non-growing">
           <a :href="getBaseURL() + '/CV_Alex_Baeuerle.pdf'" target="_blank">
@@ -73,5 +73,9 @@ a {
 .non-growing {
   flex-grow: 0;
   white-space: nowrap;
+}
+
+.no-wrap {
+  flex-wrap: nowrap;
 }
 </style>
