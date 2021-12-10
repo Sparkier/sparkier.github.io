@@ -6,12 +6,9 @@ script: yarn build
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: "$GITHUB_TOKEN"
+  github_token: $GITHUB_TOKEN
   local_dir: public
   target_branch: master
   on:
     all_branches: true
   fqdn: a13x.io
-env:
-  global:
-    secure: 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
