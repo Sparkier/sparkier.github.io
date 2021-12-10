@@ -28,11 +28,6 @@
     margin-bottom: 2em;
   }
 
-  .project-content-container {
-    display: flex;
-    flex-direction: column;
-  }
-
   img {
     height: 100%;
     object-fit: cover;

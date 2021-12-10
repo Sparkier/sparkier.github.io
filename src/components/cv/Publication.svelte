@@ -43,12 +43,6 @@
     flex: 1 1 auto;
   }
 
-  img {
-    object-fit: cover;
-    max-width: 250px;
-    margin-right: 1em;
-  }
-
   .link-item {
     margin-right: 5px;
   }
