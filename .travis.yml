@@ -1,13 +1,13 @@
 language: node_js
 node_js:
   - 14
-cache: npm
-script: npm run build
+cache: yarn
+script: yarn run build
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: "$GITHUB_TOKEN"
-  local_dir: dist
+  local_dir: public/build
   target_branch: master
   on:
     all_branches: true

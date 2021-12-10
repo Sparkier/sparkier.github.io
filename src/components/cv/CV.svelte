@@ -1,0 +1,76 @@
+<script lang="ts">
+  import Contact from "./Contact.svelte";
+  import Education from "./Education.svelte";
+  import Publications from "./Publications.svelte";
+  import Talks from "./Talks.svelte";
+  import Teaching from "./Teaching.svelte";
+  import Work from "./Work.svelte";
+
+  import html2pdf from "html2pdf.js";
+
+  let container: HTMLDivElement;
+
+  function exportCVPDF() {
+    var opt = {
+      margin: 10,
+      filename: "cv_alex_baeuerle.pdf",
+    };
+    html2pdf(container, opt);
+  }
+</script>
+
+<div class="cv-controls-container">
+  <button on:click={exportCVPDF}>Download PDF</button>
+  <div class="cv-container" bind:this={container}>
+    <div class="cv-content-container">
+      <h1>Alex Bäuerle</h1>
+      <h3>Ph D Student, Ulm University</h3>
+      <p>
+        My research is on visualization and explainability for neural networks.
+        In this context, I am always interested in new methods to better
+        understand artificial intelligence. I try to help developers in this
+        area with techniques that help them communicate and develop new
+        approaches. For consumers of AI-powered applications, I work on
+        visualizations that help them understand the decision that these
+        algorithms make. If you are interested in my research, check out my
+        scholar account.
+      </p>
+      <Contact />
+    </div>
+    <div class="cv-content-container"><Education /></div>
+    <div class="cv-content-container"><Work /></div>
+    <div class="cv-content-container"><Publications /></div>
+    <div class="cv-content-container"><Talks /></div>
+    <div class="cv-content-container"><Teaching /></div>
+  </div>
+</div>
+
+<style lang="scss">
+  .cv-controls-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .cv-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  .cv-content-container {
+    padding-bottom: 3em;
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:active {
+    background: none;
+    color: #2196f3;
+  }
+</style>
