@@ -4,7 +4,7 @@ import { LinkWithIcon } from "../types";
 
 import File from "svelte-material-icons/File.svelte";
 import GitHub from "svelte-material-icons/GithubCircle.svelte";
-import Youtube from "svelte-material-icons/YouTube.svelte";
+import Youtube from "svelte-material-icons/Youtube.svelte";
 import Web from "svelte-material-icons/Web.svelte";
 import Apple from "svelte-material-icons/Apple.svelte";
 import Android from "svelte-material-icons/Android.svelte";
