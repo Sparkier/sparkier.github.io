@@ -4,7 +4,7 @@ import { LinkWithIcon } from "../types";
 
 import File from "svelte-material-icons/File.svelte";
 import GitHub from "svelte-material-icons/GithubCircle.svelte";
-// import YouTube from "svelte-material-icons/YouTube.svelte";
+import Youtube from "svelte-material-icons/YouTube.svelte";
 import Web from "svelte-material-icons/Web.svelte";
 import Apple from "svelte-material-icons/Apple.svelte";
 import Android from "svelte-material-icons/Android.svelte";
@@ -94,10 +94,10 @@ export function getResearchProjects(): ResearchProject[] {
           "https://github.com/PAIR-code/interpretability/tree/master/text-dream",
           GitHub
         ),
-        // new LinkWithIcon(
-        //   "https://www.youtube.com/watch?v=wEo9skwDfts&t=10665s",
-        //   YouTube
-        // ),
+        new LinkWithIcon(
+          "https://www.youtube.com/watch?v=wEo9skwDfts&t=10665s",
+          Youtube
+        ),
       ]
     ),
     new ResearchProject(
@@ -121,7 +121,7 @@ export function getResearchProjects(): ResearchProject[] {
           "https://github.com/Sparkier/Classifier-Guided-Correction",
           GitHub
         ),
-        // new LinkWithIcon("https://youtu.be/FK1qoDCvdws?t=2412", YouTube),
+        new LinkWithIcon("https://youtu.be/FK1qoDCvdws?t=2412", Youtube),
       ]
     ),
     new ResearchProject(
