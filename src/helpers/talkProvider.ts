@@ -14,7 +14,7 @@ export function getTalks() {
       "Net2Vis - A Visual Grammar for Automatically Generating Publication-Tailored CNN Architecture Visualizations",
       "",
       new Date("October 28, 2021"),
-      []
+      [new LinkWithIcon("https://www.youtube.com/watch?v=LkMRI0Zk4dU", Youtube)]
     ),
     new Talk(
       "Bio+Med+Vis Spring School, Brno, Czech Republic (remote)",

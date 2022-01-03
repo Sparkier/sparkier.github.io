@@ -53,6 +53,10 @@ export function getResearchProjects(): ResearchProject[] {
         ),
         new LinkWithIcon("http://viscom.net2vis.uni-ulm.de/", Web),
         new LinkWithIcon("https://github.com/viscom-ulm/Net2Vis", GitHub),
+        new LinkWithIcon(
+          "https://www.youtube.com/watch?v=LkMRI0Zk4dU",
+          Youtube
+        ),
       ]
     ),
     new ResearchProject(
