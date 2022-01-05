@@ -19,9 +19,15 @@ export function getResearchProjects(): ResearchProject[] {
     new ResearchProject(
       "exploRNN: Understanding Recurrent Neural Networks through Visual " +
         "Exploration",
-      ["Alex Bäuerle", "Raphael Störk", "Timo Ropinski"],
+      [
+        "Alex Bäuerle",
+        "Patrick Albus",
+        "Raphael Störk",
+        "Tina Seufert",
+        "Timo Ropinski",
+      ],
       "Visualization has proven to be of great help with learning about neural network processes. While most current educational visualizations are targeted towards one specific architecture or use case recurrent neural networks (RNNs), which are capable of processing sequential data, are not covered yet, despite the fact that tasks on sequential data, such as text and function analysis, are at the forefront of deep learning research. Therefore, we propose exploRNN, the first interactively explorable, educational visualization for RNNs.",
-      "2020",
+      "2022",
       "ArXiv",
       "images/exploRNN.png",
       [
