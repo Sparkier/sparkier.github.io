@@ -5,6 +5,8 @@
   import Talks from "./Talks.svelte";
   import Teaching from "./Teaching.svelte";
   import Work from "./Work.svelte";
+  import Mentoring from "./Mentoring.svelte";
+  import Funding from "./Funding.svelte";
 
   import html2pdf from "html2pdf.js";
 
@@ -42,6 +44,8 @@
     <div class="cv-content-container"><Publications /></div>
     <div class="cv-content-container"><Talks /></div>
     <div class="cv-content-container"><Teaching /></div>
+    <div class="cv-content-container"><Mentoring /></div>
+    <div class="cv-content-container"><Funding /></div>
   </div>
 </div>
 

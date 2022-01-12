@@ -18,14 +18,14 @@ export function getLectures() {
         "I mainly talk about different explainability techniques and " +
         "visualization concepts that help investigate and communicate about" +
         "AI systems.",
-      "2019 - 2021"
+      "2019 - 2022"
     ),
     new Lecture(
       "Projects: Visualization and Explainability for AI",
       "In these regular projects, I supervise undergrad and grad students. " +
         "We go through the process of ideation, implementation, and writing " +
         "about these projects. ",
-      "2017 - 2021"
+      "2017 - 2022"
     ),
     new Lecture(
       "Seminars: Visualization and Explainability for AI",
@@ -35,7 +35,7 @@ export function getLectures() {
         "a written form and as a presentation. " +
         "During this process, my task is to provide assistance, guide " +
         "students, and teach them about research practices.",
-      "2017 - 2021"
+      "2017 - 2022"
     ),
   ];
   return thoughts;

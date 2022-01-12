@@ -28,7 +28,7 @@ export function getResearchProjects(): ResearchProject[] {
       ],
       "Visualization has proven to be of great help with learning about neural network processes. While most current educational visualizations are targeted towards one specific architecture or use case recurrent neural networks (RNNs), which are capable of processing sequential data, are not covered yet, despite the fact that tasks on sequential data, such as text and function analysis, are at the forefront of deep learning research. Therefore, we propose exploRNN, the first interactively explorable, educational visualization for RNNs.",
       "2022",
-      "ArXiv",
+      "Under Review",
       "images/exploRNN.png",
       [
         new LinkWithIcon("https://arxiv.org/pdf/2012.06326.pdf", File),
@@ -40,8 +40,7 @@ export function getResearchProjects(): ResearchProject[] {
       ]
     ),
     new ResearchProject(
-      "Net2vis: Transforming Deep Convolutional Networks into " +
-        "Publication-Ready Visualizations",
+      "Net2Vis - A Visual Grammar for Automatically Generating Publication-Tailored CNN Architecture Visualizations",
       ["Alex Bäuerle", "Christian van Onzenoodt", "Timo Ropinski"],
       "To convey neural network architectures in publications, appropriate " +
         "visualizations are of great importance. This project is aimed at " +
@@ -50,7 +49,7 @@ export function getResearchProjects(): ResearchProject[] {
         "investment towards these visualizations significantly, and reduce " +
         "errors in these visualizations.",
       "2021",
-      "IEEE TVCG",
+      "TVCG",
       "images/net2vis.png",
       [
         new LinkWithIcon(
@@ -120,7 +119,7 @@ export function getResearchProjects(): ResearchProject[] {
         " which is built on common labeling error types we propose, can be " +
         "plugged into any classification pipeline.",
       "2020",
-      "Computer Graphics Forum & EuroVis",
+      "EuroVis",
       "images/cgvc.png",
       [
         new LinkWithIcon(
@@ -200,6 +199,24 @@ export function getResearchProjects(): ResearchProject[] {
  */
 export function getFunProjects(): FunProject[] {
   const projects = [
+    new FunProject(
+      "luna",
+      "Inspired by Lucid, Luna is a Feature Visualization package for Tensorflow. While Lucid does not support Tensorflow 2, Luna was built with Tensorflow 2 at its core.",
+      "images/luna.png",
+      [
+        new LinkWithIcon("http://a13x.io/luna/", Web),
+        new LinkWithIcon("https://github.com/Sparkier/luna", GitHub),
+      ]
+    ),
+    new FunProject(
+      "svelte-vega",
+      "Use vega as a svelte component.",
+      "images/svelte-vega.png",
+      [
+        new LinkWithIcon("https://vega.github.io/svelte-vega/", Web),
+        new LinkWithIcon("https://github.com/vega/svelte-vega", GitHub),
+      ]
+    ),
     new FunProject(
       "Dotfiles",
       "These are the dotfiles I use to configure my machines. This " +

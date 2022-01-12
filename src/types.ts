@@ -109,6 +109,62 @@ export class Lecture {
 }
 
 /**
+ * Providing a structure for mentorship
+ */
+export class Mentorship {
+  name: string;
+  position: string;
+  institution: string;
+  topic: string;
+  timeframe: string;
+
+  /**
+   * Creates a mentorship
+   *
+   * @param {String} name the name of the mentee
+   * @param {String} position what the mentee was doing
+   * @param {String} institution where the mentorship happened
+   * @param {String} topic what the mentorship was about
+   * @param {String} timeframe the date of the mentorship
+   */
+  constructor(
+    name: string,
+    position: string,
+    institution: string,
+    topic: string,
+    timeframe: string
+  ) {
+    this.name = name;
+    this.position = position;
+    this.institution = institution;
+    this.topic = topic;
+    this.timeframe = timeframe;
+  }
+}
+
+/**
+ * Providing a structure for funding
+ */
+export class Funding {
+  name: string;
+  type: string;
+  timeframe: string;
+
+  /**
+   * Creates a funding
+   *
+   * @param {String} name the name of the mentee
+   * @param {String} type what type of funding was received
+   * @param {String} timeframe the date of the mentorship
+   */
+  constructor(name: string, type: string, timeframe: string) {
+    this.name = name;
+    this.type = type;
+    this.timeframe = timeframe;
+  }
+}
+
+/**
  * Providing a structure for links with icons
  */
 export class LinkWithIcon {

@@ -36,9 +36,9 @@ export function getWork(): Work[] {
       Google
     ),
     new Work(
-      "Teaching Assistant, Ulm University",
+      "Scientific Assistant, Ulm University",
       "During my Ph. D., I supervised student theses and projects, and co-taught lectures and seminars.",
-      "Jan 2018 - today",
+      "Jan 2018 - Present",
       School
     ),
   ];

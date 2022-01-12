@@ -6,7 +6,7 @@
 </script>
 
 <div>
-  <h2>Work Experience</h2>
+  <h2>Positions</h2>
   {#each employments as employment}
     <Workplace {employment} />
   {/each}
