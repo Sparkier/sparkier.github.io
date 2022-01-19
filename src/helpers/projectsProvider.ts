@@ -17,6 +17,57 @@ import Android from "svelte-material-icons/Android.svelte";
 export function getResearchProjects(): ResearchProject[] {
   const projects = [
     new ResearchProject(
+      "Symphony: Composing Interactive Interfaces for Machine Learning",
+      [
+        "Alex Bäuerle",
+        "Ángel Alexander Cabrera",
+        "Fred Hohman",
+        "Megan Maher",
+        "David Koski",
+        "Xavier Suau",
+        "Titus Barik",
+        "Dominik Moritz",
+      ],
+      "Interfaces for machine learning (ML) can help practitioners build robust and responsible ML systems. While existing ML interfaces are effective for specific tasks, they are not designed to be reused, explored, and shared by multiple stakeholders in cross-functional teams. To enable analysis and communication between different ML practitioners, we designed and implemented Symphony, a framework for composing interactive ML interfaces with task-specific, data-driven components that can be used across platforms such as computational notebooks and web dashboards. Symphony helped ML practitioners discover previously unknown issues like data duplicates and blind spots in models while enabling them to share insights with other stakeholders.",
+      "2022",
+      "CHI",
+      "images/symphony.pdf",
+      []
+    ),
+    new ResearchProject(
+      "Visual Identification of Problematic Bias in Large Label Spaces",
+      [
+        "Alex Bäuerle",
+        "Aybuke Gul Turker",
+        "Ken Burke",
+        "Osman Aka",
+        "Timo Ropinski",
+        "Christina Greer",
+        "Mani Varadarajan",
+      ],
+      "While the need for well-trained, fair ML systems is increasing ever more, measuring fairness for modern models and datasets is becoming increasingly difficult as they grow at an unprecedented pace. Indeed, this often rules out the application of traditional analysis metrics and systems. Addressing the lack of visualization work in this area, we propose guidelines for designing visualizations for such large label spaces, considering both technical and ethical issues. Our proposed visualization approach can be integrated into classical model and data pipelines, and we provide an implementation of our techniques open-sourced as a TensorBoard plug-in.",
+      "2022",
+      "ArXiv",
+      "images/npmiVIS.png",
+      [new LinkWithIcon("https://arxiv.org/pdf/2201.06386.pdf", File)]
+    ),
+    new ResearchProject(
+      "Where did my Lines go? Visualizing Missing Data in Parallel Coordinates",
+      [
+        "Alex Bäuerle",
+        "Christian van Onzenoodt",
+        "Simon der Kinderen",
+        "Jimmy Johansson Westberg",
+        "Daniel Jönsson",
+        "Timo Ropinski",
+      ],
+      "We evaluate visualization concepts for parallel coordinates to represent missing values and focus on the trade-off between the ability to perceive missing values and the concept's impact on common parallel coordinates tasks. We performed a crowd-sourced, quantitative user study with 732 participants comparing the concepts and their variations using five real-world data sets. Based on our findings, we provide suggestions regarding which visual encoding works best depending on the task at focus.",
+      "2022",
+      "Under Review",
+      "images/pc-missing-data.png",
+      []
+    ),
+    new ResearchProject(
       "exploRNN: Understanding Recurrent Neural Networks through Visual " +
         "Exploration",
       [

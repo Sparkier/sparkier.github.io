@@ -3,6 +3,7 @@
   import LinkItem from "../LinkItem.svelte";
 
   export let talk: Talk;
+  export let showLinks: boolean;
 </script>
 
 <div class="talk-container">
@@ -16,11 +17,13 @@
     <p class="venue">
       {talk.venue}
     </p>
-    <div class="link-item-container">
-      {#each talk.links as link}
-        <LinkItem linkWithIcon={link} />
-      {/each}
-    </div>
+    {#if showLinks}
+      <div class="link-item-container">
+        {#each talk.links as link}
+          <LinkItem linkWithIcon={link} />
+        {/each}
+      </div>
+    {/if}
   </div>
 </div>
 

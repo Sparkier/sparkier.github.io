@@ -4,6 +4,7 @@
   import Author from "../publications/Author.svelte";
 
   export let publication: ResearchProject;
+  export let showLinks: boolean;
 </script>
 
 <div class="publication-container">
@@ -20,13 +21,15 @@
       />
     {/each}
   </div>
-  <div class="link-item-container">
-    {#each publication.links as link}
-      <div class="link-item">
-        <LinkItem linkWithIcon={link} />
-      </div>
-    {/each}
-  </div>
+  {#if showLinks}
+    <div class="link-item-container">
+      {#each publication.links as link}
+        <div class="link-item">
+          <LinkItem linkWithIcon={link} />
+        </div>
+      {/each}
+    </div>
+  {/if}
 </div>
 
 <style lang="scss">

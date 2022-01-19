@@ -3,6 +3,7 @@
   import type { Education } from "../../types";
 
   export let educationElement: Education;
+  export let showLinks: boolean;
 </script>
 
 <div class="education-element-container">
@@ -15,18 +16,20 @@
   <p>
     {educationElement.details}
   </p>
-  <div class="link-item-container">
-    {#each educationElement.iconElements as iconElement}
-      <div class="link-item">
-        <div class="link-icon">
-          <LinkItem linkWithIcon={iconElement.icon} />
+  {#if showLinks}
+    <div class="link-item-container">
+      {#each educationElement.iconElements as iconElement}
+        <div class="link-item">
+          <div class="link-icon">
+            <LinkItem linkWithIcon={iconElement.icon} />
+          </div>
+          <p>
+            {iconElement.description}
+          </p>
         </div>
-        <p>
-          {iconElement.description}
-        </p>
-      </div>
-    {/each}
-  </div>
+      {/each}
+    </div>
+  {/if}
 </div>
 
 <style lang="scss">

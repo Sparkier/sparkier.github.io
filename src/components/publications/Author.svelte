@@ -7,16 +7,20 @@
   $: succeedingString = !last && length > 2 ? ", " : "";
 </script>
 
-<p>
-  {#if author === "Alex Bäuerle"}
-    {precedingString}<b>{author}</b>{succeedingString}
-  {:else}
-    {precedingString}{author}{succeedingString}
-  {/if}
+<p class={author === "Alex Bäuerle" ? "me" : "not-me"}>
+  {precedingString}{author}{succeedingString}
 </p>
 
 <style lang="scss">
   p {
     padding-right: 5px;
+  }
+  .me {
+    font-weight: 500;
+  }
+
+  .not-me {
+    font-weight: 100;
+    color: #555555;
   }
 </style>

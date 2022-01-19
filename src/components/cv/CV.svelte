@@ -11,8 +11,10 @@
   import html2pdf from "html2pdf.js";
 
   let container: HTMLDivElement;
+  let showLinks = true;
 
   function exportCVPDF() {
+    showLinks = false;
     var opt = {
       margin: 10,
       filename: "cv_alex_baeuerle.pdf",
@@ -25,7 +27,7 @@
       },
       jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
     };
-    html2pdf(container, opt);
+    html2pdf(container, opt).then(() => (showLinks = true));
   }
 </script>
 
@@ -38,19 +40,18 @@
       <p>
         My research is on visualization and explainability for neural networks.
         In this context, I am always interested in new methods to better
-        understand artificial intelligence. I try to help developers in this
-        area with techniques that help them communicate and develop new
-        approaches. For consumers of AI-powered applications, I work on
-        visualizations that help them understand the decision that these
-        algorithms make. If you are interested in my research, check out my
-        scholar account.
+        understand artificial intelligence. I try to help developers with
+        techniques and visualizations that foster communication and provide
+        insights during development. For consumers of AI-powered applications, I
+        work on visualizations that help them understand the decisions that
+        these algorithms make.
       </p>
       <Contact />
     </div>
-    <div class="cv-content-container"><Education /></div>
+    <div class="cv-content-container"><Education {showLinks} /></div>
     <div class="cv-content-container"><Work /></div>
-    <div class="cv-content-container"><Publications /></div>
-    <div class="cv-content-container"><Talks /></div>
+    <div class="cv-content-container"><Publications {showLinks} /></div>
+    <div class="cv-content-container"><Talks {showLinks} /></div>
     <div class="cv-content-container"><Teaching /></div>
     <div class="cv-content-container"><Mentoring /></div>
     <div class="cv-content-container"><Funding /></div>
