@@ -131,7 +131,12 @@ export function getResearchProjects(): ResearchProject[] {
       "2021",
       "AIES",
       "images/nPMI.png",
-      [new LinkWithIcon("https://arxiv.org/pdf/2103.03417.pdf", File)]
+      [
+        new LinkWithIcon(
+          "https://dl.acm.org/doi/pdf/10.1145/3461702.3462557",
+          File
+        ),
+      ]
     ),
     new ResearchProject(
       "What does BERT dream of?",
