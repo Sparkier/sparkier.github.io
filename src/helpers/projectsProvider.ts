@@ -32,7 +32,7 @@ export function getResearchProjects(): ResearchProject[] {
       "2022",
       "CHI",
       "images/symphony.pdf",
-      []
+      [new LinkWithIcon("https://arxiv.org/pdf/2202.08946", File)]
     ),
     new ResearchProject(
       "Visual Identification of Problematic Bias in Large Label Spaces",
@@ -47,7 +47,7 @@ export function getResearchProjects(): ResearchProject[] {
       ],
       "While the need for well-trained, fair ML systems is increasing ever more, measuring fairness for modern models and datasets is becoming increasingly difficult as they grow at an unprecedented pace. Indeed, this often rules out the application of traditional analysis metrics and systems. Addressing the lack of visualization work in this area, we propose guidelines for designing visualizations for such large label spaces, considering both technical and ethical issues. Our proposed visualization approach can be integrated into classical model and data pipelines, and we provide an implementation of our techniques open-sourced as a TensorBoard plug-in.",
       "2022",
-      "ArXiv",
+      "Under Review",
       "images/npmiVIS.png",
       [new LinkWithIcon("https://arxiv.org/pdf/2201.06386.pdf", File)]
     ),
@@ -63,7 +63,7 @@ export function getResearchProjects(): ResearchProject[] {
       ],
       "We evaluate visualization concepts for parallel coordinates to represent missing values and focus on the trade-off between the ability to perceive missing values and the concept's impact on common parallel coordinates tasks. We performed a crowd-sourced, quantitative user study with 732 participants comparing the concepts and their variations using five real-world data sets. Based on our findings, we provide suggestions regarding which visual encoding works best depending on the task at focus.",
       "2022",
-      "Under Review",
+      "EuroVis",
       "images/pc-missing-data.png",
       []
     ),
