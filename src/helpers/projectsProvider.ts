@@ -31,7 +31,7 @@ export function getResearchProjects(): ResearchProject[] {
       "Interfaces for machine learning (ML) can help practitioners build robust and responsible ML systems. While existing ML interfaces are effective for specific tasks, they are not designed to be reused, explored, and shared by multiple stakeholders in cross-functional teams. To enable analysis and communication between different ML practitioners, we designed and implemented Symphony, a framework for composing interactive ML interfaces with task-specific, data-driven components that can be used across platforms such as computational notebooks and web dashboards. Symphony helped ML practitioners discover previously unknown issues like data duplicates and blind spots in models while enabling them to share insights with other stakeholders.",
       "2022",
       "CHI",
-      "images/symphony.pdf",
+      "images/symphony.png",
       [new LinkWithIcon("https://arxiv.org/pdf/2202.08946", File)]
     ),
     new ResearchProject(
