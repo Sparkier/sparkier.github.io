@@ -32,7 +32,17 @@ export function getResearchProjects(): ResearchProject[] {
       "2022",
       "CHI",
       "images/symphony.png",
-      [new LinkWithIcon("https://arxiv.org/pdf/2202.08946", File)]
+      [
+        new LinkWithIcon(
+          "https://dl.acm.org/doi/pdf/10.1145/3491102.3502102",
+          File
+        ),
+        new LinkWithIcon("https://dl.acm.org/doi/10.1145/3491102.3502102", Web),
+        new LinkWithIcon(
+          "https://www.youtube.com/watch?v=0Q3wIh3AiPs",
+          Youtube
+        ),
+      ]
     ),
     new ResearchProject(
       "Visual Identification of Problematic Bias in Large Label Spaces",
