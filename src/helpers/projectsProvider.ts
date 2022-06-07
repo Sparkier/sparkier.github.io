@@ -45,23 +45,6 @@ export function getResearchProjects(): ResearchProject[] {
       ]
     ),
     new ResearchProject(
-      "Visual Identification of Problematic Bias in Large Label Spaces",
-      [
-        "Alex Bäuerle",
-        "Aybuke Gul Turker",
-        "Ken Burke",
-        "Osman Aka",
-        "Timo Ropinski",
-        "Christina Greer",
-        "Mani Varadarajan",
-      ],
-      "While the need for well-trained, fair ML systems is increasing ever more, measuring fairness for modern models and datasets is becoming increasingly difficult as they grow at an unprecedented pace. Indeed, this often rules out the application of traditional analysis metrics and systems. Addressing the lack of visualization work in this area, we propose guidelines for designing visualizations for such large label spaces, considering both technical and ethical issues. Our proposed visualization approach can be integrated into classical model and data pipelines, and we provide an implementation of our techniques open-sourced as a TensorBoard plug-in.",
-      "2022",
-      "Under Review",
-      "images/npmiVIS.png",
-      [new LinkWithIcon("https://arxiv.org/pdf/2201.06386.pdf", File)]
-    ),
-    new ResearchProject(
       "Where did my Lines go? Visualizing Missing Data in Parallel Coordinates",
       [
         "Alex Bäuerle",
@@ -75,7 +58,16 @@ export function getResearchProjects(): ResearchProject[] {
       "2022",
       "EuroVis",
       "images/pc-missing-data.png",
-      []
+      [
+        new LinkWithIcon(
+          "https://viscom.publications.uni-ulm.de/api/uploads/236/pc_missing_data.pdf",
+          File
+        ),
+        new LinkWithIcon(
+          "https://github.com/Sparkier/Missing-Coordinates",
+          GitHub
+        ),
+      ]
     ),
     new ResearchProject(
       "exploRNN: Understanding Recurrent Neural Networks through Visual " +
@@ -98,6 +90,29 @@ export function getResearchProjects(): ResearchProject[] {
           Web
         ),
         new LinkWithIcon("https://github.com/Sparkier/exploRNN", GitHub),
+      ]
+    ),
+    new ResearchProject(
+      "Visual Identification of Problematic Bias in Large Label Spaces",
+      [
+        "Alex Bäuerle",
+        "Aybuke Gul Turker",
+        "Ken Burke",
+        "Osman Aka",
+        "Timo Ropinski",
+        "Christina Greer",
+        "Mani Varadarajan",
+      ],
+      "While the need for well-trained, fair ML systems is increasing ever more, measuring fairness for modern models and datasets is becoming increasingly difficult as they grow at an unprecedented pace. Indeed, this often rules out the application of traditional analysis metrics and systems. Addressing the lack of visualization work in this area, we propose guidelines for designing visualizations for such large label spaces, considering both technical and ethical issues. Our proposed visualization approach can be integrated into classical model and data pipelines, and we provide an implementation of our techniques open-sourced as a TensorBoard plug-in.",
+      "2022",
+      "ArXiv",
+      "images/npmiVIS.png",
+      [
+        new LinkWithIcon("https://arxiv.org/pdf/2201.06386.pdf", File),
+        new LinkWithIcon(
+          "https://github.com/tensorflow/tensorboard/tree/master/tensorboard/plugins/npmi",
+          GitHub
+        ),
       ]
     ),
     new ResearchProject(
