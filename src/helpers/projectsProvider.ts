@@ -17,6 +17,15 @@ import Android from "svelte-material-icons/Android.svelte";
 export function getResearchProjects(): ResearchProject[] {
   const projects = [
     new ResearchProject(
+      "Neural Activation Patterns (NAPs): Visual Explainability of Learned Concepts",
+      ["Alex Bäuerle", "Daniel Jönsson", "Timo Ropinski"],
+      "To analyze what a model layer has learned, we present a method that takes into account the entire activation distribution. By extracting similar activation profiles within the high-dimensional activation space of a neural network layer, we find groups of inputs that are treated similarly. These input groups represent neural activation patterns (NAPs) and can be used to visualize and interpret learned layer concepts. We tested our method with a variety of networks and show how it complements existing methods for analyzing neural network activation values.",
+      "2022",
+      "arXiv",
+      "images/NAPs.png",
+      [new LinkWithIcon("https://arxiv.org/pdf/2206.10611.pdf", File)]
+    ),
+    new ResearchProject(
       "Symphony: Composing Interactive Interfaces for Machine Learning",
       [
         "Alex Bäuerle",
@@ -81,7 +90,7 @@ export function getResearchProjects(): ResearchProject[] {
       ],
       "Visualization has proven to be of great help with learning about neural network processes. While most current educational visualizations are targeted towards one specific architecture or use case recurrent neural networks (RNNs), which are capable of processing sequential data, are not covered yet, despite the fact that tasks on sequential data, such as text and function analysis, are at the forefront of deep learning research. Therefore, we propose exploRNN, the first interactively explorable, educational visualization for RNNs.",
       "2022",
-      "Under Review",
+      "The Visual Computer",
       "images/exploRNN.png",
       [
         new LinkWithIcon("https://arxiv.org/pdf/2012.06326.pdf", File),

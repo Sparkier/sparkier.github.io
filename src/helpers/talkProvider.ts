@@ -10,6 +10,13 @@ import Youtube from "svelte-material-icons/Youtube.svelte";
 export function getTalks() {
   return [
     new Talk(
+      "ACM CHI 2022, New Orleans, LA, USA",
+      "Symphony: Composing Interactive Interfaces for Machine Learning",
+      "",
+      new Date("May 04, 2022"),
+      [new LinkWithIcon("https://www.youtube.com/watch?v=0Q3wIh3AiPs", Youtube)]
+    ),
+    new Talk(
       "IEEE VIS 2021, New Orleans, LA, USA (remote)",
       "Net2Vis - A Visual Grammar for Automatically Generating Publication-Tailored CNN Architecture Visualizations",
       "",
