@@ -76,6 +76,7 @@ export function getResearchProjects(): ResearchProject[] {
           "https://github.com/Sparkier/Missing-Coordinates",
           GitHub
         ),
+        new LinkWithIcon("https://youtu.be/iaGekFD_NNg?t=8", Youtube),
       ]
     ),
     new ResearchProject(
