@@ -2,6 +2,7 @@
   import Work from "./Work.svelte";
   import Talks from "./Talks.svelte";
   import Teaching from "./Teaching.svelte";
+  import Service from "./Service.svelte";
 </script>
 
 <div>
@@ -24,6 +25,9 @@
   </div>
   <div class="research-content-container">
     <Teaching />
+  </div>
+  <div class="research-content-container">
+    <Service />
   </div>
 </div>
 

@@ -1,6 +1,25 @@
 import type { SvelteComponent } from "svelte";
 
 /**
+ * Providing a structure for reviewing and academic service
+ */
+export class Review {
+  venue: string;
+  years: string;
+
+  /**
+   * Craetes a review item
+   *
+   * @param {string} venue the venue at which service was conducted
+   * @param {string} years the years during which service was conducted
+   */
+  constructor(venue: string, years: string) {
+    this.venue = venue;
+    this.years = years;
+  }
+}
+
+/**
  * Providing a structure for projects
  */
 export class Project {
