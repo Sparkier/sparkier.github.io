@@ -94,7 +94,10 @@ export function getResearchProjects(): ResearchProject[] {
       "The Visual Computer",
       "images/exploRNN.png",
       [
-        new LinkWithIcon("https://arxiv.org/pdf/2012.06326.pdf", File),
+        new LinkWithIcon(
+          "https://link.springer.com/content/pdf/10.1007/s00371-022-02593-0.pdf",
+          File
+        ),
         new LinkWithIcon(
           "https://mi-pages.informatik.uni-ulm.de/explornn/",
           Web
@@ -118,7 +121,7 @@ export function getResearchProjects(): ResearchProject[] {
       "ArXiv",
       "images/npmiVIS.png",
       [
-        new LinkWithIcon("https://link.springer.com/content/pdf/10.1007/s00371-022-02593-0.pdf", File),
+        new LinkWithIcon("https://arxiv.org/pdf/2201.06386.pdf", File),
         new LinkWithIcon(
           "https://github.com/tensorflow/tensorboard/tree/master/tensorboard/plugins/npmi",
           GitHub
