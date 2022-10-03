@@ -15,8 +15,8 @@ export function getEducationElements() {
       "Ph. D.",
       "Computer Science",
       "Ulm University",
-      "Jan 2018 - expected Sep 2022",
-      "Supervised by Timo Ropinski, funded by the Carl-Zeiss-Scholarship"
+      "Jan 2018 - expected 2022",
+      "Supervised by Timo Ropinski, funded by the Carl-Zeiss-Scholarship",
     ),
     new Education(
       "M. Sc.",

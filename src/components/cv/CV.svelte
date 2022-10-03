@@ -37,7 +37,7 @@
   <div class="cv-container" bind:this={container}>
     <div class="cv-content-container">
       <h1>Alex Bäuerle</h1>
-      <h3>Ph D Student, Ulm University</h3>
+      <h3>Research Scientist, Sigma Computing</h3>
       <p>
         My research is on visualization and explainability for neural networks.
         In this context, I am always interested in new methods to better

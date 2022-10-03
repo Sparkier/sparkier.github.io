@@ -3,6 +3,7 @@ import { Work } from "../types";
 import School from "svelte-material-icons/School.svelte";
 import Apple from "svelte-material-icons/Apple.svelte";
 import Google from "svelte-material-icons/Google.svelte";
+import Sigma from "../components/Sigma.svelte";
 
 /**
  * Returns the work experiences within this App
@@ -11,6 +12,12 @@ import Google from "svelte-material-icons/Google.svelte";
  */
 export function getWork(): Work[] {
   const thoughts = [
+    new Work(
+      "Research Scientist, Sigma Computing",
+      "Bringing data and analysts closer together with the help of visualization and AI.",
+      "Oct 2022 - Present",
+      Sigma
+    ),
     new Work(
       "Research Intern, Apple Machine Intelligence",
       "Designed and developed a framework for component-based ML interfaces which can be composed in different environments such as computational notebooks and web dashboards.",
@@ -32,7 +39,7 @@ export function getWork(): Work[] {
     new Work(
       "Scientific Assistant, Ulm University",
       "Supervised student theses and projects, and co-taught lectures and seminars.",
-      "Jan 2018 - Present",
+      "Jan 2018 - Sep 2022",
       School
     ),
   ];

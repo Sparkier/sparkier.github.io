@@ -1,8 +1,9 @@
 <div class="home-container">
   <h1>Alex Bäuerle</h1>
   <p>
-    I am a Ph. D. student at Ulm University. When I am not in front of my
-    computer, you will probably find me in the mountains.
+    I am a Research Scientist at Sigma Computing. Previously, I did dmy Ph. D.
+    at Ulm University. When I am not in front of my computer, you will probably
+    find me in the mountains.
   </p>
   <p>
     My research is on visualization and explainability for neural networks. In
