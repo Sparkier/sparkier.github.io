@@ -10,6 +10,13 @@ import Youtube from "svelte-material-icons/Youtube.svelte";
 export function getTalks() {
   return [
     new Talk(
+      "EuroVis 2022, Rome, Italy",
+      "Where did my Lines go? Visualizing Missing Data in Parallel Coordinates",
+      "",
+      new Date("June 15, 2022"),
+      [new LinkWithIcon("https://youtu.be/iaGekFD_NNg?t=8", Youtube)]
+    ),
+    new Talk(
       "ACM CHI 2022, New Orleans, LA, USA",
       "Symphony: Composing Interactive Interfaces for Machine Learning",
       "",
