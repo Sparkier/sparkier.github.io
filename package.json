@@ -4,19 +4,19 @@
   "private": true,
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public --no-clear --single",
+    "dev": "rollup -c -w --port 3000",
+    "start": "sirv public --no-clear --single --port 3000",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-node-resolve": "^11.0.0",
-    "@rollup/plugin-typescript": "^8.0.0",
-    "@tsconfig/svelte": "^2.0.0",
-    "node-sass": "^7.0.0",
-    "rollup": "^2.3.4",
+    "@rollup/plugin-commonjs": "^23.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-typescript": "^9.0.0",
+    "@tsconfig/svelte": "^3.0.0",
+    "node-sass": "^8.0.0",
+    "rollup": "^3.3.0",
     "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-css-only": "^4.3.0",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
@@ -28,9 +28,9 @@
   },
   "dependencies": {
     "html2pdf.js": "^0.10.1",
-    "sirv-cli": "^1.0.0",
+    "sirv-cli": "^2.0.0",
     "slocation": "^1.5.0",
-    "svelte-material-icons": "^1.0.3",
+    "svelte-material-icons": "^2.0.4",
     "svelte-routing": "^1.6.0"
   }
 }
