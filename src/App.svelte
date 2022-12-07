@@ -7,6 +7,7 @@
   import Research from "./components/research/Research.svelte";
   import Publications from "./components/publications/Publications.svelte";
   import CV from "./components/cv/CV.svelte";
+  import Defense from "./components/Defense.svelte";
 
   import { Router, Route, links } from "svelte-routing";
 
@@ -32,6 +33,9 @@
         ><ComponentWrapper><Publications /></ComponentWrapper></Route
       >
       <Route path="/cv"><ComponentWrapper><CV /></ComponentWrapper></Route>
+      <Route path="/defense"
+        ><ComponentWrapper><Defense /></ComponentWrapper></Route
+      >
       <Route path="*"><ComponentWrapper><NotFound /></ComponentWrapper></Route>
     </div>
   </Router>

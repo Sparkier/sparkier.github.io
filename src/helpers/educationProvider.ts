@@ -17,6 +17,12 @@ export function getEducationElements() {
       "Ulm University",
       "Jan 2018 - expected 2022",
       "Supervised by Timo Ropinski, funded by the Carl-Zeiss-Scholarship",
+      [
+        {
+          icon: new LinkWithIcon("documents/dissertation.pdf", File),
+          description: "Thesis",
+        },
+      ]
     ),
     new Education(
       "M. Sc.",
