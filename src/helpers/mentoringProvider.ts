@@ -3,6 +3,20 @@ import { Mentorship } from "../types";
 export function getMentorshipActivities(): Mentorship[] {
   const mentorships = [
     new Mentorship(
+      "Junran Yang",
+      "Research Intern",
+      "Sigma Computing",
+      "VegaProf: Profiling Vega Visualizations",
+      "Jun 2022 - Dec 2022"
+    ),
+    new Mentorship(
+      "Lena Wiedmann",
+      "Bachelor Thesis",
+      "Ulm University",
+      "Creating an Interactive UI for Human/AI Collaboration in Poster Design Processes",
+      "Dec 2021 - Aug 2022"
+    ),
+    new Mentorship(
       "Simon der Kinderen",
       "Master Thesis",
       "Ulm University",
