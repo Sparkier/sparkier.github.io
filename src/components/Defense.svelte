@@ -4,8 +4,18 @@
   import { LinkWithIcon } from "../types";
 
   import File from "svelte-material-icons/File.svelte";
+  import Video from "svelte-material-icons/Video.svelte";
+  import FilePresentationBox from "svelte-material-icons/FilePresentationBox.svelte";
 
   const documentLink = new LinkWithIcon("documents/dissertation.pdf", File);
+  const zoomLink = new LinkWithIcon(
+    "https://uni-ulm.zoom.us/j/68659463237?pwd=bHl3YWs4SkVUVTFDdVhRQ01HMnc3QT09",
+    Video
+  );
+  const slidesLink = new LinkWithIcon(
+    "documents/slides.pdf",
+    FilePresentationBox
+  );
 </script>
 
 <div class="defense-container">
@@ -65,9 +75,14 @@
     <h2>Document</h2>
     <LinkItem linkWithIcon={documentLink} />
   </div>
-  <!--<div class="defense-content-container">
+  <div class="defense-content-container">
     <h2>Slides</h2>
-  </div>-->
+    <LinkItem linkWithIcon={slidesLink} />
+  </div>
+  <div class="defense-content-container">
+    <h2>Zoom</h2>
+    <LinkItem linkWithIcon={zoomLink} />
+  </div>
 </div>
 
 <style lang="scss">
