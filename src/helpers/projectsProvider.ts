@@ -17,9 +17,22 @@ import Android from "svelte-material-icons/Android.svelte";
 export function getResearchProjects(): ResearchProject[] {
   const projects = [
     new ResearchProject(
+      "VegaProf: Profiling Vega Visualizations",
+      ["Junran Yang", "Alex Bäuerle", "Dominik Moritz", "Çağatay Demiralp"],
+      "To analyze what a model layer has learned, we present a method that takes into account the entire activation distribution. By extracting similar activation profiles within the high-dimensional activation space of a neural network layer, we find groups of inputs that are treated similarly. These input groups represent neural activation patterns (NAPs) and can be used to visualize and interpret learned layer concepts. We tested our method with a variety of networks and show how it complements existing methods for analyzing neural network activation values.",
+      "2022",
+      "arXiv",
+      "images/vegaprof.png",
+      [
+        new LinkWithIcon("https://arxiv.org/pdf/2212.13670.pdf", File),
+        new LinkWithIcon("https://sigmacomputing.github.io/VegaProf", Web),
+        new LinkWithIcon("https://github.com/sigmacomputing/VegaProf", GitHub),
+      ]
+    ),
+    new ResearchProject(
       "Neural Activation Patterns (NAPs): Visual Explainability of Learned Concepts",
       ["Alex Bäuerle", "Daniel Jönsson", "Timo Ropinski"],
-      "To analyze what a model layer has learned, we present a method that takes into account the entire activation distribution. By extracting similar activation profiles within the high-dimensional activation space of a neural network layer, we find groups of inputs that are treated similarly. These input groups represent neural activation patterns (NAPs) and can be used to visualize and interpret learned layer concepts. We tested our method with a variety of networks and show how it complements existing methods for analyzing neural network activation values.",
+      "We introduce VegaProf, the first performance profiler for Vega visualizations. VegaProf effectively instruments the Vega library by associating the declarative specification with its compilation and execution. Using interactive visualizations, VegaProf enables visualization engineers to interactively profile visualization performance at three abstraction levels: function, dataflow graph, and visualization specification.",
       "2022",
       "arXiv",
       "images/NAPs.png",
