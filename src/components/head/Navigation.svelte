@@ -37,7 +37,7 @@
       <img
         class="avatar"
         style="width: {picHeight}px; height: {picHeight}px;"
-        src="images/alex_small.jpg"
+        src="images/alex.jpeg"
         alt="Alex Bäuerle"
       />
     </a>
