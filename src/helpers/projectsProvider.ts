@@ -133,13 +133,7 @@ export function getResearchProjects(): ResearchProject[] {
       "2022",
       "ArXiv",
       "images/npmiVIS.png",
-      [
-        new LinkWithIcon("https://arxiv.org/pdf/2201.06386.pdf", File),
-        new LinkWithIcon(
-          "https://github.com/tensorflow/tensorboard/tree/master/tensorboard/plugins/npmi",
-          GitHub
-        ),
-      ]
+      [new LinkWithIcon("https://arxiv.org/pdf/2201.06386.pdf", File)]
     ),
     new ResearchProject(
       "Net2Vis - A Visual Grammar for Automatically Generating Publication-Tailored CNN Architecture Visualizations",
