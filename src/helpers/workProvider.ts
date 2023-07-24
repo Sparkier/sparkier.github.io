@@ -15,7 +15,7 @@ export function getWork(): Work[] {
     new Work(
       "Research Scientist, Sigma Computing",
       "Bringing data and analysts closer together with the help of visualization and AI.",
-      "Oct 2022 - Present",
+      "Oct 2022 - Jun 2023",
       Sigma
     ),
     new Work(

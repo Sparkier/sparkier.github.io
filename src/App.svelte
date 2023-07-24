@@ -1,15 +1,15 @@
 <script lang="ts">
   import ComponentWrapper from "./ComponentWrapper.svelte";
-  import Head from "./components/head/Head.svelte";
-  import NotFound from "./components/NotFound.svelte";
-  import Projects from "./components/projects/Projects.svelte";
-  import Home from "./components/Home.svelte";
-  import Research from "./components/research/Research.svelte";
-  import Publications from "./components/publications/Publications.svelte";
-  import CV from "./components/cv/CV.svelte";
   import Defense from "./components/Defense.svelte";
+  import Home from "./components/Home.svelte";
+  import NotFound from "./components/NotFound.svelte";
+  import CV from "./components/cv/CV.svelte";
+  import Head from "./components/head/Head.svelte";
+  import Projects from "./components/projects/Projects.svelte";
+  import Publications from "./components/publications/Publications.svelte";
+  import Research from "./components/research/Research.svelte";
 
-  import { Router, Route, links } from "svelte-routing";
+  import { Route, Router, links } from "svelte-routing";
 
   let windowWidth;
   $: windowShare = (windowWidth / 12) * 2;

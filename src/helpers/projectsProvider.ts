@@ -17,6 +17,33 @@ import Android from "svelte-material-icons/Android.svelte";
 export function getResearchProjects(): ResearchProject[] {
   const projects = [
     new ResearchProject(
+      "Semantic Hierarchical Exploration of Large Image Datasets",
+      [
+        "Alex Bäuerle",
+        "Christian van Onzenoodt",
+        "Daniel Jönsson",
+        "Timo Ropinski",
+      ],
+      "Browsing many images at the same time requires either a large screen space or an abundance of scrolling interaction. We address this problem by projecting the images onto a two-dimensional Cartesian coordinate system by combining the latent space of vision neural networks and dimensionality reduction techniques. To alleviate overdraw of the images, we integrate a hierarchical layout and navigation, where each group of similar images is represented by the image closest to the group center. Advanced interactive analysis of images in relation to their metadata is enabled through integrated, flexible filtering based on expressions.",
+      "2023",
+      "EuroVis Short Papers",
+      "images/hie.png",
+      [
+        new LinkWithIcon(
+          "https://diglib.eg.org/handle/10.2312/evs20231051",
+          File
+        ),
+        new LinkWithIcon(
+          "http://nemesis.informatik.uni-ulm.de/frontend/main/",
+          Web
+        ),
+        new LinkWithIcon(
+          "https://github.com/Sparkier/Hierarchical-Image-Explorer",
+          GitHub
+        ),
+      ]
+    ),
+    new ResearchProject(
       "VegaProf: Profiling Vega Visualizations",
       ["Junran Yang", "Alex Bäuerle", "Dominik Moritz", "Çağatay Demiralp"],
       "To analyze what a model layer has learned, we present a method that takes into account the entire activation distribution. By extracting similar activation profiles within the high-dimensional activation space of a neural network layer, we find groups of inputs that are treated similarly. These input groups represent neural activation patterns (NAPs) and can be used to visualize and interpret learned layer concepts. We tested our method with a variety of networks and show how it complements existing methods for analyzing neural network activation values.",
