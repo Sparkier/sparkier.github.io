@@ -1,8 +1,9 @@
 <div class="home-container">
   <h1>Alex Bäuerle</h1>
   <p>
-    I am a Research Scientist at Sigma Computing. Previously, I did my Ph. D. at
-    Ulm University. When I am not in front of my computer, you will probably
+    I am working on something new and can't wait to tell you what it is soon!
+    Previously, I was a Research Scientist at Sigma Computing. I did my Ph. D.
+    at Ulm University. When I am not in front of my computer, you will probably
     find me in the mountains.
   </p>
   <p>

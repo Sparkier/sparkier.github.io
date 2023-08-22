@@ -1,13 +1,11 @@
-import { ResearchProject } from "../types";
-import { FunProject } from "../types";
-import { LinkWithIcon } from "../types";
+import { FunProject, LinkWithIcon, ResearchProject } from "../types";
 
+import Android from "svelte-material-icons/Android.svelte";
+import Apple from "svelte-material-icons/Apple.svelte";
 import File from "svelte-material-icons/File.svelte";
 import GitHub from "svelte-material-icons/GithubCircle.svelte";
-import Youtube from "svelte-material-icons/Youtube.svelte";
 import Web from "svelte-material-icons/Web.svelte";
-import Apple from "svelte-material-icons/Apple.svelte";
-import Android from "svelte-material-icons/Android.svelte";
+import Youtube from "svelte-material-icons/Youtube.svelte";
 
 /**
  * Returns the ResearchProjects within this App
@@ -16,6 +14,19 @@ import Android from "svelte-material-icons/Android.svelte";
  */
 export function getResearchProjects(): ResearchProject[] {
   const projects = [
+    new ResearchProject(
+      "VegaProf: Profiling Vega Visualizations",
+      ["Junran Yang", "Alex Bäuerle", "Dominik Moritz", "Çağatay Demiralp"],
+      "To analyze what a model layer has learned, we present a method that takes into account the entire activation distribution. By extracting similar activation profiles within the high-dimensional activation space of a neural network layer, we find groups of inputs that are treated similarly. These input groups represent neural activation patterns (NAPs) and can be used to visualize and interpret learned layer concepts. We tested our method with a variety of networks and show how it complements existing methods for analyzing neural network activation values.",
+      "2023",
+      "UIST",
+      "images/vegaprof.png",
+      [
+        new LinkWithIcon("https://arxiv.org/pdf/2212.13670.pdf", File),
+        new LinkWithIcon("https://sigmacomputing.github.io/VegaProf", Web),
+        new LinkWithIcon("https://github.com/sigmacomputing/VegaProf", GitHub),
+      ]
+    ),
     new ResearchProject(
       "Semantic Hierarchical Exploration of Large Image Datasets",
       [
@@ -41,19 +52,6 @@ export function getResearchProjects(): ResearchProject[] {
           "https://github.com/Sparkier/Hierarchical-Image-Explorer",
           GitHub
         ),
-      ]
-    ),
-    new ResearchProject(
-      "VegaProf: Profiling Vega Visualizations",
-      ["Junran Yang", "Alex Bäuerle", "Dominik Moritz", "Çağatay Demiralp"],
-      "To analyze what a model layer has learned, we present a method that takes into account the entire activation distribution. By extracting similar activation profiles within the high-dimensional activation space of a neural network layer, we find groups of inputs that are treated similarly. These input groups represent neural activation patterns (NAPs) and can be used to visualize and interpret learned layer concepts. We tested our method with a variety of networks and show how it complements existing methods for analyzing neural network activation values.",
-      "2022",
-      "arXiv",
-      "images/vegaprof.png",
-      [
-        new LinkWithIcon("https://arxiv.org/pdf/2212.13670.pdf", File),
-        new LinkWithIcon("https://sigmacomputing.github.io/VegaProf", Web),
-        new LinkWithIcon("https://github.com/sigmacomputing/VegaProf", GitHub),
       ]
     ),
     new ResearchProject(

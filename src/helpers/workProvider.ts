@@ -1,8 +1,8 @@
 import { Work } from "../types";
 
-import School from "svelte-material-icons/School.svelte";
 import Apple from "svelte-material-icons/Apple.svelte";
 import Google from "svelte-material-icons/Google.svelte";
+import School from "svelte-material-icons/School.svelte";
 import Sigma from "../components/Sigma.svelte";
 
 /**

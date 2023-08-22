@@ -1,13 +1,13 @@
 <script lang="ts">
+  import Service from "../research/Service.svelte";
   import Contact from "./Contact.svelte";
   import Education from "./Education.svelte";
+  import Funding from "./Funding.svelte";
+  import Mentoring from "./Mentoring.svelte";
   import Publications from "./Publications.svelte";
   import Talks from "./Talks.svelte";
   import Teaching from "./Teaching.svelte";
   import Work from "./Work.svelte";
-  import Mentoring from "./Mentoring.svelte";
-  import Funding from "./Funding.svelte";
-  import Service from "../research/Service.svelte";
 
   import html2pdf from "html2pdf.js";
 
@@ -37,7 +37,7 @@
   <div class="cv-container" bind:this={container}>
     <div class="cv-content-container">
       <h1>Alex Bäuerle</h1>
-      <h3>Research Scientist, Sigma Computing</h3>
+      <h3>Researcher</h3>
       <p>
         My research is on visualization and explainability for neural networks.
         In this context, I am always interested in new methods to better
