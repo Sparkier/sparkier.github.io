@@ -3,6 +3,7 @@
   import Defense from "./components/Defense.svelte";
   import Home from "./components/Home.svelte";
   import NotFound from "./components/NotFound.svelte";
+  import Thirty from "./components/Thirty.svelte";
   import CV from "./components/cv/CV.svelte";
   import Head from "./components/head/Head.svelte";
   import Projects from "./components/projects/Projects.svelte";
@@ -20,8 +21,17 @@
 <svelte:window bind:innerWidth={windowWidth} />
 <main use:links>
   <Router>
-    <Head {picHeight} {windowWidth} />
-    <div class="content" style="margin-top: {headHeight}px;">
+    {#if !window.location.pathname.includes("thirty")}
+      <Head {picHeight} {windowWidth} />
+    {/if}
+    <div
+      class="content"
+      style={`${
+        !window.location.pathname.includes("thirty")
+          ? `margin-top: ${headHeight}px;`
+          : ""
+      }`}
+    >
       <Route path="/"><ComponentWrapper><Home /></ComponentWrapper></Route>
       <Route path="/projects"
         ><ComponentWrapper><Projects /></ComponentWrapper></Route
@@ -35,6 +45,9 @@
       <Route path="/cv"><ComponentWrapper><CV /></ComponentWrapper></Route>
       <Route path="/defense"
         ><ComponentWrapper><Defense /></ComponentWrapper></Route
+      >
+      <Route path="/thirty"
+        ><ComponentWrapper><Thirty /></ComponentWrapper></Route
       >
       <Route path="*"><ComponentWrapper><NotFound /></ComponentWrapper></Route>
     </div>
