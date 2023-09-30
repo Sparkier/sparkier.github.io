@@ -5,10 +5,14 @@
 </script>
 
 <div class="thirty-container">
-  {#if $canEnter}
+  {#if !$canEnter}
     <h1>Ich werde 30. Das will ich mit euch feiern &#127881;!</h1>
     <div class="thirty-content-container">
-      <img src="images/party.webp" alt="Beispiel einer legendären Party." />
+      <img
+        class="party-gif"
+        src="images/party.webp"
+        alt="Beispiel einer legendären Party."
+      />
     </div>
     <div class="thirty-content-container">
       <h2>Wann</h2>
@@ -19,7 +23,7 @@
       <h2>Wo</h2>
       <p>Info kommt. Umgebung FN.</p>
       <p>Es wird Möglichkeiten zum Übernachten geben.</p>
-      <p>Bitte gib mir bescheid ob du kommen kannst.</p>
+      <p>Bitte gib mir Bescheid ob du kommen kannst.</p>
     </div>
     <div class="thirty-content-container">
       <h2>Freu mich &#128525;</h2>
@@ -45,5 +49,9 @@
   }
   .thirty-content-container {
     padding-bottom: 3em;
+  }
+  .party-gif {
+    width: auto;
+    max-width: 80%;
   }
 </style>
