@@ -16,7 +16,7 @@
     <h2>Wo</h2>
     <p>Info kommt. Umgebung FN.</p>
     <p>Es wird Möglichkeiten zum Übernachten geben.</p>
-    <p>Bitte gebt mir Bescheid ob du kommen kannst.</p>
+    <p>Bitte gebt mir Bescheid ob ihr kommen könnt.</p>
   </div>
   <div class="thirty-content-container">
     <h2>Freu mich &#128525;</h2>
