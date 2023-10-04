@@ -9,7 +9,7 @@
   </div>
   <div class="thirty-content-container">
     <h2>Wann</h2>
-    <p>Samstag, 09.12.</p>
+    <p>Samstag, 09.12., Abends</p>
     <p>Details folgen.</p>
   </div>
   <div class="thirty-content-container">
