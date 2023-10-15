@@ -10,11 +10,11 @@
   <div class="thirty-content-container">
     <h2>Wann</h2>
     <p>Samstag, 09.12., Abends</p>
-    <p>Details folgen.</p>
+    <p>Uhrzeit folgt.</p>
   </div>
   <div class="thirty-content-container">
     <h2>Wo</h2>
-    <p>Info kommt. Umgebung FN.</p>
+    <p>Rohmbachstr. 36, Oberteuringen</p>
     <p>Es wird Möglichkeiten zum Übernachten geben.</p>
     <p>Bitte gebt mir Bescheid ob ihr kommen könnt.</p>
   </div>
