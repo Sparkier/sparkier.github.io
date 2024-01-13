@@ -9,16 +9,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install
         run: yarn
       - name: Build
         run: yarn build
-      - uses: actions/upload-artifact@master
+      - uses: actions/upload-pages-artifact@v2
         with:
-          name: page
+          name: github-pages
           path: public
-          if-no-files-found: error
 
   deploy:
     runs-on: ubuntu-latest
@@ -29,15 +28,8 @@ jobs:
     needs: build
     environment:
       name: github-pages
-      url: ${{steps.deployment.outputs.page_url}}
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/download-artifact@master
-        with:
-          name: page
-          path: .
-      - uses: actions/configure-pages@v1
-      - uses: actions/upload-pages-artifact@v1
-        with:
-          path: .
-      - id: deployment
-        uses: actions/deploy-pages@main
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
