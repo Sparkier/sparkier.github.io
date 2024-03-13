@@ -13,6 +13,12 @@ import Sigma from "../components/Sigma.svelte";
 export function getWork(): Work[] {
   const thoughts = [
     new Work(
+      "Postdoctoral Researcher, Carnegie Mellon University",
+      "Research and development of tools in the areas of AI evaluation and prompt engineering.",
+      "Oct 2023 - Present",
+      School
+    ),
+    new Work(
       "Research Scientist, Sigma Computing",
       "Bringing data and analysts closer together with the help of visualization and AI.",
       "Oct 2022 - Jun 2023",
@@ -35,12 +41,6 @@ export function getWork(): Work[] {
       "Invented and experimented with a technique similar to Feature Visualization, but for language models.",
       "May 2019 - Aug 2019",
       Google
-    ),
-    new Work(
-      "Research Associate, Ulm University",
-      "Supervised student theses and projects, and co-taught lectures and seminars.",
-      "Jan 2018 - Sep 2022",
-      School
     ),
   ];
   return thoughts;

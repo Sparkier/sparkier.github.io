@@ -39,20 +39,21 @@
       <h1>Alex Bäuerle</h1>
       <h3>Researcher</h3>
       <p>
-        My research is on visualization and explainability for neural networks.
-        In this context, I am always interested in new methods to better
-        understand artificial intelligence. I try to help developers with
-        techniques and visualizations that foster communication and provide
-        insights during development. For consumers of AI-powered applications, I
-        work on visualizations that help them understand the decisions that
-        these algorithms make.
+        My research is at the intersection of AI and HCI. In this context, I am
+        always searching for the best method to connect humans with AI systems.
+        I try to help developers with techniques and visualizations that foster
+        communication and provide insights during development and work on
+        visualizations that help them understand the decisions their AI systems
+        make.
       </p>
       <Contact />
     </div>
     <div class="cv-content-container"><Education {showLinks} /></div>
     <div class="cv-content-container"><Work /></div>
     <div class="cv-content-container"><Publications {showLinks} /></div>
-    <div class="cv-content-container"><Talks {showLinks} /></div>
+    {#if showLinks}
+      <div class="cv-content-container"><Talks {showLinks} /></div>
+    {/if}
     <div class="cv-content-container"><Teaching /></div>
     <div class="cv-content-container"><Mentoring /></div>
     <div class="cv-content-container"><Funding /></div>

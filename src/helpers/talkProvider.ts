@@ -1,4 +1,4 @@
-import { Talk, LinkWithIcon } from "../types";
+import { LinkWithIcon, Talk } from "../types";
 
 import Youtube from "svelte-material-icons/Youtube.svelte";
 
@@ -9,6 +9,18 @@ import Youtube from "svelte-material-icons/Youtube.svelte";
  */
 export function getTalks() {
   return [
+    new Talk(
+      "Multimodal Weekly",
+      "Unlocking Model Performance Insights with Zeno",
+      "",
+      new Date("January 26, 2024"),
+      [
+        new LinkWithIcon(
+          "https://youtu.be/z8GSTYqvTPQ?si=3TKBOX6BU08Ljx6g&t=231",
+          Youtube
+        ),
+      ]
+    ),
     new Talk(
       "EuroVis 2022, Rome, Italy",
       "Where did my Lines go? Visualizing Missing Data in Parallel Coordinates",
