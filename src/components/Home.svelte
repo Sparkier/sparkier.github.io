@@ -1,19 +1,17 @@
 <div class="home-container">
   <h1>Alex Bäuerle</h1>
   <p>
-    I am working on something new and can't wait to tell you what it is soon!
+    I am currently a Researcher at CMU working on AI developer tools.
     Previously, I was a Research Scientist at Sigma Computing. I did my Ph. D.
     at Ulm University. When I am not in front of my computer, you will probably
     find me in the mountains.
   </p>
   <p>
-    My research is on visualization and explainability for neural networks. In
-    this context, I am always interested in new methods to better understand
-    artificial intelligence. I try to help developers with techniques and
-    visualizations that foster communication and provide insights during
-    development. For consumers of AI-powered applications, I work on
-    visualizations that help them understand the decisions that these algorithms
-    make.
+    My research is at the intersection of AI and HCI. In this context, I am
+    always searching for the best method to connect humans with AI systems. I
+    try to help developers with techniques that foster communication, use
+    visualiztions to provide insights during development, and work on
+    epxlanations that help them understand the decisions their AI systems make.
   </p>
 </div>
 
