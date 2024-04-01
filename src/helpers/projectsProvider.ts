@@ -348,6 +348,24 @@ export function getResearchProjects(): ResearchProject[] {
 export function getFunProjects(): FunProject[] {
   const projects = [
     new FunProject(
+      "endoftext",
+      "endoftext helps you improve your AI prompts in minutes by taking the guesswork out of prompt engineering with suggested edits, prompt rewrites, and automatically generated test cases.",
+      "images/eot.png",
+      [
+        new LinkWithIcon("http://endoftext.app", Web),
+        new LinkWithIcon("https://github.com/end-of-text/endoftext", GitHub),
+      ]
+    ),
+    new FunProject(
+      "Zeno",
+      "Zeno is an AI evalauation platform that helps AI engineers discover how their AI performs, explore their data, uncover failures, and create beautiful, interactive charts.",
+      "images/zeno.png",
+      [
+        new LinkWithIcon("http://zenoml.com", Web),
+        new LinkWithIcon("https://github.com/zeno-ml/zeno-hub", GitHub),
+      ]
+    ),
+    new FunProject(
       "luna",
       "Inspired by Lucid, Luna is a Feature Visualization package for Tensorflow. While Lucid does not support Tensorflow 2, Luna was built with Tensorflow 2 at its core.",
       "images/luna.png",
