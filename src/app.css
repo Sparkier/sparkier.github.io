@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	h1 {
+		@apply text-2xl font-bold;
+	}
+	h2 {
+		@apply text-h2 dark:text-h2-dark pb-2 pt-3 text-xl font-semibold;
+	}
+	h3 {
+		@apply text-h3 dark:text-h3-dark text-lg font-semibold;
+	}
+	h4 {
+		@apply text-h4 dark:text-h4-dark font-semibold;
+	}
+}
