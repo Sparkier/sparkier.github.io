@@ -12,7 +12,7 @@
 </script>
 
 <div class="mt-4 flex flex-wrap items-center">
-	<LinkElement href="a13x.io" blank={true}>
+	<LinkElement href="https://a13x.io" blank={true}>
 		<Icon icon={Home} downloadingPDF={!showLinks} />
 		<span class="pl-1 pr-3">a13x.io</span>
 	</LinkElement>
