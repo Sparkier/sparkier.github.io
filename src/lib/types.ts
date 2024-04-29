@@ -282,3 +282,20 @@ export class Education {
 		this.iconElements = iconElements;
 	}
 }
+
+/**
+ * Providing a structure for books
+ */
+export class Book {
+	title: string;
+	date: Date;
+	rating: number;
+	comment: string;
+
+	constructor(title: string, date: Date, rating: number, comment: string) {
+		this.title = title;
+		this.date = date;
+		this.rating = rating;
+		this.comment = comment;
+	}
+}
