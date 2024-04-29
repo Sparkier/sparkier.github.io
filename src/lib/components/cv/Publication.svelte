@@ -28,13 +28,13 @@
 	<p class="flex grow flex-wrap text-sm text-gray-500">
 		{#each publication.authors as author, index}
 			{@const length = publication.authors.length}
-			{@const succeeding = index === length - 2 ? ', and' : index === length - 1 ? '' : ','}
+			{@const succeeding = index === length - 1 ? '' : ','}
+			{@const andConnector = index === length - 2 ? 'and' : ''}
 			<span class={author === 'Alex Bäuerle' ? 'font-bold' : ''}>
 				{author}
 			</span>
-			<span class={succeeding !== '' ? 'pr-1' : ''}>
-				{succeeding}
-			</span>
+			<span class={succeeding !== '' ? 'pr-1' : ''}>{succeeding}</span>
+			<span class={andConnector !== '' ? 'pr-1' : ''}>{andConnector}</span>
 		{/each}
 	</p>
 </div>
