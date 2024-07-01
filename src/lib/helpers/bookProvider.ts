@@ -25,6 +25,18 @@ export function getBooks(): Book[] {
 			new Date('April 26, 2024'),
 			5,
 			'Very interesting book about the mental side of tennis and beyond. The author does a great job of explaining how to improve your mental game. It describes the roles of Self 1 and Self 2 in the learning process and how to improve letting Self 2 free.'
-		)
+		),
+		new Book(
+			'The Machinery of Life',
+			new Date('June 19, 2024'),
+			4,
+			'Awesome book about the biology of our bodies. The author explains how different proteins work together to keep us up and running.'
+		),
+		new Book(
+			'The Subtle Art of Not Giving a F*ck',
+			new Date('June 23, 2024'),
+			5,
+			'A book about the art of not giving a fuck about too many things. The author talks about the importance of prioritizing the right things and being able to handle stress. The book is a great read and might help you become a happier person.'
+		),
 	];
 }
