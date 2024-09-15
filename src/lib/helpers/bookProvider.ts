@@ -38,5 +38,11 @@ export function getBooks(): Book[] {
 			5,
 			'A book about the art of not giving a fuck about too many things. The author talks about the importance of prioritizing the right things and being able to handle stress. The book is a great read and might help you become a happier person.'
 		),
+		new Book(
+			'The Mountaine in the Sea',
+			new Date('August 31, 2024'),
+			4,
+			'Great fiction book about humanity and other smart species. The philosophical questions that the book raises are interesting and thought-provoking, however, the story was a bit too out of this world.'
+		)
 	];
 }
