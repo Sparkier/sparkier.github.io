@@ -3,6 +3,7 @@ import { Work } from '../types';
 import Sigma from '$lib/components/icons/Sigma.svelte';
 import Apple from 'svelte-material-icons/Apple.svelte';
 import Google from 'svelte-material-icons/Google.svelte';
+import Molecule from 'svelte-material-icons/Molecule.svelte';
 import School from 'svelte-material-icons/School.svelte';
 
 /**
@@ -11,11 +12,12 @@ import School from 'svelte-material-icons/School.svelte';
  * @return {[Work]} returns the work experiences used on this page
  */
 export function getWork(): Work[] {
-	const thoughts = [
+	return [
+		new Work('Founding Member of Technical Staff', 'AI + Biology', 'May 2024 - Present', Molecule),
 		new Work(
 			'Postdoctoral Researcher, Carnegie Mellon University',
 			'Research and development of tools in the areas of AI evaluation and prompt engineering.',
-			'Oct 2023 - Present',
+			'Oct 2023 - May 2024',
 			School
 		),
 		new Work(
@@ -43,5 +45,4 @@ export function getWork(): Work[] {
 			Google
 		)
 	];
-	return thoughts;
 }

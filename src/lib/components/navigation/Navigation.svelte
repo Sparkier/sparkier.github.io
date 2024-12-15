@@ -26,7 +26,7 @@
 			<img
 				class="rounded-full"
 				style="width: {picHeight}px; height: {picHeight}px;"
-				src="images/alex.jpeg"
+				src="/images/alex.jpeg"
 				alt="Alex Bäuerle"
 			/>
 		</a>

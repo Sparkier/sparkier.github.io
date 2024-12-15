@@ -8,7 +8,7 @@
 	<p class="text-center">
 		My research is at the intersection of AI and HCI. In this context, I am always searching for the
 		best method to connect humans with AI systems. I try to help developers with techniques that
-		foster communication, use visualiztions to provide insights during development, and work on
-		epxlanations that help them understand the decisions their AI systems make.
+		foster communication, use visualizations to provide insights during development, and work on
+		explanations that help humans understand the decisions their AI systems make.
 	</p>
 </div>
