@@ -49,6 +49,12 @@ export function getBooks(): Book[] {
 			new Date('November 20, 2024'),
 			2,
 			'Interesting book about the psychology of giving and taking. The author explains how to give and take in a way that is beneficial for everyone. However, this book could have probably been a blog post.'
+		),
+		new Book(
+			'Lord of the Flies',
+			new Date('January 1, 2025'),
+			3,
+			'A classic book about the dark side of human nature. The book is a great read and raises interesting questions about human nature, the score mostly reflects that it is somewhat hard to read especially as a non-native English speaker.'
 		)
 	];
 }
