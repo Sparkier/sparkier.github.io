@@ -7,12 +7,12 @@
 		@apply text-2xl font-bold;
 	}
 	h2 {
-		@apply text-h2 dark:text-h2-dark pb-2 pt-3 text-xl font-semibold;
+		@apply pb-2 pt-3 text-xl font-semibold text-h2;
 	}
 	h3 {
-		@apply text-h3 dark:text-h3-dark text-lg font-semibold;
+		@apply text-lg font-semibold text-h3;
 	}
 	h4 {
-		@apply text-h4 dark:text-h4-dark font-semibold;
+		@apply font-semibold text-h4;
 	}
 }

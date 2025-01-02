@@ -43,6 +43,12 @@ export function getBooks(): Book[] {
 			new Date('August 31, 2024'),
 			4,
 			'Great fiction book about humanity and other smart species. The philosophical questions that the book raises are interesting and thought-provoking, however, the story was a bit too out of this world.'
+		),
+		new Book(
+			'Give and Take',
+			new Date('November 20, 2024'),
+			2,
+			'Interesting book about the psychology of giving and taking. The author explains how to give and take in a way that is beneficial for everyone. However, this book could have probably been a blog post.'
 		)
 	];
 }

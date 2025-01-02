@@ -13,11 +13,7 @@ export function getResearchProjects(): ResearchProject[] {
 	const projects = [
 		new ResearchProject(
 			'Humboldt: Metadata-Driven Extensible Data Discovery',
-			[
-				'Alex Bäuerle',
-				'Çağatay Demiralp',
-				'Michael Stonebraker',
-			],
+			['Alex Bäuerle', 'Çağatay Demiralp', 'Michael Stonebraker'],
 			'Data discovery is crucial for data management and analysis and can benefit from better utilization of metadata. Yet, effectively surfacing metadata through interactive user interfaces (UIs) to augment data discovery poses challenges. Constantly revamping UIs with each update to metadata sources (or providers) consumes significant development resources and lacks scalability and extensibility. In response, we introduce Humboldt, a new framework enabling interactive data systems to effectively leverage metadata for data discovery and rapidly evolve their UIs to support metadata changes.',
 			'2024',
 			'VLDB 2024 Workshop: Tabular Data Analysis (TaDA)',
@@ -34,15 +30,18 @@ export function getResearchProjects(): ResearchProject[] {
 				'Olivia Odenthal',
 				'Guido Reina',
 				'Timo Ropinski',
-				'Daniel Weiskopf',
+				'Daniel Weiskopf'
 			],
 			'We present an image-based approach to integrate state-of-the-art scientific visualization into virtual reality (VR) environments: the mint visualization/VR inter-operation system. We enable the integration of visualization algorithms from within their software frameworks directly into VR without the need to explicitly port visualization implementations to the underlying VR framework—thus retaining their capabilities, specializations, and optimizations.',
 			'2024',
 			'Journal of Visualization',
 			'images/mint.png',
 			[
-				new LinkWithIcon('https://link.springer.com/article/10.1007/s12650-024-01011-y', FilePdfBox),
-				new LinkWithIcon('https://github.com/UniStuttgart-VISUS/MWK-mint', Github),
+				new LinkWithIcon(
+					'https://link.springer.com/article/10.1007/s12650-024-01011-y',
+					FilePdfBox
+				),
+				new LinkWithIcon('https://github.com/UniStuttgart-VISUS/MWK-mint', Github)
 			]
 		),
 		new ResearchProject(
@@ -184,11 +183,11 @@ export function getResearchProjects(): ResearchProject[] {
 			'Net2Vis - A Visual Grammar for Automatically Generating Publication-Tailored CNN Architecture Visualizations',
 			['Alex Bäuerle', 'Christian van Onzenoodt', 'Timo Ropinski'],
 			'To convey neural network architectures in publications, appropriate ' +
-			'visualizations are of great importance. This project is aimed at ' +
-			' automatically generating such visualizations from code. Thus, ' +
-			'we are able to employ a common visual grammar, reduce the time ' +
-			'investment towards these visualizations significantly, and reduce ' +
-			'errors in these visualizations.',
+				'visualizations are of great importance. This project is aimed at ' +
+				' automatically generating such visualizations from code. Thus, ' +
+				'we are able to employ a common visual grammar, reduce the time ' +
+				'investment towards these visualizations significantly, and reduce ' +
+				'errors in these visualizations.',
 			'2021',
 			'TVCG',
 			'images/net2vis.png',
@@ -206,9 +205,9 @@ export function getResearchProjects(): ResearchProject[] {
 			'Measuring Model Biases in the Absence of Ground Truth',
 			['Osman Aka', 'Ken Burke', 'Alex Bäuerle', 'Christina Greer', 'Margaret Mitchell'],
 			'Model fairness is getting more and more important. At the same ' +
-			'time, datasets are getting larger and ground truth more sparse. In ' +
-			'this paper, we evaluate bias detection algorithms that can be used ' +
-			'without ground truth at hand.',
+				'time, datasets are getting larger and ground truth more sparse. In ' +
+				'this paper, we evaluate bias detection algorithms that can be used ' +
+				'without ground truth at hand.',
 			'2021',
 			'AIES',
 			'images/nPMI.png',
@@ -218,11 +217,11 @@ export function getResearchProjects(): ResearchProject[] {
 			'What does BERT dream of?',
 			['Alex Bäuerle', 'James Wexler'],
 			'In this internship project with the Google PAIR team, we ' +
-			'investigated how Feature ' +
-			'Visualization could be transferred to the text domain and conducted ' +
-			'several experiments in this line of research. While Feature ' +
-			'Visualization did not work out as well as we hoped, this provides ' +
-			'new insight into the realm of deep dreaming with text.',
+				'investigated how Feature ' +
+				'Visualization could be transferred to the text domain and conducted ' +
+				'several experiments in this line of research. While Feature ' +
+				'Visualization did not work out as well as we hoped, this provides ' +
+				'new insight into the realm of deep dreaming with text.',
 			'2020',
 			'VISxAI',
 			'images/bert.png',
@@ -242,10 +241,10 @@ export function getResearchProjects(): ResearchProject[] {
 			'Classifier-Guided Visual Correction of Noisy Labels for Image ' + 'Classification Tasks',
 			['Alex Bäuerle', 'Heiko Neumann', 'Timo Ropinski'],
 			'Training data plays an essential role in modern applications of ' +
-			'machine learning. In this project, we provide means to visually ' +
-			'guide users towards potential errors in such datasets. Our guidance,' +
-			' which is built on common labeling error types we propose, can be ' +
-			'plugged into any classification pipeline.',
+				'machine learning. In this project, we provide means to visually ' +
+				'guide users towards potential errors in such datasets. Our guidance,' +
+				' which is built on common labeling error types we propose, can be ' +
+				'plugged into any classification pipeline.',
 			'2020',
 			'EuroVis',
 			'images/cgvc.png',
@@ -260,7 +259,7 @@ export function getResearchProjects(): ResearchProject[] {
 		),
 		new ResearchProject(
 			'Automatic identification of crossovers in cryo‐EM images of murine ' +
-			'amyloid protein A fibrils with machine learning',
+				'amyloid protein A fibrils with machine learning',
 			[
 				'Mattthias Weber',
 				'Alex Bäuerle',
@@ -271,10 +270,10 @@ export function getResearchProjects(): ResearchProject[] {
 				'Volker Schmidt'
 			],
 			'Detecting crossovers in cryo-electron microscopy images of ' +
-			'protein fibrils is an important step towards determining ' +
-			'the morphological composition of a sample. We propose a combination ' +
-			'of classical, stochastic approaches, and machine learning techniques' +
-			' towards solving this problem in a novel, much easier way.',
+				'protein fibrils is an important step towards determining ' +
+				'the morphological composition of a sample. We propose a combination ' +
+				'of classical, stochastic approaches, and machine learning techniques' +
+				' towards solving this problem in a novel, much easier way.',
 			'2020',
 			'Journal of Microscopy',
 			'images/fibrils.png',
@@ -282,15 +281,15 @@ export function getResearchProjects(): ResearchProject[] {
 		),
 		new ResearchProject(
 			'Convolutional neural network (CNN) applied to respiratory motion ' +
-			'detection in fluoroscopic frames',
+				'detection in fluoroscopic frames',
 			['Christoph Baldauf', 'Alex Bäuerle', 'Timo Ropinski', 'Volker Rasche', 'Ina Vernikouskaya'],
 			'To support surgeons during surgeries conducted under ' +
-			'X-ray-fluoroscopy guidance, real' +
-			'time fluoroscopy is augmented with organ shape models. Following ' +
-			'initial registration, respiratory motion is a major cause of ' +
-			'introducing mismatch to the superposition. This work evaluates ' +
-			'convolutional neural networks (CNN) as a novel approach to address ' +
-			'this problem.',
+				'X-ray-fluoroscopy guidance, real' +
+				'time fluoroscopy is augmented with organ shape models. Following ' +
+				'initial registration, respiratory motion is a major cause of ' +
+				'introducing mismatch to the superposition. This work evaluates ' +
+				'convolutional neural networks (CNN) as a novel approach to address ' +
+				'this problem.',
 			'2019',
 			'International Journal of Computer Assisted Radiology and Surgery',
 			'images/breath.png',
@@ -313,6 +312,15 @@ export function getResearchProjects(): ResearchProject[] {
  */
 export function getFunProjects(): FunProject[] {
 	const projects = [
+		new FunProject(
+			'OpenHands',
+			'OpenHands is an open-source AI coding agent that can write code for you. I worked on the UI for OpenHands for a few months.',
+			'images/openhands.png',
+			[
+				new LinkWithIcon('http://endoftext.app', Web),
+				new LinkWithIcon('https://Github.com/end-of-text/endoftext', Github)
+			]
+		),
 		new FunProject(
 			'endoftext',
 			'endoftext helps you improve your AI prompts in minutes by taking the guesswork out of prompt engineering with suggested edits, prompt rewrites, and automatically generated test cases.',
@@ -347,35 +355,35 @@ export function getFunProjects(): FunProject[] {
 		new FunProject(
 			'Dotfiles',
 			'These are the dotfiles I use to configure my machines. This ' +
-			'includes both my macs and my linux workstations. Feel free to ' +
-			'base your configurations on these!',
+				'includes both my macs and my linux workstations. Feel free to ' +
+				'base your configurations on these!',
 			'images/dotfiles.png',
 			[new LinkWithIcon('https://Github.com/Sparkier/Dotfiles', Github)]
 		),
 		new FunProject(
 			'mySnow',
 			'An App I developed with my colleagues of the Swabian Skiing ' +
-			'Association (SSV). It teaches you concepts about skiing and helps ' +
-			'you improve with videos and handcrafted guidance. Among other stuff' +
-			', I am mainly responsible for the iOS version of the app.',
+				'Association (SSV). It teaches you concepts about skiing and helps ' +
+				'you improve with videos and handcrafted guidance. Among other stuff' +
+				', I am mainly responsible for the iOS version of the app.',
 			'images/mySnow.png',
 			[]
 		),
 		new FunProject(
 			'Contagion',
 			'A fun project for the #WirVsVirus hackathon during the coronavirus ' +
-			'pandemic. We implemented a text adventure where users have to ' +
-			'manage the spreading of the virus.',
+				'pandemic. We implemented a text adventure where users have to ' +
+				'manage the spreading of the virus.',
 			'images/contagion.png',
 			[new LinkWithIcon('https://Github.com/Sparkier/Contagion', Github)]
 		),
 		new FunProject(
 			'midosa',
 			'Microdonate and Safe: Winner project for the Audi App Challenge ' +
-			'where we developed an ' +
-			'application for both, the car cockpit and android mobile devices. ' +
-			'The app motivates users to drive with less fuel consumption and then' +
-			' donate the savings to charity, thus gamifying this experience.',
+				'where we developed an ' +
+				'application for both, the car cockpit and android mobile devices. ' +
+				'The app motivates users to drive with less fuel consumption and then' +
+				' donate the savings to charity, thus gamifying this experience.',
 			'images/midosa.png',
 			[
 				new LinkWithIcon(

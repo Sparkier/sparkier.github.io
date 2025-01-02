@@ -299,3 +299,27 @@ export class Book {
 		this.comment = comment;
 	}
 }
+
+/**
+ * Providing a structure for blog entries
+ */
+export class BlogEntry {
+	title: string;
+	date: Date;
+	content_md: string;
+	abstract: string;
+
+	/**
+	 * Creates a blog entry
+	 *
+	 * @param {String} title the title of the blog entry
+	 * @param {Date} date the date of the blog entry
+	 * @param {String} content the content of the blog entry
+	 */
+	constructor(title: string, date: Date, content_md: string, abstract: string) {
+		this.title = title;
+		this.date = date;
+		this.content_md = content_md;
+		this.abstract = abstract;
+	}
+}

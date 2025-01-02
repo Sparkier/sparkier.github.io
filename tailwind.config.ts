@@ -5,28 +5,22 @@ export default {
 		extend: {
 			colors: {
 				primary: {
-					DEFAULT: '#fa8072',
-					dark: '#2196f3'
+					DEFAULT: '#fa8072'
 				},
 				text: {
-					DEFAULT: '#121212',
-					dark: '#e4e6eb'
+					DEFAULT: '#121212'
 				},
 				background: {
-					DEFAULT: '#f4f6fb',
-					dark: '#121212'
+					DEFAULT: '#f4f6fb'
 				},
 				h2: {
-					DEFAULT: '#030712',
-					dark: '#f3f4f6'
+					DEFAULT: '#030712'
 				},
 				h3: {
-					DEFAULT: '#374151',
-					dark: '#e5e7eb'
+					DEFAULT: '#374151'
 				},
 				h4: {
-					DEFAULT: '#374151',
-					dark: '#e5e7eb'
+					DEFAULT: '#374151'
 				}
 			}
 		}
