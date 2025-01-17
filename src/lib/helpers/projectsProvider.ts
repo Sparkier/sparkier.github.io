@@ -57,7 +57,7 @@ export function getResearchProjects(): ResearchProject[] {
 				'Chenyan Xiong',
 				'Graham Neubig'
 			],
-			'We do an in-depth exploration of Gemini’s language abilities, making two contributions. First, we provide a third-party, objective comparison of the abil- ities of the OpenAI GPT and Google Gemini models with reproducible code and fully transparent results. Second, we take a closer look at the results, identifying areas where one of the two model classes excels. We perform this analysis over 10 datasets testing a variety of language abilities, including reasoning, answering knowledge-based questions, solving math problems, translating between languages, generating code, and acting as instruction-following agents.',
+			'We do an in-depth exploration of Gemini’s language abilities, making two contributions. First, we provide a third-party, objective comparison of the abilities of the OpenAI GPT and Google Gemini models with reproducible code and fully transparent results. Second, we take a closer look at the results, identifying areas where one of the two model classes excels. We perform this analysis over 10 datasets testing a variety of language abilities, including reasoning, answering knowledge-based questions, solving math problems, translating between languages, generating code, and acting as instruction-following agents.',
 			'2023',
 			'ArXiv',
 			'images/gemini.png',
