@@ -317,8 +317,8 @@ export function getFunProjects(): FunProject[] {
 			'OpenHands is an open-source AI coding agent that can write code for you. I worked on the UI for OpenHands for a few months.',
 			'images/openhands.png',
 			[
-				new LinkWithIcon('http://endoftext.app', Web),
-				new LinkWithIcon('https://Github.com/end-of-text/endoftext', Github)
+				new LinkWithIcon('https://openhands.daytona.io', Web),
+				new LinkWithIcon('https://github.com/All-Hands-AI/OpenHands', Github)
 			]
 		),
 		new FunProject(
