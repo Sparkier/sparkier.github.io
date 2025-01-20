@@ -1,9 +1,9 @@
 <div class="flex max-w-[600px] flex-col gap-4 text-center">
 	<h1>Alex Bäuerle</h1>
 	<p class="text-center">
-		I am currently a Researcher at CMU working on AI developer tools. Previously, I was a Research
-		Scientist at Sigma Computing. I did my Ph. D. at Ulm University. When I am not in front of my
-		computer, you will probably find me in the mountains.
+		I am currently a Founding Member of Technical Staff at Axiom where we work on ML for liver toxicity prediction.
+		Previously, I was a Researcher at CMU working on AI developer tools.
+		I did my Ph. D. at Ulm University. When I am not in front of my computer, you will probably find me in the mountains.
 	</p>
 	<p class="text-center">
 		My research is at the intersection of AI and HCI. In this context, I am always searching for the

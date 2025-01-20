@@ -18,7 +18,9 @@ export function getResearchProjects(): ResearchProject[] {
 			'2024',
 			'VLDB 2024 Workshop: Tabular Data Analysis (TaDA)',
 			'images/humboldt.png',
-			[]
+			[
+				new LinkWithIcon('https://vldb.org/workshops/2024/proceedings/TaDA/TaDA.14.pdf', FilePdfBox),
+			]
 		),
 		new ResearchProject(
 			'mint: Integrating scientific visualizations into virtual reality',
