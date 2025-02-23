@@ -36,6 +36,3 @@ To get the ball rolling, I'll cross-post all the job postings I know of from the
 ## Technical Details
 
 visPositions is implemented in TypeScript and SvelteKit. It's hosted on Vercel and uses Supabase for the database. The code is [open source and available on GitHub](https://github.com/Sparkier/vispositions). I will be keeping this website going for at least the end of 2025 (this is how much time and money I'm willing to invest without any signal of success). After that, I'll keep things going if there is enough interest and support from the community. I do not plan to make any moeny from this website and this will always be free with community service as it's main goal.
-
-<small><a id="note1" href="#ref1">[1]</a> <a>https://road-safety.transport.ec.europa.eu/document/download/adbd19af-b384-4fb7-a7dc-2ae199aa8453_en?filename=erso-country-overview-2023-germany_0.pdf</a></small>
-<small><a id="note1" href="#ref1">[1]</a> <a>https://www.hertie-school.org/en/news/detail/content/economists-from-passau-and-berlin-speed-limits-in-germany-improve-health-outcomes-and-protect-our-climate</a></small>
