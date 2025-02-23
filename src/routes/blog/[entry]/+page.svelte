@@ -25,7 +25,7 @@
 <div class="flex flex-col gap-2">
 	<h1>{entry?.title}</h1>
 	<p class="text-sm text-gray-500">{entry?.date.toDateString()}</p>
-	<article class="[&_a]:break-word prose max-w-none [&_p]:whitespace-pre-wrap">
+	<article class="prose max-w-none [&_a]:break-all [&_p]:whitespace-pre-wrap">
 		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 		{@html content}
 	</article>
