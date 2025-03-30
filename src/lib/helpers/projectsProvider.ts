@@ -1,5 +1,6 @@
 import FilePdfBox from 'svelte-material-icons/FilePdfBox.svelte';
 import Github from 'svelte-material-icons/Github.svelte';
+import Pen from 'svelte-material-icons/Pen.svelte';
 import Web from 'svelte-material-icons/Web.svelte';
 import Youtube from 'svelte-material-icons/Youtube.svelte';
 import { FunProject, LinkWithIcon, ResearchProject } from '../types';
@@ -18,9 +19,7 @@ export function getResearchProjects(): ResearchProject[] {
 			'2024',
 			'VLDB 2024 Workshop: Tabular Data Analysis (TaDA)',
 			'images/humboldt.png',
-			[
-				new LinkWithIcon('https://vldb.org/workshops/2024/proceedings/TaDA/TaDA.14.pdf', FilePdfBox),
-			]
+			[new LinkWithIcon('https://vldb.org/workshops/2024/proceedings/TaDA/TaDA.14.pdf', FilePdfBox)]
 		),
 		new ResearchProject(
 			'mint: Integrating scientific visualizations into virtual reality',
@@ -314,6 +313,16 @@ export function getResearchProjects(): ResearchProject[] {
  */
 export function getFunProjects(): FunProject[] {
 	const projects = [
+		new FunProject(
+			'VisPositions',
+			'VisPositions is a simple job board for the VIS and HCI community. I wrote a blog post about why I think this is more useful than what is out there.',
+			'images/vispositions.svg',
+			[
+				new LinkWithIcon('https://vispositions.com', Web),
+				new LinkWithIcon('https://github.com/Sparkier/vispositions', Github),
+				new LinkWithIcon('https://a13x.io/blog/vispositions', Pen)
+			]
+		),
 		new FunProject(
 			'OpenHands',
 			'OpenHands is an open-source AI coding agent that can write code for you. I worked on the UI for OpenHands for a few months.',
