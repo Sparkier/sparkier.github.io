@@ -13,7 +13,18 @@ import School from 'svelte-material-icons/School.svelte';
  */
 export function getWork(): Work[] {
 	return [
-		new Work('Founding Member of Technical Staff', 'AI + Biology', 'May 2024 - Present', Molecule),
+		new Work(
+			'Research Scientist',
+			'What is the right interface between humans and AI?',
+			'May 2025 - Present',
+			Google
+		),
+		new Work(
+			'Founding Member of Technical Staff',
+			'Building an awesome product for Humans + AI + Biology to solve drug toxicity.',
+			'May 2024 - May 2025',
+			Molecule
+		),
 		new Work(
 			'Postdoctoral Researcher, Carnegie Mellon University',
 			'Research and development of tools in the areas of AI evaluation and prompt engineering.',

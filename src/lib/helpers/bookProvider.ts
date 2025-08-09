@@ -55,6 +55,18 @@ export function getBooks(): Book[] {
 			new Date('January 1, 2025'),
 			3,
 			'A classic book about the dark side of human nature. The book is a great read and raises interesting questions about human nature, the score mostly reflects that it is somewhat hard to read especially as a non-native English speaker.'
+		),
+		new Book(
+			'Catch 22',
+			new Date('April 5, 2025'),
+			3,
+			'Very fun book about the absurdity of war and the military. The way it is written and the weird story can make it hard to read as a non-native English speaker.'
+		),
+		new Book(
+			'Snow Crash',
+			new Date('Jly 19, 2025'),
+			4,
+			'Great sci-fi book about a somewhat dystopian future of human society. Sometimes a little too out of this world, but still a great read.'
 		)
 	];
 }

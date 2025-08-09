@@ -59,7 +59,7 @@
 				{#if showLinks}
 					<button
 						on:click={exportCVPDF}
-						class="invisible ml-auto flex items-center gap-1 rounded-full border border-text pl-3 pr-2 transition-all duration-300 hover:border-primary hover:text-primary md:visible dark:border-text-dark dark:hover:border-primary-dark dark:hover:text-primary-dark"
+						class="dark:border-text-dark dark:hover:border-primary-dark dark:hover:text-primary-dark invisible ml-auto flex items-center gap-1 rounded-full border border-text pl-3 pr-2 transition-all duration-300 hover:border-primary hover:text-primary md:visible"
 					>
 						<span>Download</span>
 						<Icon icon={Download} plain />
@@ -68,10 +68,9 @@
 			</div>
 			<h3 class={showLinks === false ? 'text-h3' : ''}>Researcher</h3>
 			<p>
-				My research is at the intersection of AI and HCI. In this context, I am always searching for
-				the best method to connect humans with AI systems. I try to help developers with techniques
-				that foster communication, use visualizations to provide insights during development, and
-				work on explanations that help humans understand the decisions their AI systems make.
+				My research is at the intersection of AI and HCI. I am prototyping and trying to understand
+				novel modes of interaction with AI, focusing on interfaces that help humans be creative with
+				AI systems.
 			</p>
 			<Contact {showLinks} />
 		</CvElement>
