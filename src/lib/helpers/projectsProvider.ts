@@ -13,6 +13,75 @@ import { FunProject, LinkWithIcon, ResearchProject } from '../types';
 export function getResearchProjects(): ResearchProject[] {
 	const projects = [
 		new ResearchProject(
+			'Your other Left! Vision-Language Models Fail to Identify Relative Positions in Medical Images',
+			[
+				'Daniel Wolf',
+				'Heiko Hillenhagen',
+				'Billurvan Taskin',
+				'Alex Bäuerle',
+				'Meinrad Beer',
+				'Michael Götz',
+				'Timo Ropinski'
+			],
+			'Clinical decision-making relies heavily on understanding relative positions of anatomical structures and anomalies. Therefore, for Vision-Language Models (VLMs) to be applicable in clinical practice, the ability to accurately determine relative positions on medical images is a fundamental prerequisite. Our evaluations suggest that, in medical imaging, VLMs rely more on prior anatomical knowledge than on actual image content for answering relative position questions, often leading to incorrect conclusions. To facilitate further research in this area, we introduce the MIRP – Medical Imaging Relative Positioning – benchmark dataset, designed to systematically evaluate the capability to identify relative positions in medical images.',
+			'2025',
+			'MICCAI',
+			'images/other_left.png',
+			[
+				new LinkWithIcon(
+					'https://link.springer.com/chapter/10.1007/978-3-032-04971-1_65',
+					FilePdfBox
+				),
+				new LinkWithIcon('https://wolfda95.github.io/your_other_left/', Github)
+			]
+		),
+		new ResearchProject(
+			'Cell Painting for cytotoxicity and mode-of-action analysis in primary human hepatocytes',
+			[
+				'Jessica D Ewald',
+				'Katherine L Titterton',
+				'Alex Bäuerle',
+				'Alex Beatson',
+				'Daniil A Boiko',
+				'Ángel A Cabrera',
+				'Jaime Cheah',
+				'Beth A Cimini',
+				'Bram Gorissen',
+				'Thouis Jones',
+				'Konrad J Karczewski',
+				'David Rouquie',
+				'Srijit Seal',
+				'Erin Weisbart',
+				'Brandon White',
+				'Anne E Carpenter',
+				'Shantanu Singh'
+			],
+			'We apply image-based profiling (the Cell Painting assay) and two cytotoxicity assays (metabolic and membrane damage readouts) to primary human hepatocytes after exposure to eight concentrations of 1085 compounds that include pharmaceuticals, pesticides, and industrial chemicals with known liver toxicity-related outcomes. We found that the morphological profiles detect compound bioactivity at lower concentrations than standard cytotoxicity assays. In supervised analyses, they predict cytotoxicity and targeted cell-based assay readouts, but not cell-free assay readouts. We envision that image-based profiling could serve as a key component of modern safety assessment.',
+			'2025',
+			'bioRxiv',
+			'images/tox.png',
+			[new LinkWithIcon('https://pmc.ncbi.nlm.nih.gov/articles/PMC11785178/', FilePdfBox)]
+		),
+		new ResearchProject(
+			'A Survey on Quality Metrics for Text-to-Image Generation',
+			[
+				'Sebastian Hartwig',
+				'Dominik Engel',
+				'Leon Sick',
+				'Hannah Kniesel',
+				'Tristan Payer',
+				'Poonam Poonam',
+				'Michael Glöckner',
+				'Alex Bäuerle',
+				'Timo Ropinski'
+			],
+			'Within this survey, we provide a comprehensive overview of text-to-image quality metrics, and propose a taxonomy to categorize these metrics. Our taxonomy is grounded in the assumption, that there are two main quality criteria, namely compositional quality and general quality, that contribute to the overall image quality. Besides the metrics, this survey covers dedicated text-to-image benchmark datasets, over which the metrics are frequently computed. Finally, we identify limitations and open challenges in the field of text-to-image generation, and derive guidelines for practitioners conducting text-to-image evaluation.',
+			'2025',
+			'TVCG',
+			'images/image_quality.png',
+			[new LinkWithIcon('https://ieeexplore.ieee.org/document/11062594', FilePdfBox)]
+		),
+		new ResearchProject(
 			'Humboldt: Metadata-Driven Extensible Data Discovery',
 			['Alex Bäuerle', 'Çağatay Demiralp', 'Michael Stonebraker'],
 			'Data discovery is crucial for data management and analysis and can benefit from better utilization of metadata. Yet, effectively surfacing metadata through interactive user interfaces (UIs) to augment data discovery poses challenges. Constantly revamping UIs with each update to metadata sources (or providers) consumes significant development resources and lacks scalability and extensibility. In response, we introduce Humboldt, a new framework enabling interactive data systems to effectively leverage metadata for data discovery and rapidly evolve their UIs to support metadata changes.',
