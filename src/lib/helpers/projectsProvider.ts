@@ -32,7 +32,9 @@ export function getResearchProjects(): ResearchProject[] {
 					'https://link.springer.com/chapter/10.1007/978-3-032-04971-1_65',
 					FilePdfBox
 				),
-				new LinkWithIcon('https://wolfda95.github.io/your_other_left/', Github)
+				new LinkWithIcon('https://wolfda95.github.io/your_other_left/', Web),
+				new LinkWithIcon('https://github.com/Wolfda95/MIRP_Benchmark', Github),
+				new LinkWithIcon('https://youtu.be/l0aIRUR4HmE', Youtube)
 			]
 		),
 		new ResearchProject(
