@@ -64,9 +64,15 @@ export function getBooks(): Book[] {
 		),
 		new Book(
 			'Snow Crash',
-			new Date('Jly 19, 2025'),
+			new Date('July 19, 2025'),
 			4,
 			'Great sci-fi book about a somewhat dystopian future of human society. Sometimes a little too out of this world, but still a great read.'
+		),
+		new Book(
+			'Children of Time',
+			new Date('October 23, 2025'),
+			4,
+			'A philosophical sci-fi book about the history of life on Earth and the future of humanity. It has a lot of interesting ideas and concepts, but can sometimes be a bit too designed to work in a particular way.'
 		)
 	];
 }
