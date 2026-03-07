@@ -3,24 +3,31 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
+			fontFamily: {
+				serif: ['Instrument Serif', 'Georgia', 'serif'],
+				sans: ['Inter', 'system-ui', 'sans-serif']
+			},
 			colors: {
 				primary: {
-					DEFAULT: '#fa8072'
+					DEFAULT: '#e8654a',
+					light: '#f4a393'
 				},
 				text: {
-					DEFAULT: '#121212'
+					DEFAULT: '#1a1a1a',
+					muted: '#6b6b6b'
 				},
 				background: {
-					DEFAULT: '#f4f6fb'
+					DEFAULT: '#faf8f5',
+					card: '#ffffff'
 				},
 				h2: {
-					DEFAULT: '#030712'
+					DEFAULT: '#1a1a1a'
 				},
 				h3: {
-					DEFAULT: '#374151'
+					DEFAULT: '#333333'
 				},
 				h4: {
-					DEFAULT: '#374151'
+					DEFAULT: '#333333'
 				}
 			}
 		}
