@@ -13,6 +13,38 @@ import { FunProject, LinkWithIcon, ResearchProject } from '../types';
 export function getResearchProjects(): ResearchProject[] {
 	const projects = [
 		new ResearchProject(
+			'Cell Painting for cytotoxicity and mode-of-action analysis in primary human hepatocytes',
+			[
+				'Jessica D Ewald',
+				'Katherine L Titterton',
+				'Alex Bäuerle',
+				'Alex Beatson',
+				'Daniil A Boiko',
+				'Ángel A Cabrera',
+				'Jaime Cheah',
+				'Beth A Cimini',
+				'Bram L Gorissen',
+				'Joshua Harrill',
+				'Thouis R Jones',
+				'Konrad J Karczewski',
+				'Christine E Crute',
+				'David Rouquie',
+				'Srijit Seal',
+				'Erin Weisbart',
+				'Brandon White',
+				'Anne E Carpenter',
+				'Shantanu Singh'
+			],
+			'Scalable, human-relevant approaches for detecting compound modes of action are needed to improve chemical safety evaluation. Here, we apply image-based profiling (Cell Painting) alongside two cytotoxicity assays in primary human hepatocytes exposed to eight concentrations of 1,085 compounds spanning pharmaceuticals, pesticides, and industrial chemicals. We compared three computational approaches (CellProfiler, a Cell Painting-specific convolutional neural network, and a pretrained vision transformer) to extract morphological features from single cells or whole images. These features were used to predict activity in the measured cytotoxicity assays and in ToxCast assays covering cytotoxicity, cell-based, and cell-free assay endpoints. Morphological profiles detected bioactivity at lower concentrations than standard cytotoxicity assays and provided mode-of-action insights. In supervised analyses, they predict cytotoxicity and targeted cell-based assays but not cell-free assays. Feature extraction methods performed similarly, and filtering concentrations did not improve performance. We envision that image-based profiling could be a key component of modern safety assessment.',
+			'2026',
+			'Cell Systems',
+			'images/tox.png',
+			[
+				new LinkWithIcon('https://doi.org/10.1016/j.cels.2026.101566', FilePdfBox),
+				new LinkWithIcon('https://pubmed.ncbi.nlm.nih.gov/41903531/', Web)
+			]
+		),
+		new ResearchProject(
 			'Your other Left! Vision-Language Models Fail to Identify Relative Positions in Medical Images',
 			[
 				'Daniel Wolf',
@@ -36,33 +68,6 @@ export function getResearchProjects(): ResearchProject[] {
 				new LinkWithIcon('https://github.com/Wolfda95/MIRP_Benchmark', Github),
 				new LinkWithIcon('https://youtu.be/l0aIRUR4HmE', Youtube)
 			]
-		),
-		new ResearchProject(
-			'Cell Painting for cytotoxicity and mode-of-action analysis in primary human hepatocytes',
-			[
-				'Jessica D Ewald',
-				'Katherine L Titterton',
-				'Alex Bäuerle',
-				'Alex Beatson',
-				'Daniil A Boiko',
-				'Ángel A Cabrera',
-				'Jaime Cheah',
-				'Beth A Cimini',
-				'Bram Gorissen',
-				'Thouis Jones',
-				'Konrad J Karczewski',
-				'David Rouquie',
-				'Srijit Seal',
-				'Erin Weisbart',
-				'Brandon White',
-				'Anne E Carpenter',
-				'Shantanu Singh'
-			],
-			'We apply image-based profiling (the Cell Painting assay) and two cytotoxicity assays (metabolic and membrane damage readouts) to primary human hepatocytes after exposure to eight concentrations of 1085 compounds that include pharmaceuticals, pesticides, and industrial chemicals with known liver toxicity-related outcomes. We found that the morphological profiles detect compound bioactivity at lower concentrations than standard cytotoxicity assays. In supervised analyses, they predict cytotoxicity and targeted cell-based assay readouts, but not cell-free assay readouts. We envision that image-based profiling could serve as a key component of modern safety assessment.',
-			'2025',
-			'bioRxiv',
-			'images/tox.png',
-			[new LinkWithIcon('https://pmc.ncbi.nlm.nih.gov/articles/PMC11785178/', FilePdfBox)]
 		),
 		new ResearchProject(
 			'A Survey on Quality Metrics for Text-to-Image Generation',

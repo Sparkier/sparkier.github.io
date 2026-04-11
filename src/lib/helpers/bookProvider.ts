@@ -3,6 +3,12 @@ import { Book } from '$lib/types';
 export function getBooks(): Book[] {
 	return [
 		new Book(
+			'Zen and the Art of Motorcycle Maintenance',
+			new Date('April 11, 2026'),
+			5,
+			'Hard to read, but brilliant. Weaving together multiple story lines, the most profound being on quality. It is one of those books that make you think every time you put it down.'
+		),
+		new Book(
 			'Build',
 			new Date('April 3, 2024'),
 			5,
