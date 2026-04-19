@@ -3,6 +3,18 @@ import { Book } from '$lib/types';
 export function getBooks(): Book[] {
 	return [
 		new Book(
+			'Perfection', 
+			new Date('April 19, 2026'),
+			2,
+			'A critique of the millenial generation and how they are focused on superficial things that do not lead to happyness or fulfillment. While it makes some valid points, I found it to be a somewhat one-dimensional representation of a generation that does a lot right, especially compared to previous ones.'
+		),
+		new Book(
+			'How to Spot a Fascist',
+			new Date('April 16, 2026'),
+			4,
+			'Very timely book about the nuances that can be observed in fascist regimes and when they come up. Written from a european viewpoint but very relevant to what currently happen elsewhere in the world.'
+		),
+		new Book(
 			'Zen and the Art of Motorcycle Maintenance',
 			new Date('April 11, 2026'),
 			5,
