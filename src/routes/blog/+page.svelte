@@ -42,7 +42,8 @@
 		<p class="eyebrow mb-2">What I think</p>
 		<h2>Field Notes</h2>
 		<p class="text-sm leading-relaxed text-text-muted">
-			Essays and opinionated takes from working where visualization, HCI, and AI meet. These are my own views — I'd love to talk about any of them.
+			Essays and opinionated takes from working where visualization, HCI, and AI meet. These are my
+			own views — I'd love to talk about any of them.
 		</p>
 	</section>
 
@@ -61,7 +62,9 @@
 					</span>
 					<div class="flex-1">
 						<div class="flex items-center justify-between gap-4">
-							<span class="font-semibold leading-snug transition-colors duration-300 group-hover:text-primary">
+							<span
+								class="font-semibold leading-snug transition-colors duration-300 group-hover:text-primary"
+							>
 								{post.title}
 							</span>
 							<span class="shrink-0 text-xs text-text-muted">

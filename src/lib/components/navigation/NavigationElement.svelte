@@ -6,7 +6,7 @@
 	{href}
 	class="nav-link text-[0.7rem] font-medium uppercase tracking-[0.1em] text-text-muted transition-colors hover:text-primary"
 	class:text-primary={active}
-	class:active={active}
+	class:active
 >
 	{name}
 </a>

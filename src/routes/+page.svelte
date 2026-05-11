@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { getBlogEntries } from '$lib/helpers/blogProvider';
-	import { getResearchProjects } from '$lib/helpers/projectsProvider';
+	import { getResearchProjects, slugify } from '$lib/helpers/projectsProvider';
 	import type { BlogEntry, ResearchProject } from '$lib/types';
 
 	const featuredPosts: BlogEntry[] = getBlogEntries().slice(0, 4);
@@ -104,9 +104,18 @@
 				{ dx: 0, dy: -55 }
 			];
 			const netEdges = [
-				[0, 1], [0, 2], [0, 3], [0, 4],
-				[1, 5], [1, 7], [2, 6], [2, 7],
-				[3, 5], [4, 6], [5, 7], [6, 7]
+				[0, 1],
+				[0, 2],
+				[0, 3],
+				[0, 4],
+				[1, 5],
+				[1, 7],
+				[2, 6],
+				[2, 7],
+				[3, 5],
+				[4, 6],
+				[5, 7],
+				[6, 7]
 			];
 
 			// ── Initialize components immediately ──
@@ -134,10 +143,15 @@
 
 			let introProgress = 0;
 			let idleTime = 0;
-			const RESTING_OPACITY = 0.50;
+			const RESTING_OPACITY = 0.5;
 
-
-			const drawRoundedBar = (x: number, y: number, width: number, height: number, radius: number) => {
+			const drawRoundedBar = (
+				x: number,
+				y: number,
+				width: number,
+				height: number,
+				radius: number
+			) => {
 				const r = Math.min(radius, width / 2, height);
 				ctx.beginPath();
 				ctx.moveTo(x, y + height);
@@ -165,7 +179,7 @@
 					const barX = cx + bar.dx;
 					const barTopY = cy + bar.dTopY;
 					const breathe = organicNoise(idleTime * bar.speed, bar.phaseOffset) * 0.5 + 0.5;
-					const targetAlpha = 0.40 + breathe * 0.25;
+					const targetAlpha = 0.4 + breathe * 0.25;
 					const drift = organicNoise(idleTime * bar.speed * 0.8, bar.phaseOffset) * 10;
 					ctx.globalAlpha = targetAlpha * barsProgress;
 					ctx.fillStyle = color;
@@ -222,7 +236,7 @@
 				if (introProgress > 0.8 && phase < 4) phase = 4;
 
 				requestAnimationFrame(draw);
-			}
+			};
 
 			setTimeout(() => requestAnimationFrame(draw), 400);
 
@@ -279,23 +293,51 @@
 	<!-- Text layer — minimal, below the vis -->
 	<div class="relative z-[1] flex flex-col items-center" style="margin-top: 12rem;">
 		<!-- Focus phrase -->
-		<h1 class="font-serif text-[clamp(1.6rem,4vw,2.8rem)] font-normal leading-[1.2] tracking-[-0.01em] text-text transition-[opacity,transform] duration-[1800ms] ease-[cubic-bezier(0.16,1,0.3,1)] {phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[8px]'}">
+		<h1
+			class="font-serif text-[clamp(1.6rem,4vw,2.8rem)] font-normal leading-[1.2] tracking-[-0.01em] text-text transition-[opacity,transform] duration-[1800ms] ease-[cubic-bezier(0.16,1,0.3,1)] {phase >=
+			2
+				? 'translate-y-0 opacity-100'
+				: 'translate-y-[8px] opacity-0'}"
+		>
 			Human interfaces to AI
 		</h1>
 
 		<!-- Domain — subtle identifier -->
-		<p class="mt-4 font-sans text-[0.7rem] font-normal tracking-[0.2em] lowercase text-text-muted transition-opacity duration-[1400ms] delay-300 {phase >= 3 ? 'opacity-50' : 'opacity-0'}">
+		<p
+			class="mt-4 font-sans text-[0.7rem] font-normal lowercase tracking-[0.2em] text-text-muted transition-opacity delay-300 duration-[1400ms] {phase >=
+			3
+				? 'opacity-50'
+				: 'opacity-0'}"
+		>
 			a13x.io
 		</p>
 
 		<!-- Links -->
 		<nav
-			class="mt-10 flex gap-8 transition-[opacity,transform] duration-1000 {phase >= 4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[6px]'}"
+			class="mt-10 flex gap-8 transition-[opacity,transform] duration-1000 {phase >= 4
+				? 'translate-y-0 opacity-100'
+				: 'translate-y-[6px] opacity-0'}"
 		>
-			<a href="/publications" class="text-[0.7rem] font-medium uppercase tracking-[0.14em] text-text-muted relative transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:left-0 after:bottom-[-3px] after:h-[1px] after:bg-primary after:transition-[width] after:duration-300 after:w-0 hover:after:w-full">Papers</a>
-			<a href="/projects" class="text-[0.7rem] font-medium uppercase tracking-[0.14em] text-text-muted relative transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:left-0 after:bottom-[-3px] after:h-[1px] after:bg-primary after:transition-[width] after:duration-300 after:w-0 hover:after:w-full">Systems</a>
-			<a href="/blog" class="text-[0.7rem] font-medium uppercase tracking-[0.14em] text-text-muted relative transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:left-0 after:bottom-[-3px] after:h-[1px] after:bg-primary after:transition-[width] after:duration-300 after:w-0 hover:after:w-full">Field Notes</a>
-			<a href="/cv" class="text-[0.7rem] font-medium uppercase tracking-[0.14em] text-text-muted relative transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:left-0 after:bottom-[-3px] after:h-[1px] after:bg-primary after:transition-[width] after:duration-300 after:w-0 hover:after:w-full">CV</a>
+			<a
+				href="/publications"
+				class="relative text-[0.7rem] font-medium uppercase tracking-[0.14em] text-text-muted transition-colors duration-300 after:absolute after:bottom-[-3px] after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-[width] after:duration-300 after:content-[''] hover:text-primary hover:after:w-full"
+				>Papers</a
+			>
+			<a
+				href="/projects"
+				class="relative text-[0.7rem] font-medium uppercase tracking-[0.14em] text-text-muted transition-colors duration-300 after:absolute after:bottom-[-3px] after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-[width] after:duration-300 after:content-[''] hover:text-primary hover:after:w-full"
+				>Systems</a
+			>
+			<a
+				href="/blog"
+				class="relative text-[0.7rem] font-medium uppercase tracking-[0.14em] text-text-muted transition-colors duration-300 after:absolute after:bottom-[-3px] after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-[width] after:duration-300 after:content-[''] hover:text-primary hover:after:w-full"
+				>Field Notes</a
+			>
+			<a
+				href="/cv"
+				class="relative text-[0.7rem] font-medium uppercase tracking-[0.14em] text-text-muted transition-colors duration-300 after:absolute after:bottom-[-3px] after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-[width] after:duration-300 after:content-[''] hover:text-primary hover:after:w-full"
+				>CV</a
+			>
 		</nav>
 	</div>
 
@@ -315,7 +357,6 @@
      CONTENT SECTIONS
      ═══════════════════════════════════════════════ -->
 <div bind:this={sectionsContainer} class="mx-auto w-full max-w-[1000px] px-4 pb-24">
-
 	<!-- PAPERS -->
 	<section class="section-shell reveal py-12">
 		<div class="flex flex-wrap items-end justify-between gap-4">
@@ -334,36 +375,35 @@
 		<div class="reveal-stagger mt-6 flex flex-col gap-3">
 			{#each featuredPapers as paper}
 				<div
-					class="reveal group flex items-start gap-5 rounded-2xl border border-transparent bg-background-card/80 p-5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg"
+					class="reveal group relative flex items-start gap-5 rounded-2xl border border-transparent bg-background-card/80 p-5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg"
 				>
+					<!-- Stretched Link -->
+					<a
+						href="/publications/{slugify(paper.title)}"
+						class="absolute inset-0 z-[1] rounded-2xl"
+						aria-label={paper.title}
+					></a>
+
 					<div class="hidden w-28 shrink-0 flex-col items-center gap-1 sm:flex">
 						<span class="font-serif text-2xl leading-none text-primary/40">{paper.year}</span>
-						<span class="text-[0.6rem] uppercase tracking-wider text-text-muted text-center">{paper.venue}</span>
+						<span class="text-center text-[0.6rem] uppercase tracking-wider text-text-muted"
+							>{paper.venue}</span
+						>
 					</div>
-					<div class="flex-1 min-w-0">
-						<h3 class="text-sm font-semibold leading-snug group-hover:text-primary">
+					<div class="min-w-0 flex-1">
+						<h3
+							class="text-sm font-semibold leading-snug transition-colors duration-300 group-hover:text-primary"
+						>
 							{paper.title}
 						</h3>
 						<p class="mt-1 text-xs text-text-muted">
 							{paper.authors.join(', ')}
 						</p>
-						{#if paper.links && paper.links.length > 0}
-							<div class="mt-2 flex items-center gap-3">
-								{#each paper.links as link}
-									<a
-										href={link.link}
-										target="_blank"
-										rel="noopener noreferrer"
-										class="text-xs text-primary/60 transition hover:text-primary"
-									>
-										link ↗
-									</a>
-								{/each}
-							</div>
-						{/if}
 					</div>
-					<div class="sm:hidden shrink-0">
-						<span class="text-[0.6rem] uppercase tracking-wider text-text-muted">{paper.year} · {paper.venue}</span>
+					<div class="shrink-0 sm:hidden">
+						<span class="text-[0.6rem] uppercase tracking-wider text-text-muted"
+							>{paper.year} · {paper.venue}</span
+						>
 					</div>
 				</div>
 			{/each}
@@ -396,7 +436,8 @@
 					<div>
 						<div class="flex items-start justify-between gap-2">
 							<h3 class="text-base font-semibold group-hover:text-primary">{system.title}</h3>
-							<span class="mt-0.5 shrink-0 text-[0.6rem] uppercase tracking-[0.14em] text-text-muted"
+							<span
+								class="mt-0.5 shrink-0 text-[0.6rem] uppercase tracking-[0.14em] text-text-muted"
 								>{system.tags}</span
 							>
 						</div>
@@ -461,5 +502,3 @@
 		</div>
 	</section>
 </div>
-
-

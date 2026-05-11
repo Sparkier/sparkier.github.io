@@ -5,7 +5,7 @@
 	import { getEducationElements } from '$lib/helpers/educationProvider';
 	import { getFunding } from '$lib/helpers/fundingProvider';
 	import { getMentorshipActivities } from '$lib/helpers/mentoringProvider';
-	import { getResearchProjects } from '$lib/helpers/projectsProvider';
+	import { getResearchProjects, slugify } from '$lib/helpers/projectsProvider';
 	import { getReviews } from '$lib/helpers/reviewProvider';
 	import { getTalks } from '$lib/helpers/talkProvider';
 	import { getLectures } from '$lib/helpers/teachingProvider';
@@ -89,7 +89,9 @@
 			<div class="flex items-start justify-between gap-4">
 				<div>
 					<p class="eyebrow mb-2">Curriculum Vitae</p>
-					<h1 class={showLinks ? '' : '!text-3xl text-text'}>{showLinks ? 'Alex Bäuerle' : 'Alex Bäuerle'}</h1>
+					<h1 class={showLinks ? '' : '!text-3xl text-text'}>
+						{showLinks ? 'Alex Bäuerle' : 'Alex Bäuerle'}
+					</h1>
 					<p class="mt-1 text-base text-text-muted {showLinks ? '' : '!text-sm'}">Researcher</p>
 				</div>
 				{#if showLinks}
@@ -118,9 +120,15 @@
 			</div>
 			<div class="{showLinks ? 'reveal-stagger' : ''} flex flex-col gap-3">
 				{#each getEducationElements() as edu}
-					<div class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks ? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm' : 'pb-3'}">
+					<div
+						class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks
+							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
+							: 'pb-3'}"
+					>
 						<div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-							<h3 class="text-sm font-semibold {showLinks ? '' : '!text-xs'}">{edu.type} in {edu.subject} at {edu.institute}</h3>
+							<h3 class="text-sm font-semibold {showLinks ? '' : '!text-xs'}">
+								{edu.type} in {edu.subject} at {edu.institute}
+							</h3>
 							<span class="shrink-0 text-xs text-text-muted">{edu.timeframe}</span>
 						</div>
 						<p class="mt-1 text-xs leading-relaxed text-text-muted">{edu.details}</p>
@@ -128,7 +136,9 @@
 							<div class="mt-2 flex items-center gap-3">
 								{#each edu.iconElements as iconElement}
 									<LinkElement href={iconElement.icon.link} blank={true}>
-										<span class="flex items-center gap-1 text-xs text-primary/60 transition-colors hover:text-primary">
+										<span
+											class="flex items-center gap-1 text-xs text-primary/60 transition-colors hover:text-primary"
+										>
 											<Icon icon={iconElement.icon.icon} plain />
 											{iconElement.description}
 										</span>
@@ -149,11 +159,17 @@
 			</div>
 			<div class="{showLinks ? 'reveal-stagger' : ''} flex flex-col gap-3">
 				{#each getWork() as employment}
-					<div class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks ? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm' : 'pb-3'}">
+					<div
+						class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks
+							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
+							: 'pb-3'}"
+					>
 						<div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
 							<div class="flex items-center gap-2">
 								<Icon icon={employment.icon} plain downloadingPDF={!showLinks} />
-								<h3 class="text-sm font-semibold {showLinks ? '' : '!text-xs'}">{employment.title}</h3>
+								<h3 class="text-sm font-semibold {showLinks ? '' : '!text-xs'}">
+									{employment.title}
+								</h3>
 							</div>
 							<span class="shrink-0 text-xs text-text-muted">{employment.timeframe}</span>
 						</div>
@@ -169,17 +185,43 @@
 				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Publications</h2>
 				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
 			</div>
-			<div class="{showLinks ? 'reveal-stagger' : ''} flex flex-col {showLinks ? 'gap-3' : 'gap-1'}">
+			<div
+				class="{showLinks ? 'reveal-stagger' : ''} flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
+			>
 				{#each getResearchProjects() as pub}
-					<div class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks ? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm' : 'pb-2'}">
-						<h3 class="text-sm font-semibold leading-snug {showLinks ? '' : '!text-xs'}">{pub.title}</h3>
+					<div
+						class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks
+							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
+							: 'pb-2'}"
+					>
+						<h3 class="text-sm font-semibold leading-snug {showLinks ? '' : '!text-xs'}">
+							{#if showLinks}
+								<a
+									href="/publications/{slugify(pub.title)}"
+									class="transition-colors duration-300 hover:text-primary"
+								>
+									{pub.title}
+								</a>
+							{:else}
+								{pub.title}
+							{/if}
+						</h3>
 						<div class="mt-1 flex flex-wrap items-center gap-2">
-							<span class="{showLinks ? 'rounded-full bg-primary/8 py-0.5' : ''} text-[0.6rem] font-medium uppercase tracking-wider text-primary">
+							<span
+								class="{showLinks
+									? 'bg-primary/8 rounded-full py-0.5'
+									: ''} text-[0.6rem] font-medium uppercase tracking-wider text-primary"
+							>
 								{pub.venue}, {pub.year}
 							</span>
 							{#if showLinks}
 								{#each pub.links as link}
-									<a href={link.link} target="_blank" rel="noopener noreferrer" class="text-primary/50 transition-colors hover:text-primary">
+									<a
+										href={link.link}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="text-primary/50 transition-colors hover:text-primary"
+									>
 										<Icon icon={link.icon} plain />
 									</a>
 								{/each}
@@ -194,7 +236,9 @@
 										<span>,&nbsp;</span>
 									{/if}
 								{/if}
-								<span class={author === 'Alex Bäuerle' ? 'font-semibold text-text' : ''}>{author}</span>
+								<span class={author === 'Alex Bäuerle' ? 'font-semibold text-text' : ''}
+									>{author}</span
+								>
 							{/each}
 						</p>
 					</div>
@@ -211,17 +255,28 @@
 				</div>
 				<div class="reveal-stagger flex flex-col gap-3">
 					{#each getTalks() as talk}
-						<div class="reveal rounded-2xl border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm">
+						<div
+							class="reveal rounded-2xl border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm"
+						>
 							<div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
 								<h3 class="text-sm font-semibold leading-snug">{talk.title}</h3>
 								<span class="shrink-0 text-xs text-text-muted">
-									{talk.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+									{talk.date.toLocaleDateString('en-US', {
+										month: 'short',
+										day: 'numeric',
+										year: 'numeric'
+									})}
 								</span>
 							</div>
 							<div class="mt-1 flex flex-wrap items-center gap-2">
 								<span class="text-xs text-text-muted">{talk.venue}</span>
 								{#each talk.links as link}
-									<a href={link.link} target="_blank" rel="noopener noreferrer" class="text-primary/50 transition-colors hover:text-primary">
+									<a
+										href={link.link}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="text-primary/50 transition-colors hover:text-primary"
+									>
 										<Icon icon={link.icon} plain />
 									</a>
 								{/each}
@@ -238,9 +293,15 @@
 				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Teaching</h2>
 				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
 			</div>
-			<div class="{showLinks ? 'reveal-stagger' : ''} flex flex-col {showLinks ? 'gap-3' : 'gap-1'}">
+			<div
+				class="{showLinks ? 'reveal-stagger' : ''} flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
+			>
 				{#each getLectures() as lecture}
-					<div class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks ? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm' : 'pb-2'}">
+					<div
+						class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks
+							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
+							: 'pb-2'}"
+					>
 						<div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
 							<h3 class="text-sm font-semibold {showLinks ? '' : '!text-xs'}">{lecture.title}</h3>
 							<span class="shrink-0 text-xs text-text-muted">{lecture.timeframe}</span>
@@ -257,9 +318,15 @@
 				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Mentoring</h2>
 				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
 			</div>
-			<div class="{showLinks ? 'reveal-stagger' : ''} flex flex-col {showLinks ? 'gap-3' : 'gap-1'}">
+			<div
+				class="{showLinks ? 'reveal-stagger' : ''} flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
+			>
 				{#each getMentorshipActivities() as m}
-					<div class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks ? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm' : 'pb-2'}">
+					<div
+						class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks
+							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
+							: 'pb-2'}"
+					>
 						<div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
 							<h3 class="text-sm font-semibold {showLinks ? '' : '!text-xs'}">{m.name}</h3>
 							<span class="shrink-0 text-xs text-text-muted">{m.timeframe}</span>
@@ -277,9 +344,15 @@
 				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Funding</h2>
 				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
 			</div>
-			<div class="{showLinks ? 'reveal-stagger' : ''} flex flex-col {showLinks ? 'gap-3' : 'gap-1'}">
+			<div
+				class="{showLinks ? 'reveal-stagger' : ''} flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
+			>
 				{#each getFunding() as fund}
-					<div class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks ? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm' : 'pb-2'}">
+					<div
+						class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks
+							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
+							: 'pb-2'}"
+					>
 						<div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
 							<h3 class="text-sm font-semibold {showLinks ? '' : '!text-xs'}">{fund.name}</h3>
 							<span class="shrink-0 text-xs text-text-muted">{fund.timeframe}</span>
@@ -296,7 +369,11 @@
 				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Reviewing and Service</h2>
 				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
 			</div>
-			<div class="{showLinks ? 'reveal' : ''} rounded-2xl {showLinks ? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm' : ''}">
+			<div
+				class="{showLinks ? 'reveal' : ''} rounded-2xl {showLinks
+					? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
+					: ''}"
+			>
 				<div class="flex flex-wrap gap-x-6 gap-y-2">
 					{#each getReviews() as s}
 						<div class="flex items-baseline gap-2">

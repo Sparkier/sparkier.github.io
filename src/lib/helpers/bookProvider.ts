@@ -3,7 +3,7 @@ import { Book } from '$lib/types';
 export function getBooks(): Book[] {
 	return [
 		new Book(
-			'Perfection', 
+			'Perfection',
 			new Date('April 19, 2026'),
 			2,
 			'A critique of the millenial generation and how they are focused on superficial things that do not lead to happyness or fulfillment. While it makes some valid points, I found it to be a somewhat one-dimensional representation of a generation that does a lot right, especially compared to previous ones.'

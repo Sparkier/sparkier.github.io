@@ -47,10 +47,7 @@
 
 <svelte:head>
 	<title>{entry?.title ?? 'Post'} — Alex Bäuerle</title>
-	<meta
-		name="description"
-		content={entry?.abstract ?? ''}
-	/>
+	<meta name="description" content={entry?.abstract ?? ''} />
 </svelte:head>
 
 <div bind:this={sectionsContainer} class="flex flex-col gap-6">
@@ -81,13 +78,13 @@
 		<article
 			class="prose max-w-none
 				prose-headings:font-serif prose-headings:text-text
-				prose-p:text-text-muted prose-p:leading-relaxed
+				prose-p:leading-relaxed prose-p:text-text-muted
 				prose-a:text-primary prose-a:underline-offset-2 prose-a:transition-colors prose-a:duration-200 hover:prose-a:text-primary/70
-				prose-strong:text-text
-				prose-ol:text-text-muted prose-ul:text-text-muted
-				prose-li:marker:text-primary/40
-				prose-blockquote:border-primary/30 prose-blockquote:text-text-muted
-				prose-code:rounded prose-code:bg-background-card prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:text-text
+				prose-blockquote:border-primary/30
+				prose-blockquote:text-text-muted prose-strong:text-text
+				prose-code:rounded
+				prose-code:bg-background-card prose-code:px-1.5
+				prose-code:py-0.5 prose-code:text-sm prose-code:text-text prose-ol:text-text-muted prose-ul:text-text-muted prose-li:marker:text-primary/40
 				[&_a]:break-all [&_p]:whitespace-pre-wrap"
 		>
 			<!-- eslint-disable-next-line svelte/no-at-html-tags -->

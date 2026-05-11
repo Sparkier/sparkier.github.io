@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Icon from '$lib/components/Icon.svelte';
-	import { getResearchProjects } from '$lib/helpers/projectsProvider';
+	import { getResearchProjects, slugify } from '$lib/helpers/projectsProvider';
 
 	const publications = getResearchProjects();
 
@@ -51,7 +51,8 @@
 		<p class="eyebrow mb-2">Research</p>
 		<h2>Papers</h2>
 		<p class="text-sm leading-relaxed text-text-muted">
-			Work across visualization, human-computer interaction, and machine learning evaluation — spanning tools, theory, and systems.
+			Work across visualization, human-computer interaction, and machine learning evaluation —
+			spanning tools, theory, and systems.
 		</p>
 	</section>
 
@@ -68,8 +69,15 @@
 			<div class="reveal-stagger mt-2 flex flex-col gap-4">
 				{#each grouped[year] as pub}
 					<div
-						class="reveal group flex flex-col gap-4 rounded-2xl border border-transparent bg-background-card/80 p-5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg sm:flex-row sm:items-start sm:gap-6"
+						class="reveal group relative flex flex-col gap-4 rounded-2xl border border-transparent bg-background-card/80 p-5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg sm:flex-row sm:items-start sm:gap-6"
 					>
+						<!-- Stretched Link -->
+						<a
+							href="/publications/{slugify(pub.title)}"
+							class="absolute inset-0 z-[1] rounded-2xl"
+							aria-label={pub.title}
+						></a>
+
 						<!-- Thumbnail -->
 						<div class="shrink-0 overflow-hidden rounded-lg">
 							<img
@@ -83,19 +91,24 @@
 						<div class="flex min-w-0 flex-1 flex-col gap-2">
 							<!-- Venue badge -->
 							<span
-								class="w-fit rounded-full bg-primary/8 py-0.5 text-[0.6rem] font-medium uppercase tracking-[0.14em] text-primary"
+								class="bg-primary/8 w-fit rounded-full py-0.5 text-[0.6rem] font-medium uppercase tracking-[0.14em] text-primary"
 							>
 								{pub.venue}
 							</span>
 
 							<!-- Title -->
-							<h3 class="text-sm font-semibold leading-snug transition-colors duration-300 group-hover:text-primary">
+							<h3
+								class="text-sm font-semibold leading-snug transition-colors duration-300 group-hover:text-primary"
+							>
 								{pub.title}
 							</h3>
 
 							<!-- Authors -->
 							<p class="text-xs leading-relaxed text-text-muted">
-								{#each pub.authors as author, index}{#if index > 0}{#if index === pub.authors.length - 1},{' '}and{' '}{:else},{' '}{/if}{/if}<span class={author === 'Alex Bäuerle' ? 'font-semibold text-text' : ''}>{author}</span>{/each}
+								{#each pub.authors as author, index}{#if index > 0}{#if index === pub.authors.length - 1},{' '}and{' '}{:else},{' '}{/if}{/if}<span
+										class={author === 'Alex Bäuerle' ? 'font-semibold text-text' : ''}
+										>{author}</span
+									>{/each}
 							</p>
 
 							<!-- Abstract (truncated) -->
@@ -111,7 +124,7 @@
 											href={link.link}
 											target="_blank"
 											rel="noopener noreferrer"
-											class="flex items-center rounded-md p-1 text-primary/50 transition-all duration-200 hover:bg-primary/10 hover:text-primary"
+											class="relative z-[3] flex items-center rounded-md p-1 text-primary/50 transition-all duration-200 hover:bg-primary/10 hover:text-primary"
 										>
 											<Icon icon={link.icon} plain />
 										</a>

@@ -43,7 +43,8 @@
 		<p class="eyebrow mb-2">What I build</p>
 		<h2>Projects</h2>
 		<p class="text-sm leading-relaxed text-text-muted">
-			Open-source tools, research prototypes, and side projects — making ML more inspectable, usable, and fair.
+			Open-source tools, research prototypes, and side projects — making ML more inspectable,
+			usable, and fair.
 		</p>
 	</section>
 
@@ -67,7 +68,9 @@
 
 						<!-- Title + Description -->
 						<div class="flex min-w-0 flex-1 flex-col">
-							<h3 class="text-base font-semibold leading-snug transition-colors duration-300 group-hover:text-primary">
+							<h3
+								class="text-base font-semibold leading-snug transition-colors duration-300 group-hover:text-primary"
+							>
 								{project.title}
 							</h3>
 							<p class="mt-1 line-clamp-3 text-xs leading-relaxed text-text-muted/80">

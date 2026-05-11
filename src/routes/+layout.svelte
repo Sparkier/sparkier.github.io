@@ -32,9 +32,7 @@
 	</div>
 
 	<!-- Header -->
-	<div
-		class="fixed left-0 right-0 top-0 z-20 bg-background/70 backdrop-blur-lg"
-	>
+	<div class="fixed left-0 right-0 top-0 z-20 bg-background/70 backdrop-blur-lg">
 		<Navigation />
 	</div>
 
