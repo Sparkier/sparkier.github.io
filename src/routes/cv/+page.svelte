@@ -18,9 +18,7 @@
 	let showLinks = true;
 	let html2pdf: any;
 
-	onMount(async () => {
-		const module = await import('html2pdf.js');
-		html2pdf = module.default;
+	onMount(() => {
 
 		const observer = new IntersectionObserver(
 			(entries) => {

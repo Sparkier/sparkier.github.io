@@ -1,5 +1,4 @@
-import type { SvelteComponent } from 'svelte';
-import type Icon from 'svelte-material-icons/Github.svelte';
+import type { Component } from 'svelte';
 
 /**
  * Providing a structure for reviewing and academic service
@@ -179,15 +178,15 @@ export class Funding {
  */
 export class LinkWithIcon {
 	link: string;
-	icon: typeof Icon;
+	icon: any;
 
 	/**
 	 * Creates a link with icon
 	 *
 	 * @param {String} link the link to the resource
-	 * @param {typeof SvelteComponent} icon the icon used to display
+	 * @param {any} icon the icon used to display
 	 */
-	constructor(link: string, icon: typeof Icon) {
+	constructor(link: string, icon: any) {
 		this.link = link;
 		this.icon = icon;
 	}
@@ -228,16 +227,16 @@ export class Work {
 	title: string;
 	abstract: string;
 	timeframe: string;
-	icon: typeof Icon;
+	icon: any;
 	/**
 	 * Creates a lecture
 	 *
 	 * @param {String} title the title of the working experience
 	 * @param {String} abstract the abstract of the working experience
 	 * @param {String} timeframe the date of the working experience
-	 * @param {typeof SvelteComponent} icon the icon of the working experience
+	 * @param {any} icon the icon of the working experience
 	 */
-	constructor(title: string, abstract: string, timeframe: string, icon: typeof SvelteComponent) {
+	constructor(title: string, abstract: string, timeframe: string, icon: any) {
 		this.title = title;
 		this.abstract = abstract;
 		this.timeframe = timeframe;
