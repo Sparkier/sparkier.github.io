@@ -1,12 +1,11 @@
 <script lang="ts">
-	import type Icon from 'svelte-material-icons/Github.svelte';
 	import { twMerge } from 'tailwind-merge';
 
 	let {
-		icon,
+		icon: IconComponent,
 		plain = false,
 		downloadingPDF = false
-	}: { icon: typeof Icon; plain?: boolean; downloadingPDF?: boolean } = $props();
+	}: { icon: any; plain?: boolean; downloadingPDF?: boolean } = $props();
 </script>
 
 <div
@@ -15,5 +14,5 @@
 		downloadingPDF && !plain ? 'dark:text-primary' : ''
 	)}
 >
-	<svelte:component this={icon} size="1.5em" />
+	<IconComponent size="1.5em" />
 </div>

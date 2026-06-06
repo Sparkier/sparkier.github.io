@@ -20,7 +20,7 @@
 	async function loadContent(entry: BlogEntry | undefined) {
 		if (!entry) return;
 		const response = await fetch(`/blog_md/${entry.content_md}`);
-		content = purify.sanitize(parse(await response.text()));
+		content = purify.sanitize(await parse(await response.text()));
 	}
 
 	onMount(() => {
