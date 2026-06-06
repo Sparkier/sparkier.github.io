@@ -509,6 +509,8 @@ export function getFunProjects(): FunProject[] {
 	return projects;
 }
 
+const slugCache = new Map<string, string>();
+
 /**
  * Converts a text title into a URL-safe lowercase slug.
  *
@@ -516,8 +518,15 @@ export function getFunProjects(): FunProject[] {
  * @return {string} returns the URL-safe slug
  */
 export function slugify(text: string): string {
-	return text
+	if (slugCache.has(text)) {
+		return slugCache.get(text)!;
+	}
+
+	const slug = text
 		.toLowerCase()
 		.replace(/[^a-z0-9]+/g, '-')
 		.replace(/(^-|-$)+/g, '');
+
+	slugCache.set(text, slug);
+	return slug;
 }
