@@ -5,12 +5,15 @@ import Web from 'svelte-material-icons/Web.svelte';
 import Youtube from 'svelte-material-icons/Youtube.svelte';
 import { FunProject, LinkWithIcon, ResearchProject } from '../types';
 
+let cachedResearchProjects: ResearchProject[] | null = null;
+
 /**
  * Returns the ResearchProjects within this App
  *
  * @return {[ResearchProject]} returns the research projects used on this page
  */
 export function getResearchProjects(): ResearchProject[] {
+	if (cachedResearchProjects) return cachedResearchProjects;
 	const projects = [
 		new ResearchProject(
 			'Intentmaking and Sensemaking: Human Interaction with AI-Guided Mathematical Discovery',
@@ -397,8 +400,11 @@ export function getResearchProjects(): ResearchProject[] {
 		)
 	];
 	projects.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+	cachedResearchProjects = projects;
 	return projects;
 }
+
+let cachedFunProjects: FunProject[] | null = null;
 
 /**
  * Returns the FunProjects within this App
@@ -406,6 +412,7 @@ export function getResearchProjects(): ResearchProject[] {
  * @return {[FunProject]} returns the fun projects used on this page
  */
 export function getFunProjects(): FunProject[] {
+	if (cachedFunProjects) return cachedFunProjects;
 	const projects = [
 		new FunProject(
 			'VisPositions',
@@ -498,6 +505,7 @@ export function getFunProjects(): FunProject[] {
 			]
 		)
 	];
+	cachedFunProjects = projects;
 	return projects;
 }
 
