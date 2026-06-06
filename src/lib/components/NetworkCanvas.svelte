@@ -17,6 +17,7 @@
 
 	const PARTICLE_COUNT = 60;
 	const CONNECTION_DIST = 140;
+	const CONNECTION_DIST_SQ = CONNECTION_DIST * CONNECTION_DIST;
 	const MOUSE_RADIUS = 180;
 
 	function createParticles(w: number, h: number): Particle[] {
@@ -84,8 +85,9 @@
 				for (let j = i + 1; j < particles.length; j++) {
 					const dx = particles[i].x - particles[j].x;
 					const dy = particles[i].y - particles[j].y;
-					const dist = Math.sqrt(dx * dx + dy * dy);
-					if (dist < CONNECTION_DIST) {
+					const distSq = dx * dx + dy * dy;
+					if (distSq < CONNECTION_DIST_SQ) {
+						const dist = Math.sqrt(distSq);
 						const alpha = (1 - dist / CONNECTION_DIST) * 0.18;
 						ctx!.beginPath();
 						ctx!.moveTo(particles[i].x, particles[i].y);
