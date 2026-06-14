@@ -1,6 +1,6 @@
 import { Book } from '$lib/types';
 
-const cachedBooks: Book[] = [
+export const books: Book[] = [
 	new Book(
 		'Perfection',
 		new Date('April 19, 2026'),
@@ -92,7 +92,3 @@ const cachedBooks: Book[] = [
 		'A philosophical sci-fi book about the history of life on Earth and the future of humanity. It has a lot of interesting ideas and concepts, but can sometimes be a bit too designed to work in a particular way.'
 	)
 ];
-
-export function getBooks(): Book[] {
-	return cachedBooks;
-}

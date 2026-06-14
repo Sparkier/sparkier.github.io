@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getBooks } from '$lib/helpers/bookProvider';
+	import { books } from '$lib/helpers/bookProvider';
 </script>
 
 <div class="flex flex-col gap-8">
@@ -8,7 +8,7 @@
 		to each book. If you want to know more about a book or have opinions about a book on this list,
 		always down to discuss!
 	</p>
-	{#each getBooks().sort((a, b) => (a.date < b.date ? 1 : -1)) as book}
+	{#each books.sort((a, b) => (a.date < b.date ? 1 : -1)) as book}
 		<div class="flex w-full items-start gap-4">
 			<div class="relative flex w-full flex-col">
 				<h3>{book.title}</h3>
