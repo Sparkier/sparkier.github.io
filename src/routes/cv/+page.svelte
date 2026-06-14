@@ -8,7 +8,7 @@
 	import { getResearchProjects, slugify } from '$lib/helpers/projectsProvider';
 	import { reviews } from '$lib/helpers/reviewProvider';
 	import { talks } from '$lib/helpers/talkProvider';
-	import { getLectures } from '$lib/helpers/teachingProvider';
+	import { lectures } from '$lib/helpers/teachingProvider';
 	import { work } from '$lib/helpers/workProvider';
 	import Download from 'svelte-material-icons/Download.svelte';
 	import LinkElement from '$lib/components/LinkElement.svelte';
@@ -294,7 +294,7 @@
 			<div
 				class="{showLinks ? 'reveal-stagger' : ''} flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
 			>
-				{#each getLectures() as lecture}
+				{#each lectures as lecture}
 					<div
 						class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks
 							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
