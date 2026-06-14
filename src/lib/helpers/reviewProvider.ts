@@ -5,7 +5,7 @@ import { Review } from '../types';
  *
  * @return {[Review]} returns the reviews used on this page
  */
-const reviews = [
+export const reviews = [
 	new Review('VGTC - Industrial Relations Chair', '2023 - Present'),
 	new Review('VIS - Program Committee', '2026'),
 	new Review('EuroVIS - Program Committee', '2026'),
@@ -20,7 +20,3 @@ const reviews = [
 	new Review('VCBM', '2022'),
 	new Review('MICCAI', '2022, 2023')
 ];
-
-export function getReviews() {
-	return reviews;
-}
