@@ -1,7 +1,10 @@
 import { BlogEntry } from '$lib/types';
 
+let cachedBlogEntries: BlogEntry[] | null = null;
+
 export function getBlogEntries() {
-	return [
+	if (cachedBlogEntries) return cachedBlogEntries;
+	const entries = [
 		new BlogEntry(
 			'visPositions',
 			new Date('March 30, 2025'),
@@ -21,4 +24,6 @@ export function getBlogEntries() {
 			'Aery brief recap of interesting HCI for AI in 2024 and my opinionated thoughts and predctions for the role of HCI for AI in 2025.'
 		)
 	];
+	cachedBlogEntries = entries;
+	return entries;
 }
