@@ -2,7 +2,7 @@ import { LinkWithIcon, Talk } from '../types';
 
 import Youtube from 'svelte-material-icons/Youtube.svelte';
 
-const talksCache: Talk[] = [
+export const talks: Talk[] = [
 	new Talk(
 		'Multimodal Weekly',
 		'Unlocking Model Performance Insights with Zeno',
@@ -60,12 +60,3 @@ const talksCache: Talk[] = [
 		[]
 	)
 ];
-
-/**
- * Returns the talks within this App
- *
- * @return {[Talk]} returns the talks used on this page
- */
-export function getTalks() {
-	return talksCache;
-}
