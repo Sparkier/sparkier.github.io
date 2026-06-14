@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { getBlogEntries } from '$lib/helpers/blogProvider';
+	import { blogEntries } from '$lib/helpers/blogProvider';
 	import type { BlogEntry } from '$lib/types';
 	import purify from 'isomorphic-dompurify';
 	import { parse } from 'marked';
@@ -10,7 +10,7 @@
 	let sectionsContainer: HTMLElement;
 
 	const entry = $derived(
-		getBlogEntries().find((entry) => entry.content_md.replace('.md', '') === $page.params.entry)
+		blogEntries.find((entry) => entry.content_md.replace('.md', '') === $page.params.entry)
 	);
 
 	$effect(() => {

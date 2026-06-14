@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { getBlogEntries } from '$lib/helpers/blogProvider';
+	import { blogEntries } from '$lib/helpers/blogProvider';
 	import { getResearchProjects, slugify } from '$lib/helpers/projectsProvider';
 	import type { BlogEntry, ResearchProject } from '$lib/types';
 	import { organicNoise } from '$lib/utils/math';
 
-	const featuredPosts: BlogEntry[] = getBlogEntries().slice(0, 4);
+	const featuredPosts: BlogEntry[] = blogEntries.slice(0, 4);
 	const featuredPapers: ResearchProject[] = getResearchProjects().slice(0, 5);
 
 	const systems = [
