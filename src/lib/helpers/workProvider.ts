@@ -6,13 +6,16 @@ import Google from 'svelte-material-icons/Google.svelte';
 import Molecule from 'svelte-material-icons/Molecule.svelte';
 import School from 'svelte-material-icons/School.svelte';
 
+let cachedWork: Work[] | null = null;
+
 /**
  * Returns the work experiences within this App
  *
  * @return {[Work]} returns the work experiences used on this page
  */
 export function getWork(): Work[] {
-	return [
+	if (cachedWork) return cachedWork;
+	const work = [
 		new Work(
 			'Research Scientist',
 			'What is the right interface between humans and AI?',
@@ -56,4 +59,6 @@ export function getWork(): Work[] {
 			Google
 		)
 	];
+	cachedWork = work;
+	return work;
 }
