@@ -19,7 +19,6 @@
 	let html2pdf: any;
 
 	onMount(() => {
-
 		const observer = new IntersectionObserver(
 			(entries) => {
 				for (const entry of entries) {
@@ -373,7 +372,7 @@
 					: ''}"
 			>
 				<div class="flex flex-wrap gap-x-6 gap-y-2">
-						{#each reviews as s}
+					{#each reviews as s}
 						<div class="flex items-baseline gap-2">
 							<span class="text-sm font-medium {showLinks ? '' : '!text-xs'}">{s.venue}</span>
 							<span class="text-xs text-text-muted">({s.years})</span>
