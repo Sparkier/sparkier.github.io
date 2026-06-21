@@ -7,7 +7,7 @@
 	import { getMentorshipActivities } from '$lib/helpers/mentoringProvider';
 	import { getResearchProjects, slugify } from '$lib/helpers/projectsProvider';
 	import { reviews } from '$lib/helpers/reviewProvider';
-	import { getTalks } from '$lib/helpers/talkProvider';
+	import { talks } from '$lib/helpers/talkProvider';
 	import { getLectures } from '$lib/helpers/teachingProvider';
 	import { work } from '$lib/helpers/workProvider';
 	import Download from 'svelte-material-icons/Download.svelte';
@@ -252,7 +252,7 @@
 					<div class="h-px flex-1 bg-primary/10"></div>
 				</div>
 				<div class="reveal-stagger flex flex-col gap-3">
-					{#each getTalks() as talk}
+					{#each talks as talk}
 						<div
 							class="reveal rounded-2xl border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm"
 						>
