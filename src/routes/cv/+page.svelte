@@ -6,7 +6,7 @@
 	import { getFunding } from '$lib/helpers/fundingProvider';
 	import { getMentorshipActivities } from '$lib/helpers/mentoringProvider';
 	import { getResearchProjects, slugify } from '$lib/helpers/projectsProvider';
-	import { getReviews } from '$lib/helpers/reviewProvider';
+	import { reviews } from '$lib/helpers/reviewProvider';
 	import { getTalks } from '$lib/helpers/talkProvider';
 	import { getLectures } from '$lib/helpers/teachingProvider';
 	import { work } from '$lib/helpers/workProvider';
@@ -373,7 +373,7 @@
 					: ''}"
 			>
 				<div class="flex flex-wrap gap-x-6 gap-y-2">
-					{#each getReviews() as s}
+						{#each reviews as s}
 						<div class="flex items-baseline gap-2">
 							<span class="text-sm font-medium {showLinks ? '' : '!text-xs'}">{s.venue}</span>
 							<span class="text-xs text-text-muted">({s.years})</span>
