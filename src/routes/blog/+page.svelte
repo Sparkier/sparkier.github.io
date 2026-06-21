@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { getBlogEntries } from '$lib/helpers/blogProvider';
+	import { blogEntries } from '$lib/helpers/blogProvider';
 
-	const posts = getBlogEntries();
+	const posts = blogEntries;
 
 	let sectionsContainer: HTMLElement;
 
