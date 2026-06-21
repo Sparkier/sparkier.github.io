@@ -9,7 +9,7 @@
 	import { getReviews } from '$lib/helpers/reviewProvider';
 	import { getTalks } from '$lib/helpers/talkProvider';
 	import { getLectures } from '$lib/helpers/teachingProvider';
-	import { getWork } from '$lib/helpers/workProvider';
+	import { work } from '$lib/helpers/workProvider';
 	import Download from 'svelte-material-icons/Download.svelte';
 	import LinkElement from '$lib/components/LinkElement.svelte';
 
@@ -156,7 +156,7 @@
 				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
 			</div>
 			<div class="{showLinks ? 'reveal-stagger' : ''} flex flex-col gap-3">
-				{#each getWork() as employment}
+				{#each work as employment}
 					<div
 						class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks
 							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
