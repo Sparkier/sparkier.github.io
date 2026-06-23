@@ -1,5 +1,3 @@
-import type { Component } from 'svelte';
-
 /**
  * Providing a structure for reviewing and academic service
  */
