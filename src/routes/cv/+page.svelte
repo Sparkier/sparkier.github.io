@@ -16,9 +16,13 @@
 	let container: HTMLDivElement;
 	let sectionsContainer: HTMLElement;
 	let showLinks = true;
-	let html2pdf: any;
+	let html2pdf: typeof import('html2pdf.js') | undefined;
 
 	onMount(() => {
+		import('html2pdf.js').then((module) => {
+			html2pdf = module.default || module;
+		});
+
 		const observer = new IntersectionObserver(
 			(entries) => {
 				for (const entry of entries) {
@@ -40,6 +44,7 @@
 	});
 
 	function exportCVPDF() {
+		if (!html2pdf) return;
 		showLinks = false;
 		var opt = {
 			margin: 10,
