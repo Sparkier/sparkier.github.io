@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getResearchProjects } from './projectsProvider';
+import { getResearchProjects, slugify } from './projectsProvider';
 
 describe('projectsProvider', () => {
 	describe('getResearchProjects', () => {
@@ -28,6 +28,37 @@ describe('projectsProvider', () => {
 			expect(projects[projects.length - 1].title).toBe(
 				'Convolutional neural network (CNN) applied to respiratory motion detection in fluoroscopic frames'
 			);
+		});
+	});
+
+	describe('slugify', () => {
+		it('should convert simple text to a slug', () => {
+			expect(slugify('Hello World')).toBe('hello-world');
+		});
+
+		it('should handle uppercase text by converting to lowercase', () => {
+			expect(slugify('UPPERCASE TEXT')).toBe('uppercase-text');
+		});
+
+		it('should remove special characters', () => {
+			expect(slugify('Text with @ special # characters!')).toBe('text-with-special-characters');
+		});
+
+		it('should handle multiple spaces and hyphens correctly', () => {
+			expect(slugify('text   with---multiple spaces')).toBe('text-with-multiple-spaces');
+		});
+
+		it('should strip leading and trailing hyphens', () => {
+			expect(slugify('---leading and trailing---')).toBe('leading-and-trailing');
+		});
+
+		it('should return the correct result from cache when called multiple times', () => {
+			const input = 'Cache Test String';
+			const firstCall = slugify(input);
+			const secondCall = slugify(input);
+			expect(firstCall).toBe('cache-test-string');
+			expect(secondCall).toBe('cache-test-string');
+			expect(firstCall).toBe(secondCall);
 		});
 	});
 });
