@@ -5,7 +5,7 @@
 
 	const activeContacts = ['email', 'school', 'github', 'twitter', 'linkedin'];
 	const displayContacts = activeContacts
-		.map((id) => contacts.find((c) => c.id === id))
+		.map((id) => contacts[id as keyof typeof contacts])
 		.filter((c) => c !== undefined);
 </script>
 
