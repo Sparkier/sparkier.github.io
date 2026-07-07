@@ -1,11 +1,16 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
+	import type { Component } from 'svelte';
 
 	let {
 		icon: IconComponent,
 		plain = false,
 		downloadingPDF = false
-	}: { icon: any; plain?: boolean; downloadingPDF?: boolean } = $props();
+	}: {
+		icon: Component<{ size?: string }> | unknown;
+		plain?: boolean;
+		downloadingPDF?: boolean;
+	} = $props();
 </script>
 
 <div
@@ -14,5 +19,8 @@
 		downloadingPDF && !plain ? 'dark:text-primary' : ''
 	)}
 >
-	<IconComponent size="1.5em" />
+	{#if IconComponent}
+		{@const TypedIcon = IconComponent as Component<{ size?: string }>}
+		<TypedIcon size="1.5em" />
+	{/if}
 </div>

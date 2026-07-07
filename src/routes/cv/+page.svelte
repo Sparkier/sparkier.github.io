@@ -8,7 +8,7 @@
 	import { getResearchProjects, slugify } from '$lib/helpers/projectsProvider';
 	import { reviews } from '$lib/helpers/reviewProvider';
 	import { talks } from '$lib/helpers/talkProvider';
-	import { getLectures } from '$lib/helpers/teachingProvider';
+	import { lectures } from '$lib/helpers/teachingProvider';
 	import { work } from '$lib/helpers/workProvider';
 	import Download from 'svelte-material-icons/Download.svelte';
 	import LinkElement from '$lib/components/LinkElement.svelte';
@@ -16,9 +16,12 @@
 	let container: HTMLDivElement;
 	let sectionsContainer: HTMLElement;
 	let showLinks = true;
-	let html2pdf: any;
+	let html2pdf: typeof import('html2pdf.js') | undefined;
 
 	onMount(() => {
+		import('html2pdf.js').then((module) => {
+			html2pdf = module.default || module;
+		});
 
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -41,6 +44,7 @@
 	});
 
 	function exportCVPDF() {
+		if (!html2pdf) return;
 		showLinks = false;
 		var opt = {
 			margin: 10,
@@ -294,7 +298,7 @@
 			<div
 				class="{showLinks ? 'reveal-stagger' : ''} flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
 			>
-				{#each getLectures() as lecture}
+				{#each lectures as lecture}
 					<div
 						class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks
 							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
@@ -373,7 +377,7 @@
 					: ''}"
 			>
 				<div class="flex flex-wrap gap-x-6 gap-y-2">
-						{#each reviews as s}
+					{#each reviews as s}
 						<div class="flex items-baseline gap-2">
 							<span class="text-sm font-medium {showLinks ? '' : '!text-xs'}">{s.venue}</span>
 							<span class="text-xs text-text-muted">({s.years})</span>
