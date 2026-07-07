@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getResearchProjects, slugify } from './projectsProvider';
+import { getResearchProjects, getFunProjects, slugify } from './projectsProvider';
 
 describe('projectsProvider', () => {
 	describe('getResearchProjects', () => {
@@ -28,6 +28,20 @@ describe('projectsProvider', () => {
 			expect(projects[projects.length - 1].title).toBe(
 				'Convolutional neural network (CNN) applied to respiratory motion detection in fluoroscopic frames'
 			);
+		});
+	});
+
+	describe('getFunProjects', () => {
+		it('should return a non-empty array of fun projects', () => {
+			const projects = getFunProjects();
+			expect(projects.length).toBeGreaterThan(0);
+		});
+
+		it('should return the correct result from cache when called multiple times', () => {
+			const firstCall = getFunProjects();
+			const secondCall = getFunProjects();
+			expect(firstCall.length).toBeGreaterThan(0);
+			expect(firstCall).toBe(secondCall);
 		});
 	});
 
