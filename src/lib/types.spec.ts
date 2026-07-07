@@ -1,5 +1,45 @@
 import { describe, it, expect } from 'vitest';
-import { FunProject, ResearchProject, LinkWithIcon } from './types';
+import { Project, Review, FunProject, ResearchProject, LinkWithIcon } from './types';
+
+describe('Review', () => {
+	it('should correctly initialize venue and years properties', () => {
+		const venue = 'Conference on Testing';
+		const years = '2020-2023';
+		const review = new Review(venue, years);
+
+		expect(review.venue).toBe(venue);
+		expect(review.years).toBe(years);
+	});
+});
+
+describe('Project', () => {
+	it('should correctly set fields when created with all parameters', () => {
+		const title = 'Test Project';
+		const abstract = 'Test abstract';
+		const imageSrc = '/test-image.jpg';
+		const links = [new LinkWithIcon('http://test.com', 'icon')];
+
+		const project = new Project(title, abstract, imageSrc, links);
+
+		expect(project.title).toBe(title);
+		expect(project.abstract).toBe(abstract);
+		expect(project.imageSrc).toBe(imageSrc);
+		expect(project.links).toBe(links);
+	});
+
+	it('should default links to an empty array when omitted', () => {
+		const title = 'Test Project';
+		const abstract = 'Test abstract';
+		const imageSrc = '/test-image.jpg';
+
+		const project = new Project(title, abstract, imageSrc);
+
+		expect(project.title).toBe(title);
+		expect(project.abstract).toBe(abstract);
+		expect(project.imageSrc).toBe(imageSrc);
+		expect(project.links).toEqual([]);
+	});
+});
 
 describe('FunProject', () => {
 	it('should correctly initialize with all arguments provided', () => {
