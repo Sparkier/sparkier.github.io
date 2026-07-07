@@ -305,6 +305,7 @@ export class BlogEntry {
 	date: Date;
 	content_md: string;
 	abstract: string;
+	slug: string;
 
 	/**
 	 * Creates a blog entry
@@ -318,5 +319,6 @@ export class BlogEntry {
 		this.date = date;
 		this.content_md = content_md;
 		this.abstract = abstract;
+		this.slug = content_md.replace('.md', '');
 	}
 }
