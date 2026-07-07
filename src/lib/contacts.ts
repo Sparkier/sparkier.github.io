@@ -5,6 +5,10 @@ import Linkedin from 'svelte-material-icons/Linkedin.svelte';
 import School from 'svelte-material-icons/School.svelte';
 import Twitter from 'svelte-material-icons/Twitter.svelte';
 
+export type Contact = (typeof contacts)[0];
+
+export const contactsById: Record<string, Contact> = {};
+
 export const contacts = [
 	{
 		id: 'home',
@@ -49,3 +53,7 @@ export const contacts = [
 		blank: true
 	}
 ];
+
+for (const contact of contacts) {
+	contactsById[contact.id] = contact;
+}
