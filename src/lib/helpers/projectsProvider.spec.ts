@@ -8,6 +8,12 @@ describe('projectsProvider', () => {
 			expect(projects.length).toBeGreaterThan(0);
 		});
 
+		it('should return the exact same array reference on subsequent calls (caching)', () => {
+			const firstCall = getResearchProjects();
+			const secondCall = getResearchProjects();
+			expect(firstCall).toBe(secondCall);
+		});
+
 		it('should sort projects in descending order by year', () => {
 			const projects = getResearchProjects();
 
