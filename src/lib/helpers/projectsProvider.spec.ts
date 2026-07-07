@@ -60,5 +60,15 @@ describe('projectsProvider', () => {
 			expect(secondCall).toBe('cache-test-string');
 			expect(firstCall).toBe(secondCall);
 		});
+
+		it('should not return the same cached value for different inputs', () => {
+			const firstInput = 'First Unique String';
+			const secondInput = 'Second Unique String';
+			const firstCall = slugify(firstInput);
+			const secondCall = slugify(secondInput);
+			expect(firstCall).toBe('first-unique-string');
+			expect(secondCall).toBe('second-unique-string');
+			expect(firstCall).not.toBe(secondCall);
+		});
 	});
 });
