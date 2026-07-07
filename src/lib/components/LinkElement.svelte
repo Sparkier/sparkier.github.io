@@ -8,6 +8,6 @@
 	}: { href: string; blank?: boolean; children: Snippet } = $props();
 </script>
 
-<a {href} target={blank ? '_blank' : undefined} rel={blank ? 'noopener noreferrer' : undefined} class="flex items-center">
+<a {href} target={blank ? '_blank' : undefined} rel="noopener noreferrer" class="flex items-center">
 	{@render children()}
 </a>

@@ -176,15 +176,15 @@ export class Funding {
  */
 export class LinkWithIcon {
 	link: string;
-	icon: any;
+	icon: unknown;
 
 	/**
 	 * Creates a link with icon
 	 *
 	 * @param {String} link the link to the resource
-	 * @param {any} icon the icon used to display
+	 * @param {unknown} icon the icon used to display
 	 */
-	constructor(link: string, icon: any) {
+	constructor(link: string, icon: unknown) {
 		this.link = link;
 		this.icon = icon;
 	}
@@ -225,16 +225,16 @@ export class Work {
 	title: string;
 	abstract: string;
 	timeframe: string;
-	icon: any;
+	icon: unknown;
 	/**
 	 * Creates a lecture
 	 *
 	 * @param {String} title the title of the working experience
 	 * @param {String} abstract the abstract of the working experience
 	 * @param {String} timeframe the date of the working experience
-	 * @param {any} icon the icon of the working experience
+	 * @param {unknown} icon the icon of the working experience
 	 */
-	constructor(title: string, abstract: string, timeframe: string, icon: any) {
+	constructor(title: string, abstract: string, timeframe: string, icon: unknown) {
 		this.title = title;
 		this.abstract = abstract;
 		this.timeframe = timeframe;
