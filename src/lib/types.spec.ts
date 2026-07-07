@@ -11,15 +11,7 @@ describe('ResearchProject', () => {
 		const imageSRC = '/test.png';
 		const links = [new LinkWithIcon('http://test.link', 'icon-test')];
 
-		const project = new ResearchProject(
-			title,
-			authors,
-			abstract,
-			year,
-			venue,
-			imageSRC,
-			links
-		);
+		const project = new ResearchProject(title, authors, abstract, year, venue, imageSRC, links);
 
 		expect(project.title).toBe(title);
 		expect(project.authors).toEqual(authors);
@@ -38,14 +30,7 @@ describe('ResearchProject', () => {
 		const venue = 'Test Venue';
 		const imageSRC = '/test.png';
 
-		const project = new ResearchProject(
-			title,
-			authors,
-			abstract,
-			year,
-			venue,
-			imageSRC
-		);
+		const project = new ResearchProject(title, authors, abstract, year, venue, imageSRC);
 
 		expect(project.title).toBe(title);
 		expect(project.authors).toEqual(authors);
