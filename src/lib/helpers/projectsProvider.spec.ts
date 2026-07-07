@@ -1,11 +1,17 @@
 import { describe, it, expect } from 'vitest';
-import { getResearchProjects, slugify } from './projectsProvider';
+import { getResearchProjects, getFunProjects, slugify } from './projectsProvider';
 
 describe('projectsProvider', () => {
 	describe('getResearchProjects', () => {
 		it('should return a non-empty array of research projects', () => {
 			const projects = getResearchProjects();
 			expect(projects.length).toBeGreaterThan(0);
+		});
+
+		it('should return the exact same array reference on subsequent calls (caching)', () => {
+			const firstCall = getResearchProjects();
+			const secondCall = getResearchProjects();
+			expect(firstCall).toBe(secondCall);
 		});
 
 		it('should sort projects in descending order by year', () => {
@@ -28,6 +34,20 @@ describe('projectsProvider', () => {
 			expect(projects[projects.length - 1].title).toBe(
 				'Convolutional neural network (CNN) applied to respiratory motion detection in fluoroscopic frames'
 			);
+		});
+	});
+
+	describe('getFunProjects', () => {
+		it('should return a non-empty array of fun projects', () => {
+			const projects = getFunProjects();
+			expect(projects.length).toBeGreaterThan(0);
+		});
+
+		it('should return the correct result from cache when called multiple times', () => {
+			const firstCall = getFunProjects();
+			const secondCall = getFunProjects();
+			expect(firstCall.length).toBeGreaterThan(0);
+			expect(firstCall).toBe(secondCall);
 		});
 	});
 
@@ -59,6 +79,16 @@ describe('projectsProvider', () => {
 			expect(firstCall).toBe('cache-test-string');
 			expect(secondCall).toBe('cache-test-string');
 			expect(firstCall).toBe(secondCall);
+		});
+
+		it('should not return the same cached value for different inputs', () => {
+			const firstInput = 'First Unique String';
+			const secondInput = 'Second Unique String';
+			const firstCall = slugify(firstInput);
+			const secondCall = slugify(secondInput);
+			expect(firstCall).toBe('first-unique-string');
+			expect(secondCall).toBe('second-unique-string');
+			expect(firstCall).not.toBe(secondCall);
 		});
 	});
 });

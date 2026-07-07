@@ -464,7 +464,7 @@
 		<div class="reveal-stagger mt-6 flex flex-col gap-4">
 			{#each featuredPosts as post}
 				<a
-					href={`/blog/${post.content_md.replace('.md', '')}`}
+					href={`/blog/${post.slug}`}
 					class="reveal group flex items-center gap-6 rounded-2xl border border-transparent bg-background-card/80 p-5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg"
 				>
 					<span

@@ -1,11 +1,11 @@
 <script lang="ts">
 	import Icon from './Icon.svelte';
 	import LinkElement from './LinkElement.svelte';
-	import { contacts } from '$lib/contacts';
+	import { contactsById } from '$lib/contacts';
 
 	const activeContacts = ['email', 'school', 'github', 'twitter', 'linkedin'];
 	const displayContacts = activeContacts
-		.map((id) => contacts.find((c) => c.id === id))
+		.map((id) => contactsById[id])
 		.filter((c) => c !== undefined);
 </script>
 

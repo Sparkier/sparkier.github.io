@@ -9,9 +9,7 @@
 	let content = $state('');
 	let sectionsContainer: HTMLElement;
 
-	const entry = $derived(
-		blogEntries.find((entry) => entry.content_md.replace('.md', '') === $page.params.entry)
-	);
+	const entry = $derived(blogEntries.find((entry) => entry.slug === $page.params.entry));
 
 	$effect(() => {
 		loadContent(entry);
