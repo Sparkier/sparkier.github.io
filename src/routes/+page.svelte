@@ -182,40 +182,39 @@
 					const breathe = organicNoise(idleTime * 0.4, 42) * 0.5 + 0.5;
 					const baseAlpha = (RESTING_OPACITY + breathe * 0.1) * nodesProgress;
 
+					const computedNodes = nodes.map((node) => {
+						const nBreathe = organicNoise(idleTime * node.speed, node.phaseOffset) * 0.5 + 0.5;
+						const nAlpha = (RESTING_OPACITY + nBreathe * 0.12) * nodesProgress;
+						const driftX = organicNoise(idleTime * node.speed * 0.5, node.phaseOffset) * 5;
+						const driftY = organicNoise(idleTime * node.speed * 0.6, node.phaseOffset * 1.3) * 5;
+						return {
+							x: cx + node.dx + driftX,
+							y: cy + node.dy + driftY,
+							alpha: nAlpha,
+							radius: 5 + nBreathe * 1.5
+						};
+					});
+
 					for (const edge of netEdges) {
 						const [a, b] = edge;
-						if (a >= nodes.length || b >= nodes.length) continue;
-						const na = nodes[a];
-						const nb = nodes[b];
-						const nAx = cx + na.dx;
-						const nAy = cy + na.dy;
-						const nBx = cx + nb.dx;
-						const nBy = cy + nb.dy;
-						const driftAx = organicNoise(idleTime * na.speed * 0.5, na.phaseOffset) * 5;
-						const driftAy = organicNoise(idleTime * na.speed * 0.6, na.phaseOffset * 1.3) * 5;
-						const driftBx = organicNoise(idleTime * nb.speed * 0.5, nb.phaseOffset) * 5;
-						const driftBy = organicNoise(idleTime * nb.speed * 0.6, nb.phaseOffset * 1.3) * 5;
+						if (a >= computedNodes.length || b >= computedNodes.length) continue;
+						const nodeA = computedNodes[a];
+						const nodeB = computedNodes[b];
+
 						ctx.beginPath();
-						ctx.moveTo(nAx + driftAx, nAy + driftAy);
-						ctx.lineTo(nBx + driftBx, nBy + driftBy);
+						ctx.moveTo(nodeA.x, nodeA.y);
+						ctx.lineTo(nodeB.x, nodeB.y);
 						ctx.strokeStyle = color;
 						ctx.lineWidth = 1;
 						ctx.globalAlpha = baseAlpha * 0.5;
 						ctx.stroke();
 					}
 
-					for (const node of nodes) {
-						const nBreathe = organicNoise(idleTime * node.speed, node.phaseOffset) * 0.5 + 0.5;
-						const nAlpha = (RESTING_OPACITY + nBreathe * 0.12) * nodesProgress;
-						const nX = cx + node.dx;
-						const nY = cy + node.dy;
-						const driftX = organicNoise(idleTime * node.speed * 0.5, node.phaseOffset) * 5;
-						const driftY = organicNoise(idleTime * node.speed * 0.6, node.phaseOffset * 1.3) * 5;
-						const radius = 5 + nBreathe * 1.5;
+					for (const cNode of computedNodes) {
 						ctx.beginPath();
-						ctx.arc(nX + driftX, nY + driftY, radius, 0, Math.PI * 2);
+						ctx.arc(cNode.x, cNode.y, cNode.radius, 0, Math.PI * 2);
 						ctx.fillStyle = color;
-						ctx.globalAlpha = nAlpha;
+						ctx.globalAlpha = cNode.alpha;
 						ctx.fill();
 					}
 				}
