@@ -137,7 +137,7 @@
 						{#if showLinks && edu.iconElements.length > 0}
 							<div class="mt-2 flex items-center gap-3">
 								{#each edu.iconElements as iconElement}
-									<LinkElement href={iconElement.icon.link} blank={true}>
+									<LinkElement href={iconElement.icon.link} blank={true} rel="noopener noreferrer">
 										<span
 											class="flex items-center gap-1 text-xs text-primary/60 transition-colors hover:text-primary"
 										>
