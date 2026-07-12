@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
 	import { blogEntries } from '$lib/helpers/blogProvider';
 	import type { BlogEntry } from '$lib/types';
 	import purify from 'isomorphic-dompurify';
 	import { parse } from 'marked';
+	import { reveal } from '$lib/actions/reveal';
 
 	let content = $state('');
-	let sectionsContainer: HTMLElement;
 
 	const entry = $derived(blogEntries.find((entry) => entry.slug === $page.params.entry));
 
@@ -20,27 +19,6 @@
 		const response = await fetch(`/blog_md/${entry.content_md}`);
 		content = purify.sanitize(await parse(await response.text()));
 	}
-
-	onMount(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				for (const entry of entries) {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('visible');
-						observer.unobserve(entry.target);
-					}
-				}
-			},
-			{ threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
-		);
-
-		if (sectionsContainer) {
-			const reveals = sectionsContainer.querySelectorAll('.reveal');
-			reveals.forEach((el) => observer.observe(el));
-		}
-
-		return () => observer.disconnect();
-	});
 </script>
 
 <svelte:head>
@@ -48,7 +26,7 @@
 	<meta name="description" content={entry?.abstract ?? ''} />
 </svelte:head>
 
-<div bind:this={sectionsContainer} class="flex flex-col gap-6">
+<div use:reveal class="flex flex-col gap-6">
 	<!-- Post Header -->
 	<section class="section-shell reveal">
 		<a

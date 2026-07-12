@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Icon from '$lib/components/Icon.svelte';
 	import { getResearchProjects, slugify } from '$lib/helpers/projectsProvider';
+	import { reveal } from '$lib/actions/reveal';
 
 	const publications = getResearchProjects();
 
@@ -12,29 +12,6 @@
 		grouped[pub.year].push(pub);
 	}
 	const years = Object.keys(grouped).sort((a, b) => parseInt(b) - parseInt(a));
-
-	let sectionsContainer: HTMLElement;
-
-	onMount(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				for (const entry of entries) {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('visible');
-						observer.unobserve(entry.target);
-					}
-				}
-			},
-			{ threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
-		);
-
-		if (sectionsContainer) {
-			const reveals = sectionsContainer.querySelectorAll('.reveal');
-			reveals.forEach((el) => observer.observe(el));
-		}
-
-		return () => observer.disconnect();
-	});
 </script>
 
 <svelte:head>
@@ -45,7 +22,7 @@
 	/>
 </svelte:head>
 
-<div bind:this={sectionsContainer} class="flex flex-col gap-6">
+<div use:reveal class="flex flex-col gap-6">
 	<!-- Page Header -->
 	<section class="section-shell reveal">
 		<p class="eyebrow mb-2">Research</p>

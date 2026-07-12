@@ -4,6 +4,7 @@
 	import { getResearchProjects, slugify } from '$lib/helpers/projectsProvider';
 	import type { BlogEntry, ResearchProject } from '$lib/types';
 	import { organicNoise } from '$lib/utils/math';
+	import { reveal } from '$lib/actions/reveal';
 
 	const featuredPosts: BlogEntry[] = blogEntries.slice(0, 4);
 	const featuredPapers: ResearchProject[] = getResearchProjects().slice(0, 5);
@@ -55,7 +56,6 @@
 	*/
 	let phase = $state(0);
 	let canvas: HTMLCanvasElement;
-	let sectionsContainer: HTMLElement;
 
 	onMount(() => {
 		let resizeObserver: ResizeObserver | undefined;
@@ -244,25 +244,7 @@
 			resizeObserver.observe(canvas);
 		}
 
-		const observer = new IntersectionObserver(
-			(entries) => {
-				for (const entry of entries) {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('visible');
-						observer.unobserve(entry.target);
-					}
-				}
-			},
-			{ threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-		);
-
-		if (sectionsContainer) {
-			const reveals = sectionsContainer.querySelectorAll('.reveal');
-			reveals.forEach((el) => observer.observe(el));
-		}
-
 		return () => {
-			observer.disconnect();
 			if (resizeObserver) {
 				resizeObserver.disconnect();
 			}
@@ -347,7 +329,10 @@
 <!-- ═══════════════════════════════════════════════
      CONTENT SECTIONS
      ═══════════════════════════════════════════════ -->
-<div bind:this={sectionsContainer} class="mx-auto w-full max-w-[1000px] px-4 pb-24">
+<div
+	use:reveal={{ threshold: 0.1, rootMargin: '0px 0px -40px 0px' }}
+	class="mx-auto w-full max-w-[1000px] px-4 pb-24"
+>
 	<!-- PAPERS -->
 	<section class="section-shell reveal py-12">
 		<div class="flex flex-wrap items-end justify-between gap-4">

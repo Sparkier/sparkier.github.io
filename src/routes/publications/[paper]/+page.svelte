@@ -1,35 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
 	import Icon from '$lib/components/Icon.svelte';
 	import { getResearchProjects, slugify } from '$lib/helpers/projectsProvider';
-
-	let sectionsContainer: HTMLElement;
+	import { reveal } from '$lib/actions/reveal';
 
 	const paper = $derived(
 		getResearchProjects().find((p) => slugify(p.title) === $page.params.paper)
 	);
-
-	onMount(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				for (const entry of entries) {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('visible');
-						observer.unobserve(entry.target);
-					}
-				}
-			},
-			{ threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
-		);
-
-		if (sectionsContainer) {
-			const reveals = sectionsContainer.querySelectorAll('.reveal');
-			reveals.forEach((el) => observer.observe(el));
-		}
-
-		return () => observer.disconnect();
-	});
 
 	// Helper to get friendly labels for resource buttons
 	function getLinkLabel(linkUrl: string): string {
@@ -57,7 +34,7 @@
 	<meta name="description" content={paper?.abstract ?? ''} />
 </svelte:head>
 
-<div bind:this={sectionsContainer} class="flex flex-col gap-6">
+<div use:reveal class="flex flex-col gap-6">
 	{#if paper}
 		<!-- Paper Header -->
 		<section class="section-shell reveal">

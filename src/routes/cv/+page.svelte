@@ -12,9 +12,9 @@
 	import { work } from '$lib/helpers/workProvider';
 	import Download from 'svelte-material-icons/Download.svelte';
 	import LinkElement from '$lib/components/LinkElement.svelte';
+	import { reveal } from '$lib/actions/reveal';
 
 	let container: HTMLDivElement;
-	let sectionsContainer: HTMLElement;
 	let showLinks = true;
 	let html2pdf: typeof import('html2pdf.js') | undefined;
 
@@ -22,25 +22,6 @@
 		import('html2pdf.js').then((module) => {
 			html2pdf = module.default || module;
 		});
-
-		const observer = new IntersectionObserver(
-			(entries) => {
-				for (const entry of entries) {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('visible');
-						observer.unobserve(entry.target);
-					}
-				}
-			},
-			{ threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
-		);
-
-		if (sectionsContainer) {
-			const reveals = sectionsContainer.querySelectorAll('.reveal');
-			reveals.forEach((el) => observer.observe(el));
-		}
-
-		return () => observer.disconnect();
 	});
 
 	function exportCVPDF() {
@@ -67,8 +48,8 @@
 				showLinks = true;
 				const { tick } = await import('svelte');
 				await tick();
-				if (sectionsContainer) {
-					sectionsContainer.querySelectorAll('.reveal').forEach((el) => {
+				if (container) {
+					container.parentElement?.querySelectorAll('.reveal').forEach((el) => {
 						el.classList.add('visible');
 					});
 				}
@@ -84,7 +65,7 @@
 	/>
 </svelte:head>
 
-<div bind:this={sectionsContainer} class="flex flex-col gap-6">
+<div use:reveal class="flex flex-col gap-6">
 	<div bind:this={container} class="flex flex-col {showLinks ? 'gap-6' : 'gap-2 pb-8'}">
 		<!-- Header -->
 		<section class="section-shell {showLinks ? 'reveal' : ''}">
