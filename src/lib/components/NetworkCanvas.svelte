@@ -87,8 +87,7 @@
 					const dy = particles[i].y - particles[j].y;
 					const distSq = dx * dx + dy * dy;
 					if (distSq < CONNECTION_DIST_SQ) {
-						const dist = Math.sqrt(distSq);
-						const alpha = (1 - dist / CONNECTION_DIST) * 0.18;
+						const alpha = (1 - distSq / CONNECTION_DIST_SQ) * 0.18;
 						ctx!.beginPath();
 						ctx!.moveTo(particles[i].x, particles[i].y);
 						ctx!.lineTo(particles[j].x, particles[j].y);
