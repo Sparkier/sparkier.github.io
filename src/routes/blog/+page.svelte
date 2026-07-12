@@ -1,31 +1,8 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { blogEntries } from '$lib/helpers/blogProvider';
+	import { reveal } from '$lib/actions/reveal';
 
 	const posts = blogEntries;
-
-	let sectionsContainer: HTMLElement;
-
-	onMount(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				for (const entry of entries) {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('visible');
-						observer.unobserve(entry.target);
-					}
-				}
-			},
-			{ threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
-		);
-
-		if (sectionsContainer) {
-			const reveals = sectionsContainer.querySelectorAll('.reveal');
-			reveals.forEach((el) => observer.observe(el));
-		}
-
-		return () => observer.disconnect();
-	});
 </script>
 
 <svelte:head>
@@ -36,7 +13,7 @@
 	/>
 </svelte:head>
 
-<div bind:this={sectionsContainer} class="flex flex-col gap-6">
+<div use:reveal class="flex flex-col gap-6">
 	<!-- Page Header -->
 	<section class="section-shell reveal">
 		<p class="eyebrow mb-2">What I think</p>
