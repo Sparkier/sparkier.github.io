@@ -1,6 +1,12 @@
+export interface RevealOptions {
+	threshold?: number;
+	rootMargin?: string;
+	trigger?: unknown;
+}
+
 export function reveal(
 	node: HTMLElement,
-	options: any = { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
+	options: RevealOptions = { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
 ) {
 	const observerOptions = {
 		threshold: options?.threshold !== undefined ? options.threshold : 0.08,
@@ -28,7 +34,7 @@ export function reveal(
 	observeElements();
 
 	return {
-		update(newOptions: any) {
+		update() {
 			observeElements();
 		},
 		destroy() {
