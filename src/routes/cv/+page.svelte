@@ -45,10 +45,7 @@
 		};
 
 		try {
-			await html2pdf()
-				.set(opt)
-				.from(container)
-				.save();
+			await html2pdf().set(opt).from(container).save();
 		} finally {
 			showLinks = true;
 			document.body.classList.remove('exporting-pdf');
@@ -168,9 +165,7 @@
 				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Publications</h2>
 				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
 			</div>
-			<div
-				class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
-			>
+			<div class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}">
 				{#each getResearchProjects() as pub}
 					<div
 						class="pdf-entry reveal rounded-2xl {showLinks
@@ -276,9 +271,7 @@
 				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Teaching</h2>
 				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
 			</div>
-			<div
-				class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
-			>
+			<div class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}">
 				{#each lectures as lecture}
 					<div
 						class="pdf-entry reveal rounded-2xl {showLinks
@@ -301,9 +294,7 @@
 				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Mentoring</h2>
 				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
 			</div>
-			<div
-				class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
-			>
+			<div class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}">
 				{#each getMentorshipActivities() as m}
 					<div
 						class="pdf-entry reveal rounded-2xl {showLinks
@@ -327,9 +318,7 @@
 				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Funding</h2>
 				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
 			</div>
-			<div
-				class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
-			>
+			<div class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}">
 				{#each getFunding() as fund}
 					<div
 						class="pdf-entry reveal rounded-2xl {showLinks
