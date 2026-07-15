@@ -16,11 +16,7 @@
 		href="/projects"
 		active={$page.url.pathname.startsWith('/projects')}
 	/>
-	<NavigationElement
-		name="Writing"
-		href="/blog"
-		active={$page.url.pathname.startsWith('/blog')}
-	/>
+	<NavigationElement name="Writing" href="/blog" active={$page.url.pathname.startsWith('/blog')} />
 	<NavigationElement name="CV" href="/cv" active={$page.url.pathname.startsWith('/cv')} />
 {/snippet}
 
@@ -42,7 +38,9 @@
 	</div>
 
 	<!-- Mobile horizontal scroll navigation -->
-	<div class="flex items-center gap-2 overflow-x-auto whitespace-nowrap scroll-smooth pt-3 sm:hidden no-scrollbar -mx-6 px-6">
+	<div
+		class="flex items-center gap-2 overflow-x-auto whitespace-nowrap scroll-smooth pt-3 sm:hidden no-scrollbar -mx-6 px-6"
+	>
 		{@render navLinks()}
 	</div>
 </nav>
