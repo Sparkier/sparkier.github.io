@@ -56,6 +56,13 @@
 		transform: translateY(0);
 	}
 
+	/* Temporary override during print compilation to force full layout visibility without transitions */
+	.exporting-pdf .reveal {
+		opacity: 1 !important;
+		transform: none !important;
+		transition: none !important;
+	}
+
 	/* Staggered children */
 	.reveal-stagger > .reveal:nth-child(1) {
 		transition-delay: 0ms;

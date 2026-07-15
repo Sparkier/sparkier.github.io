@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import Icon from '$lib/components/Icon.svelte';
 	import Contact from '$lib/components/cv/Contact.svelte';
 	import { getEducationElements } from '$lib/helpers/educationProvider';
@@ -24,9 +24,12 @@
 		});
 	});
 
-	function exportCVPDF() {
+	async function exportCVPDF() {
 		if (!html2pdf) return;
 		showLinks = false;
+		document.body.classList.add('exporting-pdf');
+		await tick();
+
 		var opt = {
 			margin: 10,
 			pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
@@ -40,20 +43,17 @@
 			},
 			jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
 		};
-		html2pdf()
-			.set(opt)
-			.from(container)
-			.save()
-			.then(async () => {
-				showLinks = true;
-				const { tick } = await import('svelte');
-				await tick();
-				if (container) {
-					container.parentElement?.querySelectorAll('.reveal').forEach((el) => {
-						el.classList.add('visible');
-					});
-				}
-			});
+
+		try {
+			await html2pdf()
+				.set(opt)
+				.from(container)
+				.save();
+		} finally {
+			showLinks = true;
+			document.body.classList.remove('exporting-pdf');
+			await tick();
+		}
 	}
 </script>
 
@@ -68,7 +68,7 @@
 <div use:reveal class="flex flex-col gap-6">
 	<div bind:this={container} class="flex flex-col {showLinks ? 'gap-6' : 'gap-2 pb-8'}">
 		<!-- Header -->
-		<section class="section-shell {showLinks ? 'reveal' : ''}">
+		<section class="section-shell reveal">
 			<div class="flex items-start justify-between gap-4">
 				<div>
 					<p class="eyebrow mb-2">Curriculum Vitae</p>
@@ -96,15 +96,15 @@
 		</section>
 
 		<!-- Education -->
-		<section class="section-shell {showLinks ? 'reveal' : ''}">
+		<section class="section-shell reveal">
 			<div class="flex items-center gap-4">
 				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Education</h2>
 				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
 			</div>
-			<div class="{showLinks ? 'reveal-stagger' : ''} flex flex-col gap-3">
+			<div class="reveal-stagger flex flex-col gap-3">
 				{#each getEducationElements() as edu}
 					<div
-						class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks
+						class="pdf-entry reveal rounded-2xl {showLinks
 							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
 							: 'pb-3'}"
 					>
@@ -135,15 +135,15 @@
 		</section>
 
 		<!-- Positions -->
-		<section class="section-shell {showLinks ? 'reveal' : ''}">
+		<section class="section-shell reveal">
 			<div class="flex items-center gap-4">
 				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Positions</h2>
 				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
 			</div>
-			<div class="{showLinks ? 'reveal-stagger' : ''} flex flex-col gap-3">
+			<div class="reveal-stagger flex flex-col gap-3">
 				{#each work as employment}
 					<div
-						class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks
+						class="pdf-entry reveal rounded-2xl {showLinks
 							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
 							: 'pb-3'}"
 					>
@@ -163,17 +163,17 @@
 		</section>
 
 		<!-- Publications -->
-		<section class="section-shell {showLinks ? 'reveal' : ''}">
+		<section class="section-shell reveal">
 			<div class="flex items-center gap-4">
 				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Publications</h2>
 				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
 			</div>
 			<div
-				class="{showLinks ? 'reveal-stagger' : ''} flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
+				class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
 			>
 				{#each getResearchProjects() as pub}
 					<div
-						class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks
+						class="pdf-entry reveal rounded-2xl {showLinks
 							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
 							: 'pb-2'}"
 					>
@@ -271,17 +271,17 @@
 		{/if}
 
 		<!-- Teaching -->
-		<section class="section-shell {showLinks ? 'reveal' : ''}">
+		<section class="section-shell reveal">
 			<div class="flex items-center gap-4">
 				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Teaching</h2>
 				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
 			</div>
 			<div
-				class="{showLinks ? 'reveal-stagger' : ''} flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
+				class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
 			>
 				{#each lectures as lecture}
 					<div
-						class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks
+						class="pdf-entry reveal rounded-2xl {showLinks
 							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
 							: 'pb-2'}"
 					>
@@ -296,17 +296,17 @@
 		</section>
 
 		<!-- Mentoring -->
-		<section class="section-shell {showLinks ? 'reveal' : ''}">
+		<section class="section-shell reveal">
 			<div class="flex items-center gap-4">
 				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Mentoring</h2>
 				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
 			</div>
 			<div
-				class="{showLinks ? 'reveal-stagger' : ''} flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
+				class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
 			>
 				{#each getMentorshipActivities() as m}
 					<div
-						class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks
+						class="pdf-entry reveal rounded-2xl {showLinks
 							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
 							: 'pb-2'}"
 					>
@@ -322,17 +322,17 @@
 		</section>
 
 		<!-- Funding -->
-		<section class="section-shell {showLinks ? 'reveal' : ''}">
+		<section class="section-shell reveal">
 			<div class="flex items-center gap-4">
 				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Funding</h2>
 				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
 			</div>
 			<div
-				class="{showLinks ? 'reveal-stagger' : ''} flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
+				class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}"
 			>
 				{#each getFunding() as fund}
 					<div
-						class="pdf-entry {showLinks ? 'reveal' : ''} rounded-2xl {showLinks
+						class="pdf-entry reveal rounded-2xl {showLinks
 							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
 							: 'pb-2'}"
 					>
@@ -347,13 +347,13 @@
 		</section>
 
 		<!-- Reviewing & Service -->
-		<section class="section-shell {showLinks ? 'reveal' : ''}">
+		<section class="section-shell reveal">
 			<div class="flex items-center gap-4">
 				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Reviewing and Service</h2>
 				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
 			</div>
 			<div
-				class="{showLinks ? 'reveal' : ''} rounded-2xl {showLinks
+				class="reveal rounded-2xl {showLinks
 					? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
 					: ''}"
 			>
