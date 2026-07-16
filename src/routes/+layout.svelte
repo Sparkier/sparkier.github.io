@@ -44,8 +44,7 @@
 	{:else}
 		<!-- Sub-pages: constrained layout -->
 		<div
-			class="relative z-10 mx-auto flex w-full max-w-[1000px] justify-center px-4 pb-16"
-			style="margin-top: 80px;"
+			class="relative z-10 mx-auto flex w-full max-w-[1000px] justify-center px-4 pb-16 mt-[110px] sm:mt-[80px]"
 		>
 			<div class="page-shell">
 				{@render children()}
