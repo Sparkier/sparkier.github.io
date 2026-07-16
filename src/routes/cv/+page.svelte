@@ -46,13 +46,6 @@
 			.save()
 			.then(async () => {
 				showLinks = true;
-				const { tick } = await import('svelte');
-				await tick();
-				if (container) {
-					container.parentElement?.querySelectorAll('.reveal').forEach((el) => {
-						el.classList.add('visible');
-					});
-				}
 			});
 	}
 </script>
@@ -65,7 +58,7 @@
 	/>
 </svelte:head>
 
-<div use:reveal class="flex flex-col gap-6">
+<div use:reveal={{ trigger: showLinks }} class="flex flex-col gap-6">
 	<div bind:this={container} class="flex flex-col {showLinks ? 'gap-6' : 'gap-2 pb-8'}">
 		<!-- Header -->
 		<section class="section-shell {showLinks ? 'reveal' : ''}">
