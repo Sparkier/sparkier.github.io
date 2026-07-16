@@ -5,7 +5,7 @@ export const books: Book[] = [
 		'Service Model',
 		new Date('July 12, 2026'),
 		4,
-		'Really fun book, I don\'t think I\'ve giggled that much when reading a book in a long time. The protagonist (or is he one?) is adorable and the topic is very timely.'
+		"Really fun book, I don't think I've giggled that much when reading a book in a long time. The protagonist (or is he one?) is adorable and the topic is very timely."
 	),
 	new Book(
 		'Perfection',
