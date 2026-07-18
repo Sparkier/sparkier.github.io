@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Icon from '$lib/components/Icon.svelte';
+	import ImageLoader from '$lib/components/ImageLoader.svelte';
 	import { getResearchProjects, slugify } from '$lib/helpers/projectsProvider';
 	import { reveal } from '$lib/actions/reveal';
 
@@ -57,10 +58,12 @@
 
 						<!-- Thumbnail -->
 						<div class="shrink-0 overflow-hidden rounded-lg">
-							<img
+							<ImageLoader
 								src={pub.imageSrc}
 								alt={pub.title}
-								class="h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.03] sm:w-48"
+								dimensions={pub.imageDimensions}
+								className="w-full sm:w-48"
+								imageClassName="transition-transform duration-500 group-hover:scale-[1.03]"
 							/>
 						</div>
 

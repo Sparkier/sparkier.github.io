@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import Icon from '$lib/components/Icon.svelte';
+	import ImageLoader from '$lib/components/ImageLoader.svelte';
 	import { getResearchProjects, slugify } from '$lib/helpers/projectsProvider';
 	import { reveal } from '$lib/actions/reveal';
 
@@ -80,12 +81,12 @@
 				<div
 					class="order-1 overflow-hidden rounded-2xl border border-primary/10 bg-background-card/50 p-2 shadow-sm backdrop-blur-sm md:order-2 md:col-span-2 md:col-start-4 md:row-start-1"
 				>
-					<img
-						src={paper.imageSrc.startsWith('/') || paper.imageSrc.startsWith('http')
-							? paper.imageSrc
-							: `/${paper.imageSrc}`}
+					<ImageLoader
+						src={paper.imageSrc}
 						alt={paper.title}
-						class="h-auto w-full rounded-xl object-contain"
+						dimensions={paper.imageDimensions}
+						className="w-full"
+						imageClassName="rounded-xl"
 					/>
 				</div>
 

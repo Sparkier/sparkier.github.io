@@ -24,6 +24,7 @@ export class Project {
 	title: string;
 	abstract: string;
 	imageSrc: string;
+	imageDimensions?: { width: number; height: number };
 	links: LinkWithIcon[];
 	/**
 	 * Creates a project
@@ -32,11 +33,13 @@ export class Project {
 	 * @param {String} abstract the abstract of the project/paper
 	 * @param {String} imageSrc the image source for the project
 	 * @param {[LinkWithIcon]} links links from the project to more information
+	 * @param {{ width: number; height: number }} imageDimensions dimensions of the image
 	 */
-	constructor(title: string, abstract: string, imageSrc: string, links: LinkWithIcon[] = []) {
+	constructor(title: string, abstract: string, imageSrc: string, links: LinkWithIcon[] = [], imageDimensions?: { width: number; height: number }) {
 		this.title = title;
 		this.abstract = abstract;
 		this.imageSrc = imageSrc;
+		this.imageDimensions = imageDimensions;
 		this.links = links;
 	}
 }
@@ -59,6 +62,7 @@ export class ResearchProject extends Project {
 	 * @param {String} venue the venue of the publication
 	 * @param {String} imageSRC the image source for the project
 	 * @param {[LinkWithIcon]} links links from the project to more information
+	 * @param {{ width: number; height: number }} imageDimensions dimensions of the image
 	 */
 	constructor(
 		title: string,
@@ -67,9 +71,10 @@ export class ResearchProject extends Project {
 		year: string,
 		venue: string,
 		imageSRC: string,
-		links: LinkWithIcon[] = []
+		links: LinkWithIcon[] = [],
+		imageDimensions?: { width: number; height: number }
 	) {
-		super(title, abstract, imageSRC, links);
+		super(title, abstract, imageSRC, links, imageDimensions);
 		this.authors = authors;
 		this.year = year;
 		this.venue = venue;
@@ -87,9 +92,10 @@ export class FunProject extends Project {
 	 * @param {String} abstract the abstract of the project/paper
 	 * @param {String} imageSRC the image source for the project
 	 * @param {[LinkWithIcon]} links links from the project to more information
+	 * @param {{ width: number; height: number }} imageDimensions dimensions of the image
 	 */
-	constructor(title: string, abstract: string, imageSRC: string, links: LinkWithIcon[] = []) {
-		super(title, abstract, imageSRC, links);
+	constructor(title: string, abstract: string, imageSRC: string, links: LinkWithIcon[] = [], imageDimensions?: { width: number; height: number }) {
+		super(title, abstract, imageSRC, links, imageDimensions);
 	}
 }
 
