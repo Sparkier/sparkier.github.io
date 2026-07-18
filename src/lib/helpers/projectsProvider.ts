@@ -5,6 +5,134 @@ import Web from 'svelte-material-icons/Web.svelte';
 import Youtube from 'svelte-material-icons/Youtube.svelte';
 import { FunProject, LinkWithIcon, ResearchProject } from '../types';
 
+const imageDimensions: Record<string, { width: number; height: number }> = {
+  "images/NAPs.png": {
+    "width": 1000,
+    "height": 450
+  },
+  "images/alphaevolve.png": {
+    "width": 2043,
+    "height": 1077
+  },
+  "images/bert.png": {
+    "width": 1926,
+    "height": 830
+  },
+  "images/breath.png": {
+    "width": 1200,
+    "height": 512
+  },
+  "images/cgvc.png": {
+    "width": 1600,
+    "height": 1200
+  },
+  "images/contagion.png": {
+    "width": 1024,
+    "height": 1024
+  },
+  "images/dotfiles.png": {
+    "width": 256,
+    "height": 256
+  },
+  "images/eot.png": {
+    "width": 500,
+    "height": 412
+  },
+  "images/exploRNN.png": {
+    "width": 1926,
+    "height": 992
+  },
+  "images/fibrils.png": {
+    "width": 2866,
+    "height": 1250
+  },
+  "images/gemini.png": {
+    "width": 3846,
+    "height": 1624
+  },
+  "images/hie.png": {
+    "width": 1000,
+    "height": 729
+  },
+  "images/humboldt.png": {
+    "width": 1292,
+    "height": 625
+  },
+  "images/image_quality.png": {
+    "width": 923,
+    "height": 477
+  },
+  "images/luna.png": {
+    "width": 1000,
+    "height": 1000
+  },
+  "images/midosa.png": {
+    "width": 1114,
+    "height": 1114
+  },
+  "images/mint.png": {
+    "width": 888,
+    "height": 538
+  },
+  "images/mySnow.png": {
+    "width": 1024,
+    "height": 1024
+  },
+  "images/nPMI.png": {
+    "width": 1596,
+    "height": 774
+  },
+  "images/net2vis.png": {
+    "width": 1916,
+    "height": 1046
+  },
+  "images/npmiVIS.png": {
+    "width": 4000,
+    "height": 2240
+  },
+  "images/openhands.png": {
+    "width": 542,
+    "height": 362
+  },
+  "images/other_left.png": {
+    "width": 678,
+    "height": 424
+  },
+  "images/pc-missing-data.png": {
+    "width": 2500,
+    "height": 850
+  },
+  "images/preview.png": {
+    "width": 1200,
+    "height": 630
+  },
+  "images/svelte-vega.png": {
+    "width": 434,
+    "height": 336
+  },
+  "images/symphony.png": {
+    "width": 291,
+    "height": 296
+  },
+  "images/tox.png": {
+    "width": 357,
+    "height": 260
+  },
+  "images/vegaprof.png": {
+    "width": 2100,
+    "height": 688
+  },
+  "images/zeno.png": {
+    "width": 617,
+    "height": 615
+  },
+  "images/vispositions.svg": {
+    "width": 1000,
+    "height": 500
+  }
+};
+
+
 let cachedResearchProjects: ResearchProject[] | null = null;
 
 /**
@@ -400,6 +528,9 @@ export function getResearchProjects(): ResearchProject[] {
 		)
 	];
 	projects.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+	projects.forEach(p => {
+		if (imageDimensions[p.imageSrc]) p.imageDimensions = imageDimensions[p.imageSrc];
+	});
 	cachedResearchProjects = projects;
 	return projects;
 }
@@ -505,6 +636,9 @@ export function getFunProjects(): FunProject[] {
 			]
 		)
 	];
+	projects.forEach(p => {
+		if (imageDimensions[p.imageSrc]) p.imageDimensions = imageDimensions[p.imageSrc];
+	});
 	cachedFunProjects = projects;
 	return projects;
 }
