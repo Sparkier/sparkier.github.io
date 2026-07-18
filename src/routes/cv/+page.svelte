@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Icon from '$lib/components/Icon.svelte';
-	import Contact from '$lib/components/cv/Contact.svelte';
+	import Contact from '$lib/components/Contact.svelte';
 	import { getEducationElements } from '$lib/helpers/educationProvider';
 	import { getFunding } from '$lib/helpers/fundingProvider';
 	import { getMentorshipActivities } from '$lib/helpers/mentoringProvider';
@@ -85,7 +85,7 @@
 				novel modes of interaction with AI, focusing on interfaces that help humans be creative with
 				AI systems.
 			</p>
-			<Contact {showLinks} />
+			<Contact variant="labeled" {showLinks} />
 		</section>
 
 		<!-- Education -->
