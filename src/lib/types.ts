@@ -35,7 +35,13 @@ export class Project {
 	 * @param {[LinkWithIcon]} links links from the project to more information
 	 * @param {{ width: number; height: number }} imageDimensions dimensions of the image
 	 */
-	constructor(title: string, abstract: string, imageSrc: string, links: LinkWithIcon[] = [], imageDimensions?: { width: number; height: number }) {
+	constructor(
+		title: string,
+		abstract: string,
+		imageSrc: string,
+		links: LinkWithIcon[] = [],
+		imageDimensions?: { width: number; height: number }
+	) {
 		this.title = title;
 		this.abstract = abstract;
 		this.imageSrc = imageSrc;
@@ -94,7 +100,13 @@ export class FunProject extends Project {
 	 * @param {[LinkWithIcon]} links links from the project to more information
 	 * @param {{ width: number; height: number }} imageDimensions dimensions of the image
 	 */
-	constructor(title: string, abstract: string, imageSRC: string, links: LinkWithIcon[] = [], imageDimensions?: { width: number; height: number }) {
+	constructor(
+		title: string,
+		abstract: string,
+		imageSRC: string,
+		links: LinkWithIcon[] = [],
+		imageDimensions?: { width: number; height: number }
+	) {
 		super(title, abstract, imageSRC, links, imageDimensions);
 	}
 }

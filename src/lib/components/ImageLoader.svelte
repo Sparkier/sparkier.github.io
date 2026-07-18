@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
 	// Props
 	export let src: string;
 	export let alt: string = '';
@@ -28,16 +26,10 @@
 	}
 </script>
 
-<div
-	class="relative w-full overflow-hidden {className}"
-	style="aspect-ratio: {aspectRatio};"
->
+<div class="relative w-full overflow-hidden {className}" style="aspect-ratio: {aspectRatio};">
 	<!-- Skeleton Loader -->
 	{#if !loaded && !error}
-		<div
-			class="absolute inset-0 bg-primary/10 animate-pulse"
-			aria-hidden="true"
-		></div>
+		<div class="absolute inset-0 bg-primary/10 animate-pulse" aria-hidden="true"></div>
 	{/if}
 
 	<!-- Actual Image -->
@@ -46,6 +38,9 @@
 		{alt}
 		on:load={handleLoad}
 		on:error={handleError}
-		class="absolute inset-0 h-full w-full object-contain transition-all duration-700 ease-in-out {loaded && !error ? 'opacity-100' : 'opacity-0'} {imageClassName}"
+		class="absolute inset-0 h-full w-full object-contain transition-all duration-700 ease-in-out {loaded &&
+		!error
+			? 'opacity-100'
+			: 'opacity-0'} {imageClassName}"
 	/>
 </div>
