@@ -2,9 +2,9 @@
 	import { page } from '$app/stores';
 	import { blogEntries } from '$lib/helpers/blogProvider';
 	import type { BlogEntry } from '$lib/types';
-	import purify from 'isomorphic-dompurify';
 	import { parse } from 'marked';
 	import { reveal } from '$lib/actions/reveal';
+	import { renderSanitizedHtml } from '$lib/actions/renderSanitizedHtml';
 
 	let content = $state('');
 
@@ -17,7 +17,7 @@
 	async function loadContent(entry: BlogEntry | undefined) {
 		if (!entry) return;
 		const response = await fetch(`/blog_md/${entry.content_md}`);
-		content = purify.sanitize(await parse(await response.text()));
+		content = await parse(await response.text());
 	}
 </script>
 
@@ -62,9 +62,7 @@
 				prose-code:bg-background-card prose-code:px-1.5
 				prose-code:py-0.5 prose-code:text-sm prose-code:text-text prose-ol:text-text-muted prose-ul:text-text-muted prose-li:marker:text-primary/40
 				[&_a]:break-all [&_p]:whitespace-pre-wrap"
-		>
-			<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-			{@html content}
-		</article>
+			use:renderSanitizedHtml={content}
+		></article>
 	</section>
 </div>
