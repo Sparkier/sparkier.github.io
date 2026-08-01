@@ -28,7 +28,7 @@ jobs:
         run: bun run lint
 
       - name: Run tests
-        run: bun run vitest run
+        run: bun run test
 
       - name: Build
         run: bun run build
