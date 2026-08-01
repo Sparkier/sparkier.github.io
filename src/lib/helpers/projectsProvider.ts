@@ -4,6 +4,7 @@ import Pen from 'svelte-material-icons/Pen.svelte';
 import Web from 'svelte-material-icons/Web.svelte';
 import Youtube from 'svelte-material-icons/Youtube.svelte';
 import { FunProject, LinkWithIcon, ResearchProject } from '../types';
+import imageDimensions from 'virtual:image-dimensions';
 
 let cachedResearchProjects: ResearchProject[] | null = null;
 
@@ -400,6 +401,9 @@ export function getResearchProjects(): ResearchProject[] {
 		)
 	];
 	projects.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+	projects.forEach((p) => {
+		if (imageDimensions[p.imageSrc]) p.imageDimensions = imageDimensions[p.imageSrc];
+	});
 	cachedResearchProjects = projects;
 	return projects;
 }
@@ -505,6 +509,9 @@ export function getFunProjects(): FunProject[] {
 			]
 		)
 	];
+	projects.forEach((p) => {
+		if (imageDimensions[p.imageSrc]) p.imageDimensions = imageDimensions[p.imageSrc];
+	});
 	cachedFunProjects = projects;
 	return projects;
 }
