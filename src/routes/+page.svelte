@@ -113,6 +113,7 @@
 			// ── Initialize components immediately ──
 			const bars: { dx: number; dTopY: number; phaseOffset: number; speed: number }[] = [];
 			const nodes: { dx: number; dy: number; phaseOffset: number; speed: number }[] = [];
+			const computedNodes: { x: number; y: number; alpha: number; radius: number }[] = [];
 
 			for (let b = 0; b < barHeights.length; b++) {
 				const bDx = barAreaDx + b * (barW + barGap) + barW / 2;
@@ -131,6 +132,7 @@
 					phaseOffset: Math.random() * Math.PI * 2,
 					speed: 0.3 + Math.random() * 0.4
 				});
+				computedNodes.push({ x: 0, y: 0, alpha: 0, radius: 0 });
 			}
 
 			let introProgress = 0;
@@ -182,18 +184,19 @@
 					const breathe = organicNoise(idleTime * 0.4, 42) * 0.5 + 0.5;
 					const baseAlpha = (RESTING_OPACITY + breathe * 0.1) * nodesProgress;
 
-					const computedNodes = nodes.map((node) => {
+					for (let i = 0; i < nodes.length; i++) {
+						const node = nodes[i];
+						const cNode = computedNodes[i];
 						const nBreathe = organicNoise(idleTime * node.speed, node.phaseOffset) * 0.5 + 0.5;
 						const nAlpha = (RESTING_OPACITY + nBreathe * 0.12) * nodesProgress;
 						const driftX = organicNoise(idleTime * node.speed * 0.5, node.phaseOffset) * 5;
 						const driftY = organicNoise(idleTime * node.speed * 0.6, node.phaseOffset * 1.3) * 5;
-						return {
-							x: cx + node.dx + driftX,
-							y: cy + node.dy + driftY,
-							alpha: nAlpha,
-							radius: 5 + nBreathe * 1.5
-						};
-					});
+
+						cNode.x = cx + node.dx + driftX;
+						cNode.y = cy + node.dy + driftY;
+						cNode.alpha = nAlpha;
+						cNode.radius = 5 + nBreathe * 1.5;
+					}
 
 					for (const edge of netEdges) {
 						const [a, b] = edge;
