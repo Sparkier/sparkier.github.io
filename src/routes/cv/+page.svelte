@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { onMount, tick } from 'svelte';
-	import Icon from '$lib/components/Icon.svelte';
+	import { reveal } from '$lib/actions/reveal';
 	import Contact from '$lib/components/Contact.svelte';
+	import Icon from '$lib/components/Icon.svelte';
+	import LinkElement from '$lib/components/LinkElement.svelte';
 	import { getEducationElements } from '$lib/helpers/educationProvider';
 	import { getFunding } from '$lib/helpers/fundingProvider';
 	import { getMentorshipActivities } from '$lib/helpers/mentoringProvider';
@@ -10,9 +11,8 @@
 	import { talks } from '$lib/helpers/talkProvider';
 	import { lectures } from '$lib/helpers/teachingProvider';
 	import { work } from '$lib/helpers/workProvider';
+	import { onMount, tick } from 'svelte';
 	import Download from 'svelte-material-icons/Download.svelte';
-	import LinkElement from '$lib/components/LinkElement.svelte';
-	import { reveal } from '$lib/actions/reveal';
 
 	let container: HTMLDivElement;
 	let showLinks = true;
@@ -267,97 +267,105 @@
 			</section>
 		{/if}
 
-		<!-- Teaching -->
-		<section class="section-shell reveal">
-			<div class="flex items-center gap-4">
-				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Teaching</h2>
-				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
-			</div>
-			<div class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}">
-				{#each lectures as lecture}
-					<div
-						class="pdf-entry reveal rounded-2xl {showLinks
-							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
-							: 'pb-2'}"
-					>
-						<div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-							<h3 class="text-sm font-semibold {showLinks ? '' : '!text-xs'}">{lecture.title}</h3>
-							<span class="shrink-0 text-xs text-text-muted">{lecture.timeframe}</span>
-						</div>
-						<p class="mt-1 text-xs leading-relaxed text-text-muted">{lecture.abstract}</p>
-					</div>
-				{/each}
-			</div>
-		</section>
-
-		<!-- Mentoring -->
-		<section class="section-shell reveal">
-			<div class="flex items-center gap-4">
-				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Mentoring</h2>
-				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
-			</div>
-			<div class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}">
-				{#each getMentorshipActivities() as m}
-					<div
-						class="pdf-entry reveal rounded-2xl {showLinks
-							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
-							: 'pb-2'}"
-					>
-						<div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-							<h3 class="text-sm font-semibold {showLinks ? '' : '!text-xs'}">{m.name}</h3>
-							<span class="shrink-0 text-xs text-text-muted">{m.timeframe}</span>
-						</div>
-						<p class="mt-0.5 text-xs text-text-muted">{m.position}, {m.institution}</p>
-						<p class="mt-0.5 text-xs leading-relaxed text-text-muted/70">{m.topic}</p>
-					</div>
-				{/each}
-			</div>
-		</section>
-
-		<!-- Funding -->
-		<section class="section-shell reveal">
-			<div class="flex items-center gap-4">
-				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Funding</h2>
-				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
-			</div>
-			<div class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}">
-				{#each getFunding() as fund}
-					<div
-						class="pdf-entry reveal rounded-2xl {showLinks
-							? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
-							: 'pb-2'}"
-					>
-						<div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-							<h3 class="text-sm font-semibold {showLinks ? '' : '!text-xs'}">{fund.name}</h3>
-							<span class="shrink-0 text-xs text-text-muted">{fund.timeframe}</span>
-						</div>
-						<p class="mt-0.5 text-xs text-text-muted">{fund.type}</p>
-					</div>
-				{/each}
-			</div>
-		</section>
-
-		<!-- Reviewing & Service -->
-		<section class="section-shell reveal">
-			<div class="flex items-center gap-4">
-				<h2 class={showLinks ? '' : '!text-xl text-h2'}>Reviewing and Service</h2>
-				{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
-			</div>
-			<div
-				class="reveal rounded-2xl {showLinks
-					? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
-					: ''}"
-			>
-				<div class="flex flex-wrap gap-x-6 gap-y-2">
-					{#each reviews as s}
-						<div class="flex items-baseline gap-2">
-							<span class="text-sm font-medium {showLinks ? '' : '!text-xs'}">{s.venue}</span>
-							<span class="text-xs text-text-muted">({s.years})</span>
+		<!-- Teaching (screen only) -->
+		{#if showLinks}
+			<section class="section-shell reveal">
+				<div class="flex items-center gap-4">
+					<h2 class={showLinks ? '' : '!text-xl text-h2'}>Teaching</h2>
+					{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
+				</div>
+				<div class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}">
+					{#each lectures as lecture}
+						<div
+							class="pdf-entry reveal rounded-2xl {showLinks
+								? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
+								: 'pb-2'}"
+						>
+							<div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+								<h3 class="text-sm font-semibold {showLinks ? '' : '!text-xs'}">{lecture.title}</h3>
+								<span class="shrink-0 text-xs text-text-muted">{lecture.timeframe}</span>
+							</div>
+							<p class="mt-1 text-xs leading-relaxed text-text-muted">{lecture.abstract}</p>
 						</div>
 					{/each}
 				</div>
-			</div>
-		</section>
+			</section>
+		{/if}
+
+		<!-- Mentoring (screen only) -->
+		{#if showLinks}
+			<section class="section-shell reveal">
+				<div class="flex items-center gap-4">
+					<h2 class={showLinks ? '' : '!text-xl text-h2'}>Mentoring</h2>
+					{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
+				</div>
+				<div class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}">
+					{#each getMentorshipActivities() as m}
+						<div
+							class="pdf-entry reveal rounded-2xl {showLinks
+								? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
+								: 'pb-2'}"
+						>
+							<div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+								<h3 class="text-sm font-semibold {showLinks ? '' : '!text-xs'}">{m.name}</h3>
+								<span class="shrink-0 text-xs text-text-muted">{m.timeframe}</span>
+							</div>
+							<p class="mt-0.5 text-xs text-text-muted">{m.position}, {m.institution}</p>
+							<p class="mt-0.5 text-xs leading-relaxed text-text-muted/70">{m.topic}</p>
+						</div>
+					{/each}
+				</div>
+			</section>
+		{/if}
+
+		<!-- Funding (screen only) -->
+		{#if showLinks}
+			<section class="section-shell reveal">
+				<div class="flex items-center gap-4">
+					<h2 class={showLinks ? '' : '!text-xl text-h2'}>Funding</h2>
+					{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
+				</div>
+				<div class="reveal-stagger flex flex-col {showLinks ? 'gap-3' : 'gap-1'}">
+					{#each getFunding() as fund}
+						<div
+							class="pdf-entry reveal rounded-2xl {showLinks
+								? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
+								: 'pb-2'}"
+						>
+							<div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+								<h3 class="text-sm font-semibold {showLinks ? '' : '!text-xs'}">{fund.name}</h3>
+								<span class="shrink-0 text-xs text-text-muted">{fund.timeframe}</span>
+							</div>
+							<p class="mt-0.5 text-xs text-text-muted">{fund.type}</p>
+						</div>
+					{/each}
+				</div>
+			</section>
+		{/if}
+
+		<!-- Reviewing & Service (screen only) -->
+		{#if showLinks}
+			<section class="section-shell reveal">
+				<div class="flex items-center gap-4">
+					<h2 class={showLinks ? '' : '!text-xl text-h2'}>Reviewing and Service</h2>
+					{#if showLinks}<div class="h-px flex-1 bg-primary/10"></div>{/if}
+				</div>
+				<div
+					class="reveal rounded-2xl {showLinks
+						? 'border border-transparent bg-background-card/80 p-4 shadow-sm backdrop-blur-sm'
+						: ''}"
+				>
+					<div class="flex flex-wrap gap-x-6 gap-y-2">
+						{#each reviews as s}
+							<div class="flex items-baseline gap-2">
+								<span class="text-sm font-medium {showLinks ? '' : '!text-xs'}">{s.venue}</span>
+								<span class="text-xs text-text-muted">({s.years})</span>
+							</div>
+						{/each}
+					</div>
+				</div>
+			</section>
+		{/if}
 	</div>
 </div>
 
