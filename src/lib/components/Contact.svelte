@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Icon from './Icon.svelte';
 	import LinkElement from './LinkElement.svelte';
-	import { contactsById } from '$lib/contacts';
+	import { contactsById, type Contact } from '$lib/contacts';
 
 	let {
 		variant = 'icon-only',
@@ -18,7 +18,11 @@
 	);
 
 	let displayContacts = $derived(
-		activeContacts.map((id) => contactsById[id]).filter((c) => c !== undefined)
+		activeContacts.reduce<Contact[]>((acc, id) => {
+			const c = contactsById[id];
+			if (c !== undefined) acc.push(c);
+			return acc;
+		}, [])
 	);
 </script>
 
