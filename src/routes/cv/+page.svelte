@@ -148,7 +148,9 @@
 							<div class="flex items-center gap-2">
 								<Icon icon={employment.icon} plain downloadingPDF={!showLinks} />
 								<h3 class="text-sm font-semibold {showLinks ? '' : '!text-xs'}">
-									{employment.title}
+									{employment.title}<span class="font-normal text-text-muted"
+										>, {employment.company}</span
+									>
 								</h3>
 							</div>
 							<span class="shrink-0 text-xs text-text-muted">{employment.timeframe}</span>
