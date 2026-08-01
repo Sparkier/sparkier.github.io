@@ -241,19 +241,22 @@ export class Talk {
  */
 export class Work {
 	title: string;
+	company: string;
 	abstract: string;
 	timeframe: string;
 	icon: unknown;
 	/**
-	 * Creates a lecture
+	 * Creates a work experience
 	 *
 	 * @param {String} title the title of the working experience
+	 * @param {String} company the company name
 	 * @param {String} abstract the abstract of the working experience
 	 * @param {String} timeframe the date of the working experience
 	 * @param {unknown} icon the icon of the working experience
 	 */
-	constructor(title: string, abstract: string, timeframe: string, icon: unknown) {
+	constructor(title: string, company: string, abstract: string, timeframe: string, icon: unknown) {
 		this.title = title;
+		this.company = company;
 		this.abstract = abstract;
 		this.timeframe = timeframe;
 		this.icon = icon;
