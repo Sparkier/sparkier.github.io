@@ -6,41 +6,41 @@
 	export let className: string = '';
 	export let imageClassName: string = '';
 
-	// State
+	// Whether the image has finished loading — used only to hide the skeleton.
+	// The image itself is never gated on this, so it can't get stuck hidden.
 	let loaded = false;
-	let error = false;
 
 	// Normalize path so nested routes (e.g., /publications/paper-name) don't break relative paths
 	$: normalizedSrc = src.startsWith('/') || src.startsWith('http') ? src : `/${src}`;
 
-	// Calculate aspect ratio string if dimensions exist
+	// Reserve the exact aspect ratio so the box holds its height before the image
+	// loads, eliminating layout shift.
 	$: aspectRatio = dimensions ? `${dimensions.width} / ${dimensions.height}` : 'auto';
 
-	function handleLoad() {
+	function markLoaded() {
 		loaded = true;
 	}
 
-	function handleError() {
-		error = true;
-		loaded = true;
+	// Cached or server-rendered images can finish loading before the `load` listener
+	// is attached, so reconcile the state on mount by inspecting the element directly.
+	function trackLoad(node: HTMLImageElement) {
+		if (node.complete) markLoaded();
 	}
 </script>
 
 <div class="relative w-full overflow-hidden {className}" style="aspect-ratio: {aspectRatio};">
-	<!-- Skeleton Loader -->
-	{#if !loaded && !error}
-		<div class="absolute inset-0 bg-primary/10 animate-pulse" aria-hidden="true"></div>
+	<!-- Skeleton placeholder, shown behind the image until it has loaded -->
+	{#if !loaded}
+		<div class="absolute inset-0 animate-pulse bg-primary/10" aria-hidden="true"></div>
 	{/if}
 
-	<!-- Actual Image -->
+	<!-- Actual image: always visible, covers the skeleton once it paints -->
 	<img
 		src={normalizedSrc}
 		{alt}
-		on:load={handleLoad}
-		on:error={handleError}
-		class="absolute inset-0 h-full w-full object-contain transition-all duration-700 ease-in-out {loaded &&
-		!error
-			? 'opacity-100'
-			: 'opacity-0'} {imageClassName}"
+		use:trackLoad
+		on:load={markLoaded}
+		on:error={markLoaded}
+		class="absolute inset-0 h-full w-full object-contain {imageClassName}"
 	/>
 </div>
