@@ -18,7 +18,7 @@ export function getEducationElements() {
 			'Supervised by Timo Ropinski, funded by the Carl-Zeiss-Scholarship',
 			[
 				{
-					icon: new LinkWithIcon('documents/dissertation.pdf', FilePdfBox),
+					icon: new LinkWithIcon('https://doi.org/10.18725/OPARU-48818', FilePdfBox),
 					description: 'Thesis'
 				}
 			]
