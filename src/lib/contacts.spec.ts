@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { contacts } from './contacts';
+import { contacts, contactsById } from './contacts';
 
 describe('contacts', () => {
 	it('should be a non-empty array of objects', () => {
@@ -25,6 +25,18 @@ describe('contacts', () => {
 
 			expect(contact).toHaveProperty('blank');
 			expect(typeof contact.blank).toBe('boolean');
+		});
+	});
+});
+
+describe('contactsById', () => {
+	it('should contain the same number of items as contacts array', () => {
+		expect(Object.keys(contactsById).length).toBe(contacts.length);
+	});
+
+	it('should map each contact id to its corresponding contact object', () => {
+		contacts.forEach((contact) => {
+			expect(contactsById[contact.id]).toBe(contact);
 		});
 	});
 });
