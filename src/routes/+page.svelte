@@ -59,6 +59,8 @@
 
 	onMount(() => {
 		let resizeObserver: ResizeObserver | undefined;
+		let startTimeoutId: ReturnType<typeof setTimeout> | undefined;
+		let animationFrameId: number | undefined;
 
 		// ── Tracing dot animation on canvas ──
 		const ctx = canvas?.getContext('2d');
@@ -229,10 +231,12 @@
 				if (introProgress > 0.6 && phase < 3) phase = 3;
 				if (introProgress > 0.8 && phase < 4) phase = 4;
 
-				requestAnimationFrame(draw);
+				animationFrameId = requestAnimationFrame(draw);
 			};
 
-			setTimeout(() => requestAnimationFrame(draw), 400);
+			startTimeoutId = setTimeout(() => {
+				animationFrameId = requestAnimationFrame(draw);
+			}, 400);
 
 			resizeObserver = new ResizeObserver(() => {
 				const rect = canvas.getBoundingClientRect();
@@ -248,6 +252,12 @@
 		}
 
 		return () => {
+			if (startTimeoutId) {
+				clearTimeout(startTimeoutId);
+			}
+			if (animationFrameId) {
+				cancelAnimationFrame(animationFrameId);
+			}
 			if (resizeObserver) {
 				resizeObserver.disconnect();
 			}
